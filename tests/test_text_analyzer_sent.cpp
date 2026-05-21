@@ -37,3 +37,17 @@ TEST_CASE("FA_TC_05_SentimentPartialNeg", "[fa-tc][p0][sent][legacy]") {
         fa_fixtures::singleText(u8"나쁘지 않아요"));
     fa_expect::expectSentiment(result, 0, 0, 1);
 }
+
+TEST_CASE("FA_TC_06_SentimentNeutralAmbiguous", "[fa-tc][p0][sent][def-01][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result =
+        adapter.analyzeSentiment(fa_fixtures::def01NeutralAmbiguous());
+    fa_expect::expectSentiment(result, 0, 1, 0);
+}
+
+TEST_CASE("FA_TC_07_SentimentPositiveWins", "[fa-tc][p0][sent][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.analyzeSentiment(
+        fa_fixtures::positiveNegativeOverlap());
+    fa_expect::expectSentiment(result, 1, 0, 0);
+}
