@@ -17,3 +17,10 @@ TEST_CASE("FA_TC_10_KeywordQuality", "[fa-tc][p0][kw][legacy]") {
         fa_fixtures::singleText(u8"í’ˆì§ˆì´ ìš°ìˆ˜í•©ë‹ˆë‹¤"));
     fa_expect::expectKeywordGe(result, u8"í’ˆì§ˆ", 1);
 }
+
+TEST_CASE("FA_TC_11_KeywordPrice", "[fa-tc][p0][kw][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.countKeywords(
+        fa_fixtures::singleText(u8"°¡°İÀÌ ºñ½Î¿ä"));
+    fa_expect::expectKeywordGe(result, u8"°¡°İ", 1);
+}
