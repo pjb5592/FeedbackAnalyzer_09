@@ -38,3 +38,14 @@ TEST_CASE("FA_TC_13_KeywordUsability", "[fa-tc][p0][kw][legacy]") {
         fa_fixtures::singleText(u8"사용이 편리해요"));
     fa_expect::expectKeywordGe(result, u8"사용성", 1);
 }
+
+TEST_CASE("FA_TC_14_KeywordNone", "[fa-tc][p0][kw][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.countKeywords(
+        fa_fixtures::singleText(u8"오늘 날씨가 맑습니다"));
+    REQUIRE(result.at(u8"배송") == 0);
+    REQUIRE(result.at(u8"품질") == 0);
+    REQUIRE(result.at(u8"가격") == 0);
+    REQUIRE(result.at(u8"서비스") == 0);
+    REQUIRE(result.at(u8"사용성") == 0);
+}
