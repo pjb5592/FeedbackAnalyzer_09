@@ -80,7 +80,7 @@ feedback_analyzer_cpp/
 |---|------|--------|--------|------|
 | 0 | 프로젝트 규칙 | spec | `.cursorrules` | [x] |
 | 1 | 요구사항 분석 | spec | `docs/requirements_analysis.md` | [x] |
-| 2 | 코드 품질 분석 | spec | `docs/code_quality_report.md` | [ ] |
+| 2 | 코드 품질 분석 | spec | `docs/code_quality_report.md` | [x] |
 | 3 | 테스트 계획 (Test Plan) | spec | `docs/test_plan.md` | [ ] |
 | 4-A | RED — 실패 테스트 | red | `tests/*.cpp`, ctest 의도적 FAIL | [ ] |
 | 4-B | GREEN — FA-TC 통과 | green | `tests/support/`, FA-TC 전건 Green | [ ] |

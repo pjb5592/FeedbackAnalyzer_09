@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `spec` (Step 01 완료)
+**브랜치:** `spec` (Step 02 완료)
 
 ---
 
@@ -12,6 +12,7 @@
 |------|------|------|------|
 | **00** | **spec-cursorrules** | `.cursorrules`, README TODO | ✅ |
 | **01** | **spec-requirements-analysis** | `docs/requirements_analysis.md`, FA-001~055 | ✅ |
+| **02** | **spec-code-quality** | `docs/code_quality_report.md`, DEF·P0~P3 | ✅ |
 
 ---
 
@@ -56,6 +57,28 @@
 
 ---
 
+## Step 02 상세 (2026-05-22)
+
+**User:** `@main.cpp` `@TextAnalyzer.h` `@Filters.h` `@Constants.h` `@Session.h` `@Feedback.h` `@README.md` — [P] 시니어 C++ 아키텍트 — SOLID·Code Smell 정적 분석, DEF-01~04 근거, P0~P3 → `docs/code_quality_report.md`.
+
+**Assistant:**
+- `docs/code_quality_report.md` 신규 (한글)
+  - God Module·Duplicate `containsAny`·Global State·Feature Envy·Shotgun Surgery·Lava Flow
+  - DEF-01~04 코드 위치·Mom Test·리팩토링 P0~P3 (Phase 0~4 매핑)
+- `src/cpp/` 수정 없음
+
+**검증:**
+- `cmake --build build` → ✅
+- `ctest` → ⏭️ 테스트 타겟 없음
+
+**User:** [P] 문서·배포 — Step 02 Report/Prompt/full-transcript·git commit/push.
+
+**Assistant:** Report 02 · Transcript 02 · full-transcript 갱신 · README 단계 2 `[x]` · commit·push.
+
+**다음:** `spec` — Step 03 `docs/test_plan.md`
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -66,7 +89,8 @@ main → spec → red → green → refactoring → feature/newFeature → main
 |---|--------|------|
 | 0 | spec | `.cursorrules` ✅ |
 | 1 | spec | `requirements_analysis.md` ✅ |
-| 2~3 | spec | code_quality · test_plan |
+| 2 | spec | `code_quality_report.md` ✅ |
+| 3 | spec | test_plan |
 | 4-A | red | FA-TC RED |
 | 4-B~C, 8 | green | GREEN → 커버리지 → GM |
 | 5~6 | refactoring | refactoring_plan Step |
