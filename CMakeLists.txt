@@ -46,6 +46,7 @@ add_executable(feedback_analyzer_tests
     tests/test_main.cpp
     tests/test_text_analyzer_sent.cpp
     tests/test_text_analyzer_kw.cpp
+    tests/test_consistency.cpp
     ${FA_LEGACY_SOURCES}
 )
 
