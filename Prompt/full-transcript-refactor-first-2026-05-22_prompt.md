@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `spec` (Step 00 완료)
+**브랜치:** `spec` (Step 01 완료)
 
 ---
 
@@ -10,7 +10,8 @@
 
 | Step | slug | 산출 | 상태 |
 |------|------|------|------|
-| **00** | **spec-cursorrules** | `.cursorrules`, README TODO, Report/Prompt | ✅ |
+| **00** | **spec-cursorrules** | `.cursorrules`, README TODO | ✅ |
+| **01** | **spec-requirements-analysis** | `docs/requirements_analysis.md`, FA-001~055 | ✅ |
 
 ---
 
@@ -25,13 +26,33 @@
 
 **검증:**
 - `cmake --build build` → ✅ `feedback_analyzer` 빌드
-- `ctest` → ⏭️ 테스트 타겟 없음 (Catch2 미도입)
+- `ctest` → ⏭️ 테스트 타겟 없음
 
 **User:** [P] 문서·배포 — Step 00 Report/Prompt/full-transcript·git commit/push.
 
-**Assistant:** Report 00 · Transcript 00 · full-transcript 갱신 · commit·push.
+**Assistant:** Report 00 · Transcript 00 · full-transcript · commit·push.
 
-**다음:** `spec` — Step 01 `docs/requirements_analysis.md`
+---
+
+## Step 01 상세 (2026-05-22)
+
+**User:** `@README.md` `@project_purpose.md` — [P] 시니어 C++ QA — 요구사항 분석 8항목 → `docs/requirements_analysis.md` (FA-001~, Mom Test, 미션 매핑).
+
+**Assistant:**
+- `docs/requirements_analysis.md` 신규 (8섹션, **FA-001~FA-055** 55건, DEF·Mom 추적)
+- HTTP/분류/CSV/Session 정합성·Analyzer vs Filters 계약 문서화
+- `README.md` 단계 1 `[x]`
+- `src/cpp/` 수정 없음
+
+**검증:**
+- `cmake --build build` → ✅
+- `ctest` → ⏭️ 테스트 타겟 없음
+
+**User:** [P] 문서·배포 — Step 01 Report/Prompt/full-transcript·git commit/push.
+
+**Assistant:** Report 01 · Transcript 01 · full-transcript 갱신 · commit·push.
+
+**다음:** `spec` — Step 02 `docs/code_quality_report.md`
 
 ---
 
@@ -44,7 +65,8 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | # | 브랜치 | 핵심 |
 |---|--------|------|
 | 0 | spec | `.cursorrules` ✅ |
-| 1~3 | spec | requirements · code_quality · test_plan |
+| 1 | spec | `requirements_analysis.md` ✅ |
+| 2~3 | spec | code_quality · test_plan |
 | 4-A | red | FA-TC RED |
 | 4-B~C, 8 | green | GREEN → 커버리지 → GM |
 | 5~6 | refactoring | refactoring_plan Step |

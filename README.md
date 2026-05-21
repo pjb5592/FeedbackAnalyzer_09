@@ -79,7 +79,7 @@ feedback_analyzer_cpp/
 | # | 단계 | 브랜치 | 산출물 | 진행 |
 |---|------|--------|--------|------|
 | 0 | 프로젝트 규칙 | spec | `.cursorrules` | [x] |
-| 1 | 요구사항 분석 | spec | `docs/requirements_analysis.md` | [ ] |
+| 1 | 요구사항 분석 | spec | `docs/requirements_analysis.md` | [x] |
 | 2 | 코드 품질 분석 | spec | `docs/code_quality_report.md` | [ ] |
 | 3 | 테스트 계획 (Test Plan) | spec | `docs/test_plan.md` | [ ] |
 | 4-A | RED — 실패 테스트 | red | `tests/*.cpp`, ctest 의도적 FAIL | [ ] |
