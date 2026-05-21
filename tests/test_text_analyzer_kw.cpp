@@ -10,3 +10,10 @@ TEST_CASE("FA_TC_09_KeywordShipping", "[fa-tc][p0][kw][legacy]") {
         fa_fixtures::singleText(u8"배송이 빨라요"));
     fa_expect::expectKeywordGe(result, u8"배송", 1);
 }
+
+TEST_CASE("FA_TC_10_KeywordQuality", "[fa-tc][p0][kw][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.countKeywords(
+        fa_fixtures::singleText(u8"품질이 우수합니다"));
+    fa_expect::expectKeywordGe(result, u8"품질", 1);
+}
