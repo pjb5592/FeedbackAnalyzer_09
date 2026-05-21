@@ -68,3 +68,41 @@ feedback_analyzer_cpp/
 입력 CSV 파일은 다음과 같은 형식이어야 합니다:
 - 필수 컬럼: `text`
 - 텍스트 컬럼에 피드백 내용 포함
+
+---
+
+## TDD/리팩토링 진행 TODO
+
+> 브랜치 순서: `spec` → `red` → `green` → `refactoring` → `feature/newFeature`  
+> 규칙 상세: 프로젝트 루트 [`.cursorrules`](./.cursorrules) · 프롬프트: [`prompt초안.md`](./prompt초안.md)
+
+| # | 단계 | 브랜치 | 산출물 | 진행 |
+|---|------|--------|--------|------|
+| 0 | 프로젝트 규칙 | spec | `.cursorrules` | [x] |
+| 1 | 요구사항 분석 | spec | `docs/requirements_analysis.md` | [x] |
+| 2 | 코드 품질 분석 | spec | `docs/code_quality_report.md` | [x] |
+| 3 | 테스트 계획 (Test Plan) | spec | `docs/test_plan.md` | [x] |
+| 4-A | RED — 실패 테스트 | red | `tests/*.cpp`, ctest 의도적 FAIL | [ ] |
+| 4-B | GREEN — FA-TC 통과 | green | `tests/support/`, FA-TC 전건 Green | [ ] |
+| 4-C | 커버리지 게이트 | green | `docs/coverage_report.md`, Domain≥90% Boundary≥85% | [ ] |
+| 5 | 리팩토링 계획 | spec / refactoring | `docs/refactoring_plan.md` | [ ] |
+| 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [ ] |
+| 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [ ] |
+| 8 | Golden Master | green | `tests/golden/`, `docs/golden_master.md` (4-B·4-C 완료 후) | [ ] |
+| 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |
+| 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [ ] |
+| 11 | 설계 다이어그램 (선택) | spec | `docs/architecture.md` | [ ] |
+| 12 | QA 종합 검토 | refactoring / main | `docs/qa_final_report.md` | [ ] |
+
+**green 완료 조건 (refactoring 진입 전, 순서 고정)**
+
+- [ ] FA-TC 전건 `ctest` Green
+- [ ] `scripts/run_coverage_gate.ps1` PASS
+- [ ] Golden Master `ctest` Green
+
+**검증 명령**
+
+```bash
+cmake --build build && ctest
+scripts/run_coverage_gate.ps1
+```
