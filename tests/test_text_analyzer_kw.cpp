@@ -49,3 +49,11 @@ TEST_CASE("FA_TC_14_KeywordNone", "[fa-tc][p0][kw][legacy]") {
     REQUIRE(result.at(u8"서비스") == 0);
     REQUIRE(result.at(u8"사용성") == 0);
 }
+
+TEST_CASE("FA_TC_15_KeywordMultiCategory", "[fa-tc][p0][kw][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.countKeywords(
+        fa_fixtures::singleText(u8"배송도 빠르고 품질도 좋습니다"));
+    REQUIRE(result.at(u8"배송") >= 1);
+    REQUIRE(result.at(u8"품질") >= 1);
+}
