@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `spec` (Step 02 완료)
+**브랜치:** `spec` (Step 03 완료)
 
 ---
 
@@ -13,6 +13,7 @@
 | **00** | **spec-cursorrules** | `.cursorrules`, README TODO | ✅ |
 | **01** | **spec-requirements-analysis** | `docs/requirements_analysis.md`, FA-001~055 | ✅ |
 | **02** | **spec-code-quality** | `docs/code_quality_report.md`, DEF·P0~P3 | ✅ |
+| **03** | **spec-test-plan** | `docs/test_plan.md`, FA-TC-01~55, GM-01~09 | ✅ |
 
 ---
 
@@ -79,6 +80,27 @@
 
 ---
 
+## Step 03 상세 (2026-05-22)
+
+**User:** `@README.md` `@docs/project_purpose.md` `@docs/requirements_analysis.md` `@docs/code_quality_report.md` `@TextAnalyzer.h` `@Filters.h` — [P] 시니어 QA 리드 — spec, 프로덕션 코드 수정 금지 — Test Plan: TDD 5영역, FA-TC, 경계·CoT·Fixture·커버리지 90/85·GM·Seam → `docs/test_plan.md`.
+
+**Assistant:**
+- `docs/test_plan.md` 신규 (FA-TC-01~55, Seam, RED/GREEN, GM-01~09, 커버리지 게이트)
+- `README.md` 단계 3 `[x]`
+- `src/cpp/` 수정 없음
+
+**검증:**
+- `cmake --build build` → ✅
+- `ctest` → ⏭️ 테스트 타겟 없음
+
+**User:** [P] 문서·배포 — Step 03 Report/Prompt/full-transcript·git commit/push (FA-TC-01~55).
+
+**Assistant:** Report 03 · Transcript 03 · full-transcript 갱신 · commit·push.
+
+**다음:** `red` — FA-TC-01 RED (`test(red): FA-TC-01 ...`)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -90,7 +112,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 0 | spec | `.cursorrules` ✅ |
 | 1 | spec | `requirements_analysis.md` ✅ |
 | 2 | spec | `code_quality_report.md` ✅ |
-| 3 | spec | test_plan |
+| 3 | spec | `test_plan.md` ✅ |
 | 4-A | red | FA-TC RED |
 | 4-B~C, 8 | green | GREEN → 커버리지 → GM |
 | 5~6 | refactoring | refactoring_plan Step |
