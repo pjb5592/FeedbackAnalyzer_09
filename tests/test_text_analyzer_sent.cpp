@@ -30,3 +30,10 @@ TEST_CASE("FA_TC_04_SentimentNeutralNoKw", "[fa-tc][p0][sent][legacy]") {
         fa_fixtures::singleText(u8"배송이 늦었습니다"));
     fa_expect::expectSentiment(result, 0, 1, 0);
 }
+
+TEST_CASE("FA_TC_05_SentimentPartialNeg", "[fa-tc][p0][sent][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.analyzeSentiment(
+        fa_fixtures::singleText(u8"나쁘지 않아요"));
+    fa_expect::expectSentiment(result, 0, 0, 1);
+}
