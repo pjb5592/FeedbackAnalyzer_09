@@ -31,3 +31,10 @@ TEST_CASE("FA_TC_12_KeywordService", "[fa-tc][p0][kw][legacy]") {
         fa_fixtures::singleText(u8"서비스가 친절해요"));
     fa_expect::expectKeywordGe(result, u8"서비스", 1);
 }
+
+TEST_CASE("FA_TC_13_KeywordUsability", "[fa-tc][p0][kw][legacy]") {
+    LegacyTextAnalyzerAdapter adapter;
+    const auto result = adapter.countKeywords(
+        fa_fixtures::singleText(u8"사용이 편리해요"));
+    fa_expect::expectKeywordGe(result, u8"사용성", 1);
+}
