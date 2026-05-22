@@ -48,6 +48,7 @@ set(FA_SUPPORT_SOURCES
     tests/support/DomainFeedbackFilter.cpp
     tests/support/CsvUploadParser.cpp
     tests/support/InMemoryDownloadSource.cpp
+    tests/support/GoldenMasterRunner.cpp
 )
 
 add_executable(feedback_analyzer_tests
@@ -57,6 +58,8 @@ add_executable(feedback_analyzer_tests
     tests/test_filters.cpp
     tests/test_consistency.cpp
     tests/test_csv_session.cpp
+    tests/test_golden_master.cpp
+    tests/test_perf_skip.cpp
     ${FA_LEGACY_SOURCES}
     ${FA_SUPPORT_SOURCES}
 )
@@ -79,4 +82,36 @@ endif()
 enable_testing()
 include(CTest)
 include(Catch)
-catch_discover_tests(feedback_analyzer_tests)
+catch_discover_tests(feedback_analyzer_tests
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
+add_executable(feedback_analyzer_integration_tests
+    tests/integration/test_http_main.cpp
+    tests/integration/test_http_integration.cpp
+)
+
+target_include_directories(feedback_analyzer_integration_tests PRIVATE
+    src/cpp
+    tests/integration
+)
+
+target_compile_definitions(feedback_analyzer_integration_tests PRIVATE
+    FA_SERVER_EXE="$<TARGET_FILE:feedback_analyzer>"
+)
+
+target_link_libraries(feedback_analyzer_integration_tests PRIVATE Catch2::Catch2)
+
+if(WIN32)
+    target_compile_definitions(feedback_analyzer_integration_tests PRIVATE
+        _WIN32_WINNT=0x0A00
+        WINVER=0x0A00
+    )
+    target_link_libraries(feedback_analyzer_integration_tests PRIVATE ws2_32)
+endif()
+
+add_dependencies(feedback_analyzer_integration_tests feedback_analyzer)
+
+catch_discover_tests(feedback_analyzer_integration_tests
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)

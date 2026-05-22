@@ -1,0 +1,2 @@
+kw.배송=1
+filter.배송.count=1

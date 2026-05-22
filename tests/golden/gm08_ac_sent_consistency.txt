@@ -1,0 +1,7 @@
+sent.positive=0
+sent.neutral=1
+sent.negative=0
+filter.neutral.count=1
+---
+kw.배송=1
+filter.배송.count=1
