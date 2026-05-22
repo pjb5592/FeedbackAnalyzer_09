@@ -100,6 +100,34 @@ feedback_analyzer_cpp/
 - [x] `scripts/run_coverage_gate.ps1` PASS (Domain **97.6%** · Boundary **85.0%** · Overall **98.1%**)
 - [x] Golden Master `ctest` Green (**GM-01~04**, `GoldenMaster` 집계, FA-TC-53)
 
+**refactoring TODO** (`refactoring` 브랜치 · [`docs/refactoring_plan.md`](./docs/refactoring_plan.md) · **1 Step = 1 Commit**)
+
+> 매 Step 후: `ctest` 67/67 + `GoldenMaster` + `run_coverage_gate.ps1` Green 유지. `src/cpp/`만 수정.
+
+| Phase | DEF | Step | 내용 | 진행 |
+|-------|-----|------|------|------|
+| **0** | DEF-01 | 0.1 | `Filters` 감정 분기 = `Constants` + `sent` 규칙 | [ ] |
+| **0** | DEF-01 | 0.2 | `S_KEYWORDS`·`initFilterKeywords` 제거 | [ ] |
+| **1** | DEF-02 | 1.1 | `fil` 카테고리 스캔에 `main` 포함 | [ ] |
+| **2** | DEF-03 | 2.1 | Session download 뷰 API | [ ] |
+| **2** | DEF-03/04 | 2.2 | `fil_data` 제거 · analyze/filter/download 연동 | [ ] |
+| **2** | DEF-04 | 2.3 | `CsvUploadParser` 승격 · `/upload` `text` 컬럼 | [ ] |
+| **3** | 중복 | 3.1 | `KeywordMatcher` 공통화 | [ ] |
+| **3** | 네이밍 | 3.2 | `fil`→`filterFeedbacks` 등 API rename | [ ] |
+| **3** | 전역 | 3.3 | `globalSent`/`globalKw`·`cout`·Session dead code 정리 | [ ] |
+| **4** | God Module | 4.1 | `HtmlRenderer` 분리 | [ ] |
+| **4** | God Module | 4.2 | `HttpRouter` 분리 | [ ] |
+| **4** | God Module | 4.3 | `main.cpp` 부트스트랩만 | [ ] |
+
+**Phase 완료 체크 (GM·FA-TC)**
+
+- [ ] Phase 0 — FA-TC-17/29/32 · **GM-02**
+- [ ] Phase 1 — FA-TC-16/24/30
+- [ ] Phase 2 — FA-TC-33~34, 39~41 · **GM-03**, **GM-04**
+- [ ] Phase 3~4 — GM-01~04 전건 · `feedback_analyzer.exe` smoke
+
+**목표 계약:** AC-SENT-01 · AC-KW-01/02 · download 뷰 · CSV `text` (→ `docs/defect_list.md` Phase 완료 후 기록)
+
 **검증 명령**
 
 ```bash

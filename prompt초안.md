@@ -381,6 +381,7 @@ CoT 후 GM-XX 하나씩 커밋: test(green): GM-XX <slug>
     - Phase 4: main.cpp 분리 (HtmlRenderer, Router)
     - 각 Step: 목표 / 변경 파일(레거시 허용) / 리스크 / 롤백 / ctest / **CoT 질문 3개**
     - **1 Step = 1 Commit** 명시
+    - @README.md 에 green 완료조건 아래에 refactoring TODO 추가
 [F] docs/refactoring_plan.md (Phase 0~N 체크리스트, 한글)
 ```
 
