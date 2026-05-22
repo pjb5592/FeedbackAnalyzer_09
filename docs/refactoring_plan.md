@@ -462,11 +462,11 @@ flowchart LR
 
 ### Phase 5 체크리스트
 
-- [ ] Step 5.1 — `Filters`·`TextAnalyzer` 선언/정의 분리
-- [ ] Step 5.2 — `SentimentClassifier` 추출 (`fa::classifySentiment`)
-- [ ] Step 5.3 — `UIComponents` 카테고리 ← `Constants` 단일 소스
-- [ ] Step 5.4 — `Constants::init` 감성 키워드 중복 리터럴 제거
-- [ ] Phase 5 게이트: ctest + GM + 커버리지
+- [x] Step 5.1 — `Filters`·`TextAnalyzer` 선언/정의 분리
+- [x] Step 5.2 — `SentimentClassifier` 추출 (`fa::classifySentiment`)
+- [x] Step 5.3 — `UIComponents` 카테고리 ← `Constants` 단일 소스
+- [x] Step 5.4 — `Constants::init` 감성 키워드 중복 리터럴 제거
+- [x] Phase 5 게이트: ctest + GM + 커버리지
 
 ---
 
@@ -527,8 +527,8 @@ flowchart LR
 
 ### Phase 6 체크리스트
 
-- [ ] Step 6.1 — Session append/read API · HttpRouter 연동
-- [ ] Phase 6 게이트: ctest + GM-03 + `FA_TC_39~41`
+- [x] Step 6.1 — Session append/read API · HttpRouter 연동
+- [x] Phase 6 게이트: ctest + GM-03 + `FA_TC_39~41`
 
 ---
 
@@ -551,10 +551,10 @@ flowchart LR
 
 ### Phase 7 체크리스트
 
-- [ ] Step 7.1 — `Logger` 구현 `.cpp` 이동
-- [ ] Step 7.2 — `HtmlRenderer::PageModel` · 미사용 `feedbacks` 제거
-- [ ] Step 7.3 — `HttpRouter` 오류/성공 응답 헬퍼 DRY
-- [ ] Phase 7 게이트: ctest + GM + FA-TC-44~52 (IT)
+- [x] Step 7.1 — `Logger` 구현 `.cpp` 이동
+- [x] Step 7.2 — `HtmlRenderer::PageModel` · 미사용 `feedbacks` 제거
+- [x] Step 7.3 — `HttpRouter` 오류/성공 응답 헬퍼 DRY
+- [x] Phase 7 게이트: ctest + GM + FA-TC-44~52 (IT)
 
 ---
 
@@ -630,20 +630,20 @@ flowchart LR
 
 ### 12.7 Phase 5 (헤더/DRY)
 
-- [ ] Step 5.1 — Filters·TextAnalyzer `.cpp`
-- [ ] Step 5.2 — SentimentClassifier
-- [ ] Step 5.3 — 카테고리 단일 소스
-- [ ] Step 5.4 — Constants init dedupe
+- [x] Step 5.1 — Filters·TextAnalyzer `.cpp`
+- [x] Step 5.2 — SentimentClassifier
+- [x] Step 5.3 — 카테고리 단일 소스
+- [x] Step 5.4 — Constants init dedupe
 
 ### 12.8 Phase 6 (Session)
 
-- [ ] Step 6.1 — Session 캡슐화
+- [x] Step 6.1 — Session 캡슐화
 
 ### 12.9 Phase 7 (프레젠테이션·Router)
 
-- [ ] Step 7.1 — Logger cpp
-- [ ] Step 7.2 — PageModel
-- [ ] Step 7.3 — HttpRouter DRY
+- [x] Step 7.1 — Logger cpp
+- [x] Step 7.2 — PageModel
+- [x] Step 7.3 — HttpRouter DRY
 
 ### 12.10 종료 (refactoring 완료)
 
