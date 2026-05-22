@@ -250,8 +250,8 @@ int main() {
             std::map<std::string, int> sentimentResults, keywordResults;
 
             if (!feedbacks.empty()) {
-                sentimentResults = textAnalyzer.sent(feedbacks);
-                keywordResults = textAnalyzer.kw(feedbacks);
+                sentimentResults = textAnalyzer.analyzeSentiment(feedbacks);
+                keywordResults = textAnalyzer.countKeywords(feedbacks);
                 Logger::logInfo(u8"감성 분석 완료");
                 Logger::logInfo(u8"키워드 분석 완료");
             }
@@ -302,11 +302,11 @@ int main() {
             std::string keyword = params["keyword"];
 
             if (!feedbacks.empty()) {
-                auto filtered = filters.fil(feedbacks, sentiment, keyword);
+                auto filtered = filters.filterFeedbacks(feedbacks, sentiment, keyword);
                 Session::applyFilterResult(filtered, !filtered.empty());
                 if (!filtered.empty()) {
-                    auto sentimentResults = textAnalyzer.sent(filtered);
-                    auto keywordResults = textAnalyzer.kw(filtered);
+                    auto sentimentResults = textAnalyzer.analyzeSentiment(filtered);
+                    auto keywordResults = textAnalyzer.countKeywords(filtered);
                     Logger::logInfo(u8"필터링 결과: " + std::to_string(filtered.size()) + u8"개의 피드백");
                     std::string html = renderPage("", "", "", sentimentResults, keywordResults, filtered);
                     res.set_content(html, "text/html; charset=UTF-8");
