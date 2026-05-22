@@ -25,3 +25,47 @@ if(WIN32)
     )
     target_link_libraries(feedback_analyzer PRIVATE ws2_32)
 endif()
+
+# --- Catch2 (red/green test harness; legacy src/cpp headers unchanged) ---
+include(FetchContent)
+FetchContent_Declare(
+    Catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+    GIT_TAG        v3.5.4
+)
+set(CATCH_BUILD_TESTING OFF CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(Catch2)
+
+set(FA_LEGACY_SOURCES
+    src/cpp/Constants.cpp
+    src/cpp/Filters.cpp
+    src/cpp/TextAnalyzer.cpp
+)
+
+add_executable(feedback_analyzer_tests
+    tests/test_main.cpp
+    tests/test_text_analyzer_sent.cpp
+    tests/test_text_analyzer_kw.cpp
+    tests/test_consistency.cpp
+    ${FA_LEGACY_SOURCES}
+)
+
+target_include_directories(feedback_analyzer_tests PRIVATE
+    src/cpp
+    tests
+    tests/fixtures
+    tests/support
+)
+
+target_link_libraries(feedback_analyzer_tests PRIVATE Catch2::Catch2)
+
+if(MSVC)
+    target_compile_options(feedback_analyzer_tests PRIVATE /utf-8)
+else()
+    target_compile_options(feedback_analyzer_tests PRIVATE -finput-charset=UTF-8)
+endif()
+
+enable_testing()
+include(CTest)
+include(Catch)
+catch_discover_tests(feedback_analyzer_tests)

@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `spec` (Step 03 완료)
+**브랜치:** `red` (Step 04-A 진행 중)
 
 ---
 
@@ -14,6 +14,7 @@
 | **01** | **spec-requirements-analysis** | `docs/requirements_analysis.md`, FA-001~055 | ✅ |
 | **02** | **spec-code-quality** | `docs/code_quality_report.md`, DEF·P0~P3 | ✅ |
 | **03** | **spec-test-plan** | `docs/test_plan.md`, FA-TC-01~55, GM-01~09 | ✅ |
+| **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ (1차) |
 
 ---
 
@@ -101,6 +102,32 @@
 
 ---
 
+## Step 04-A 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@TextAnalyzer.h` `@Filters.h` `@CMakeLists.txt` — [P] 시니어 C++ QA — **red**, 레거시 수정 금지 — Catch2·`feedback_analyzer_tests`·FA-TC-01~15 RED (1 TC = 1 Commit, CoT)·ctest 의도적 FAIL.
+
+**Assistant:**
+- Catch2 FetchContent, `feedback_analyzer_tests`, Legacy Adapter·Fixture
+- FA-TC-01~07 sent, FA-TC-09~15 kw (Type C PASS)
+- FA-TC-16 (DEF-02, `품질` main-only), FA-TC-17·29 (DEF-01) — Type A **FAIL**
+- `src/cpp/` diff 0 · 20× `test(red):` / `fix(red):` 커밋
+
+**검증:**
+- `cmake --build build --target feedback_analyzer_tests` → ✅
+- `ctest` → 17 tests, **14 PASS / 3 FAIL** (의도적)
+
+**User:** 작업 결과 brief 안내.
+
+**Assistant:** 완료 요약·실행 명령.
+
+**User:** [P] 문서·배포 — Step 04 Report/Prompt/full-transcript·git commit/push (FA-TC-01~15, 16·17·29).
+
+**Assistant:** Report 04 · Transcript 04 · full-transcript 갱신 · commit·push.
+
+**다음:** `red` — FA-TC-18 ~ FA-TC-30 (`test_filters.cpp` 등)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -113,7 +140,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 1 | spec | `requirements_analysis.md` ✅ |
 | 2 | spec | `code_quality_report.md` ✅ |
 | 3 | spec | `test_plan.md` ✅ |
-| 4-A | red | FA-TC RED |
+| 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ (1차) |
 | 4-B~C, 8 | green | GREEN → 커버리지 → GM |
 | 5~6 | refactoring | refactoring_plan Step |
 | 9 | feature | 미션 6~7 |
