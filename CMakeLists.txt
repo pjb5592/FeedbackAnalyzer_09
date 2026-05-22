@@ -11,6 +11,7 @@ add_executable(feedback_analyzer
     src/cpp/Constants.cpp
     src/cpp/CsvUploadParser.cpp
     src/cpp/Filters.cpp
+    src/cpp/HtmlRenderer.cpp
     src/cpp/Logger.cpp
     src/cpp/Session.cpp
     src/cpp/TextAnalyzer.cpp
