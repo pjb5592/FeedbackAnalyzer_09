@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

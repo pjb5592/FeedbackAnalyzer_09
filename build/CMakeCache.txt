@@ -480,6 +480,9 @@ Catch2_SOURCE_DIR:STATIC=D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
 
+//Enable gcov/lcov flags on feedback_analyzer_tests
+FA_ENABLE_COVERAGE:BOOL=OFF
+
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=D:/DEV/FeedbackAnalyzer_09/build/_deps
 
