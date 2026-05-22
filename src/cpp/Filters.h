@@ -5,16 +5,9 @@
 #include <iostream>
 #include "Feedback.h"
 #include "Constants.h"
+#include "KeywordMatcher.h"
 
 class Filters {
-private:
-    static bool containsAny(const std::string& text, const std::vector<std::string>& keywords) {
-        for (const auto& kw : keywords) {
-            if (text.find(kw) != std::string::npos) return true;
-        }
-        return false;
-    }
-
 public:
     std::vector<Feedback> fil(const std::vector<Feedback>& dataList,
                               const std::string& sFilter,
@@ -26,9 +19,9 @@ public:
                 std::string txt = item.getText();
                 std::string currentSentiment = u8"중립";
 
-                if (containsAny(txt, Constants::SENTIMENT_KEYWORDS[u8"긍정"])) {
+                if (fa::containsAny(txt, Constants::SENTIMENT_KEYWORDS[u8"긍정"])) {
                     currentSentiment = u8"긍정";
-                } else if (containsAny(txt, Constants::SENTIMENT_KEYWORDS[u8"부정"])) {
+                } else if (fa::containsAny(txt, Constants::SENTIMENT_KEYWORDS[u8"부정"])) {
                     currentSentiment = u8"부정";
                 }
 
@@ -47,7 +40,7 @@ public:
                 if (Constants::CATEGORY_KEYWORDS.count(kFilter)) {
                     const auto& catMap = Constants::CATEGORY_KEYWORDS[kFilter];
                     for (const auto& subEntry : catMap) {
-                        if (containsAny(txt, subEntry.second)) {
+                        if (fa::containsAny(txt, subEntry.second)) {
                             finalFiltered.push_back(item);
                             break;
                         }

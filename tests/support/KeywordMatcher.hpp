@@ -1,18 +1,9 @@
 #pragma once
 
-#include <string>
-#include <vector>
+#include "KeywordMatcher.h"
 
 namespace fa_support {
 
-inline bool containsAny(const std::string& text,
-                        const std::vector<std::string>& keywords) {
-    for (const auto& kw : keywords) {
-        if (text.find(kw) != std::string::npos) {
-            return true;
-        }
-    }
-    return false;
-}
+using fa::containsAny;
 
 }  // namespace fa_support
