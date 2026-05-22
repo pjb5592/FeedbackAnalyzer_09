@@ -218,6 +218,7 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
     - **커버리지 (green 게이트)**: 측정 대상 파일·Domain/Boundary 정의·90%/85% 통과 기준
     - **Golden Master**: green **4-D**에서 최초 확립(GM-01~) · **§8**과 동일 절차로 feature 시 TC·커버리지 반영 후 스냅샷 갱신
     - red/green 제약: 레거시 파일 변경 없이 테스트 가능한 **Seam** 설계
+    - README.md 에 red/green TODO 추가
 [F] docs/test_plan.md (한글) + TC-ID 목록
 ```
 
