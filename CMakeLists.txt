@@ -44,6 +44,8 @@ set(FA_LEGACY_SOURCES
 
 set(FA_SUPPORT_SOURCES
     tests/support/DomainSentimentAnalyzer.cpp
+    tests/support/DomainKeywordCounter.cpp
+    tests/support/DomainFeedbackFilter.cpp
 )
 
 add_executable(feedback_analyzer_tests
