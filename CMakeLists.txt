@@ -9,6 +9,7 @@ include(cmake/FACoverage.cmake)
 add_executable(feedback_analyzer
     src/cpp/main.cpp
     src/cpp/Constants.cpp
+    src/cpp/CsvUploadParser.cpp
     src/cpp/Filters.cpp
     src/cpp/Logger.cpp
     src/cpp/Session.cpp
@@ -40,6 +41,7 @@ FetchContent_MakeAvailable(Catch2)
 
 set(FA_LEGACY_SOURCES
     src/cpp/Constants.cpp
+    src/cpp/CsvUploadParser.cpp
     src/cpp/Filters.cpp
     src/cpp/TextAnalyzer.cpp
 )
@@ -48,7 +50,6 @@ set(FA_SUPPORT_SOURCES
     tests/support/DomainSentimentAnalyzer.cpp
     tests/support/DomainKeywordCounter.cpp
     tests/support/DomainFeedbackFilter.cpp
-    tests/support/CsvUploadParser.cpp
     tests/support/InMemoryDownloadSource.cpp
     tests/support/GoldenMasterRunner.cpp
 )

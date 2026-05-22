@@ -7,6 +7,7 @@
 #include "FileHandler.h"
 #include "UIComponents.h"
 #include "Logger.h"
+#include "CsvUploadParser.h"
 #include <sstream>
 #include <fstream>
 #include <algorithm>
@@ -209,26 +210,6 @@ static std::string renderPage(const std::string& success,
     return html.str();
 }
 
-// Simple CSV line parser
-static std::vector<std::string> parseCsvLine(const std::string& line) {
-    std::vector<std::string> fields;
-    std::string field;
-    bool inQuotes = false;
-    for (size_t i = 0; i < line.size(); i++) {
-        char c = line[i];
-        if (c == '"') {
-            inQuotes = !inQuotes;
-        } else if (c == ',' && !inQuotes) {
-            fields.push_back(field);
-            field.clear();
-        } else {
-            field += c;
-        }
-    }
-    fields.push_back(field);
-    return fields;
-}
-
 int main() {
     Constants::init();
 
@@ -293,17 +274,10 @@ int main() {
             if (req.form.has_file("file")) {
                 const auto file = req.form.get_file("file");
                 if (!file.content.empty()) {
-                    std::istringstream stream(file.content);
-                    std::string line;
-                    bool firstLine = true;
-                    while (std::getline(stream, line)) {
-                        if (!line.empty() && line.back() == '\r') line.pop_back();
-                        if (firstLine) { firstLine = false; continue; }
-                        if (line.empty()) continue;
-                        auto fields = parseCsvLine(line);
-                        if (!fields.empty() && !fields[0].empty()) {
-                            feedbacks.push_back(Feedback(fields[0]));
-                        }
+                    CsvUploadParser parser;
+                    const auto parsed = parser.parse(file.content);
+                    for (const auto& item : parsed) {
+                        feedbacks.push_back(item);
                     }
                     Logger::logInfo(u8"파일이 성공적으로 업로드되었습니다.");
                 }
