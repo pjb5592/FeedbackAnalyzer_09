@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `red` (Step 04-A 진행 중)
+**브랜치:** `green` (Step 05 — 4-B·8 완료)
 
 ---
 
@@ -14,7 +14,8 @@
 | **01** | **spec-requirements-analysis** | `docs/requirements_analysis.md`, FA-001~055 | ✅ |
 | **02** | **spec-code-quality** | `docs/code_quality_report.md`, DEF·P0~P3 | ✅ |
 | **03** | **spec-test-plan** | `docs/test_plan.md`, FA-TC-01~55, GM-01~09 | ✅ |
-| **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ (1차) |
+| **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ |
+| **05** | **green-fa-tc-pass** | Domain support, FA-TC-01~54, GM-01~09, ctest 63/63 | ✅ |
 
 ---
 
@@ -128,6 +129,32 @@
 
 ---
 
+## Step 05 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@tests/` — [P] 시니어 C++ (TDD) — **green**, 레거시 무수정 — RED TC 1건씩 GREEN, CoT, ctest Green.
+
+**Assistant:**
+- `DomainSentimentAnalyzer`, `DomainKeywordCounter`, `DomainFeedbackFilter`, `CsvUploadParser`, `InMemoryDownloadSource`, `GoldenMasterRunner`
+- DEF-01/02/03/04 support에서 해소 · FA-TC-18~43·30~32·08 추가
+- HTTP 통합 FA-TC-38·44~52 · GM-01~09 · FA-TC-51/54/55
+- `src/cpp/` diff 0 · green 커밋 12건
+
+**검증:**
+- `ctest` → **63/63 PASS**
+- `feedback_analyzer` → ✅
+
+**User:** 다음 단계 진행 → 63 TC Green 완료.
+
+**User:** 전체 Test Case 실행 → 63/63 PASS 확인.
+
+**User:** [P] 문서·배포 — Step 05 Report/Transcript/README/commit/push.
+
+**Assistant:** Report 05 · Transcript 05 · full-transcript · README 4-B·8 `[x]` · commit·push.
+
+**다음:** `green` 4-C gcov 본게이트 → `refactoring` Phase 0
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -140,8 +167,9 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 1 | spec | `requirements_analysis.md` ✅ |
 | 2 | spec | `code_quality_report.md` ✅ |
 | 3 | spec | `test_plan.md` ✅ |
-| 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ (1차) |
-| 4-B~C, 8 | green | GREEN → 커버리지 → GM |
+| 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ |
+| 4-B, 8 | green | FA-TC Green + GM — **63 ctest** ✅ |
+| 4-C | green | 커버리지 수치 gcov — **스텁** |
 | 5~6 | refactoring | refactoring_plan Step |
 | 9 | feature | 미션 6~7 |
 
