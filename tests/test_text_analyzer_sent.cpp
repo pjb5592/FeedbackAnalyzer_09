@@ -50,3 +50,12 @@ TEST_CASE("FA_TC_07_SentimentPositiveWins", "[fa-tc][p0][sent][domain]") {
     const auto result = analyzer.analyze(fa_fixtures::positiveNegativeOverlap());
     fa_expect::expectSentiment(result, 1, 0, 0);
 }
+
+TEST_CASE("FA_TC_08_SentimentMixedN", "[fa-tc][p1][sent][domain]") {
+    const auto feedbacks = fa_fixtures::mixedSentimentSet();
+    DomainSentimentAnalyzer analyzer;
+    const auto result = analyzer.analyze(feedbacks);
+    const int total = result.at(u8"긍정") + result.at(u8"중립") + result.at(u8"부정");
+    REQUIRE(total == static_cast<int>(feedbacks.size()));
+    fa_expect::expectSentiment(result, 1, 1, 1);
+}
