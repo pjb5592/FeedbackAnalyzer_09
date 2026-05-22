@@ -295,6 +295,23 @@
 
 ---
 
+## Step 13 상세 (2026-05-22)
+
+**User:** `@docs/defect_list.md` `@docs/test_plan.md` — [P] QA 리드 · `docs/defect_report.md` (Severity×ItemType, 템플릿, 메트릭, 한글 프로세스).
+
+**Assistant:**
+- `docs/defect_report.md` 신규 (process-1.0): 매트릭스·템플릿·M1~M12·G1~G5·DEF-01~04 예시
+- `defect_list.md` · `test_plan.md` 부록 · README TODO #10 `[x]`
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Report 13 / Transcript 13 / full-transcript / README / git.
+
+**Assistant:** Report 13 · Transcript 13 · full-transcript · commit·push.
+
+**다음:** TODO #11 `architecture.md` (선택) · TODO #12 `qa_final_report.md` · feature → main PR
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -315,7 +332,8 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) ✅ |
 | 6b | refactoring | Phase 5~7 후속 스멜 제거 (8 Commit) ✅ (Step 10) |
 | 7 | refactoring | `defect_list.md` + GM 재점검 ✅ (Step 11) |
-| 9 | feature | 미션 6~7 |
+| 9 | feature | 미션 6~7 ✅ (Step 12) |
+| 10 | spec | `defect_report.md` ✅ (Step 13) |
 
 ---
 
