@@ -4,6 +4,8 @@ project(FeedbackAnalyzer LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(cmake/FACoverage.cmake)
+
 add_executable(feedback_analyzer
     src/cpp/main.cpp
     src/cpp/Constants.cpp
@@ -58,11 +60,14 @@ add_executable(feedback_analyzer_tests
     tests/test_filters.cpp
     tests/test_consistency.cpp
     tests/test_csv_session.cpp
+    tests/test_coverage_boundary.cpp
     tests/test_golden_master.cpp
     tests/test_perf_skip.cpp
     ${FA_LEGACY_SOURCES}
     ${FA_SUPPORT_SOURCES}
 )
+
+fa_apply_coverage(feedback_analyzer_tests)
 
 target_include_directories(feedback_analyzer_tests PRIVATE
     src/cpp
@@ -85,6 +90,18 @@ include(Catch)
 catch_discover_tests(feedback_analyzer_tests
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
+
+if(FA_ENABLE_COVERAGE)
+    add_custom_target(feedback_analyzer_tests_cov
+        COMMAND ${CMAKE_COMMAND}
+                -DFA_COVERAGE_DIR=${CMAKE_BINARY_DIR}
+                -DCMAKE_SOURCE_DIR=${CMAKE_SOURCE_DIR}
+                -P ${CMAKE_SOURCE_DIR}/cmake/RunCoverage.cmake
+        DEPENDS feedback_analyzer_tests
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        COMMENT "Run unit tests and capture lcov baseline for coverage gate"
+    )
+endif()
 
 add_executable(feedback_analyzer_integration_tests
     tests/integration/test_http_main.cpp

@@ -1,20 +1,33 @@
-﻿# Coverage Report (green)
+# Coverage Report (green)
 
-| Date | 2026-05-22 |
-| Gate | Domain >= 90% 쨌 Boundary >= 85% |
-| Status | PASS (stub ??install gcov/lcov for numeric %) |
+| Generated | docs gate |
+| Info file | `D:/DEV/FeedbackAnalyzer_09/build-cov/coverage.info` |
 
-## Domain files
-- `tests/support/DomainSentimentAnalyzer.cpp`
-- `tests/support/DomainKeywordCounter.cpp`
-- `tests/support/DomainFeedbackFilter.cpp`
-- `tests/support/CsvUploadParser.cpp`
-- `tests/support/InMemoryDownloadSource.cpp`
+## Gate summary
 
-## Command
+| Metric | Threshold | Measured | Status |
+|--------|-----------|----------|--------|
+| Domain | >= 90% | 97.6% | PASS |
+| Boundary (branches @ boundary lines) | >= 85% | 85.0% | PASS |
+| Overall | >= 90% | 98.1% | PASS |
+| Boundary lines (aux) | — | 100.0% (11/11) | — |
+
+## Per-file (Domain)
+
+| File | Line % | Hit/Total | Miss lines | Branch % |
+|------|--------|-----------|------------|----------|
+| `tests/support/DomainSentimentAnalyzer.cpp` | 94.4% | 17/18 | 27 | 58.8% |
+| `tests/support/DomainKeywordCounter.cpp` | 92.9% | 13/14 | 27 | 68.2% |
+| `tests/support/DomainFeedbackFilter.cpp` | 100.0% | 27/27 | — | 70.0% |
+| `tests/support/CsvUploadParser.cpp` | 97.7% | 43/44 | 43 | 68.3% |
+| `tests/support/InMemoryDownloadSource.cpp` | 100.0% | 23/23 | — | 72.7% |
+
+## Commands
+
 ```powershell
-cmake -S . -B build -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_EXE_LINKER_FLAGS=--coverage
-cmake --build build --target feedback_analyzer_tests
-ctest --test-dir build --output-on-failure
-.\scripts\run_coverage_gate.ps1
+.\scripts\run_coverage_gate.ps1 -BuildDir build-cov
+```
+
+```bash
+./scripts/run_coverage_gate.sh build-cov
 ```

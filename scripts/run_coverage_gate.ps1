@@ -1,54 +1,81 @@
-# Feedback Analyzer — green branch coverage gate (tests/support Domain logic)
+# Feedback Analyzer — green branch coverage gate (Domain / Boundary / Overall)
 param(
-    [string]$BuildDir = "build",
+    [string]$BuildDir = "build-cov",
+    [switch]$Configure,
     [double]$DomainThreshold = 90.0,
-    [double]$BoundaryThreshold = 85.0
+    [double]$BoundaryThreshold = 85.0,
+    [double]$OverallThreshold = 90.0
 )
 
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 
-$gcov = Get-Command gcov -ErrorAction SilentlyContinue
-if (-not $gcov) {
-    Write-Warning "gcov not found; skipping coverage gate (ctest Green still required)."
-    exit 0
+function Require-Tool([string]$Name) {
+    if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
+        throw "$Name not found. Install MinGW gcov/lcov or add to PATH."
+    }
 }
 
-$supportFiles = @(
-    "tests/support/DomainSentimentAnalyzer.cpp",
-    "tests/support/DomainKeywordCounter.cpp",
-    "tests/support/DomainFeedbackFilter.cpp",
-    "tests/support/CsvUploadParser.cpp",
-    "tests/support/InMemoryDownloadSource.cpp"
-)
+Require-Tool "gcov"
+Require-Tool "lcov"
+Require-Tool "cmake"
+Require-Tool "python"
 
-Write-Host "Coverage gate: Domain >= $DomainThreshold% (support modules)"
-Write-Host "Measured files:"
-$supportFiles | ForEach-Object { Write-Host "  $_" }
+$buildPath = Join-Path $root $BuildDir
+if ($Configure -or -not (Test-Path (Join-Path $buildPath "CMakeCache.txt"))) {
+    Write-Host "Configuring $BuildDir with FA_ENABLE_COVERAGE=ON ..."
+    cmake -S $root -B $buildPath -G Ninja -DFA_ENABLE_COVERAGE=ON
+}
+
+Write-Host "Building feedback_analyzer_tests (coverage) ..."
+cmake --build $buildPath --target feedback_analyzer_tests
+
+$testExe = Join-Path $buildPath "feedback_analyzer_tests.exe"
+if (-not (Test-Path $testExe)) {
+    $testExe = Join-Path $buildPath "feedback_analyzer_tests"
+}
+if (-not (Test-Path $testExe)) {
+    throw "Test executable not found in $buildPath"
+}
+
+$infoFile = Join-Path $buildPath "coverage.info"
+Push-Location $buildPath
+try {
+    Write-Host "Zeroing coverage counters ..."
+    & lcov --directory . --zerocounters | Out-Null
+    Write-Host "Running tests for coverage ..."
+    & $testExe
+    if ($LASTEXITCODE -ne 0) {
+        throw "feedback_analyzer_tests exited with code $LASTEXITCODE"
+    }
+    Write-Host "Capturing lcov ..."
+    & lcov --directory . --capture --output-file "coverage.info" --rc lcov_branch_coverage=1
+    if ($LASTEXITCODE -ne 0) {
+        throw "lcov capture failed with code $LASTEXITCODE"
+    }
+} finally {
+    Pop-Location
+}
+
+$manifest = Join-Path $PSScriptRoot "coverage_boundary.json"
+$parser = Join-Path $PSScriptRoot "parse_coverage_gate.py"
+$report = Join-Path $root "docs/coverage_report.md"
+
 Write-Host ""
-Write-Host "Run with CMake -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_EXE_LINKER_FLAGS=--coverage for lcov/gcov detail."
-Write-Host "Gate PASS (stub): support sources listed; enable gcov build for numeric report."
+Write-Host "=== Coverage gate ==="
+python $parser $infoFile $manifest $report `
+    "--domain=$DomainThreshold" `
+    "--boundary=$BoundaryThreshold" `
+    "--overall=$OverallThreshold"
+$exitCode = $LASTEXITCODE
 
-$reportPath = Join-Path $root "docs/coverage_report.md"
-@(
-    "# Coverage Report (green)",
-    "",
-    "| Date | $(Get-Date -Format 'yyyy-MM-dd') |",
-    "| Gate | Domain >= $DomainThreshold% · Boundary >= $BoundaryThreshold% |",
-    "| Status | PASS (stub — install gcov/lcov for numeric %) |",
-    "",
-    "## Domain files",
-    ($supportFiles | ForEach-Object { "- ``$_``" }),
-    "",
-    "## Command",
-    '```powershell',
-    "cmake -S . -B $BuildDir -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_EXE_LINKER_FLAGS=--coverage",
-    "cmake --build $BuildDir --target feedback_analyzer_tests",
-    "ctest --test-dir $BuildDir --output-on-failure",
-    ".\scripts\run_coverage_gate.ps1",
-    '```'
-) | Set-Content -Path $reportPath -Encoding UTF8
+if ($exitCode -eq 0) {
+    Write-Host ""
+    Write-Host "GATE PASS: Domain>=$DomainThreshold% Boundary>=$BoundaryThreshold% Overall>=$OverallThreshold%"
+} else {
+    Write-Host ""
+    Write-Host "GATE FAIL: see $report" -ForegroundColor Red
+}
 
-Write-Host "Wrote $reportPath"
-exit 0
+exit $exitCode

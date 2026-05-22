@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `green` (Step 05 — 4-B·8 완료)
+**브랜치:** `green` (Step 06 — 4-C 완료, refactoring 진입 가능)
 
 ---
 
@@ -16,6 +16,7 @@
 | **03** | **spec-test-plan** | `docs/test_plan.md`, FA-TC-01~55, GM-01~09 | ✅ |
 | **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ |
 | **05** | **green-fa-tc-pass** | Domain support, FA-TC-01~54, GM-01~09, ctest 63/63 | ✅ |
+| **06** | **green-coverage-gate** | gcov/lcov 게이트 PASS, FA-TC-54, Domain 97.6% / Boundary 85% | ✅ |
 
 ---
 
@@ -155,6 +156,28 @@
 
 ---
 
+## Step 06 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@tests/` `@CMakeLists.txt` — [P] 시니어 C++ QA + 빌드 — **green**, FA-TC Green 직후 GM 이전 — 커버리지 측정·게이트(Domain≥90%, Boundary≥85%, Overall≥90%), 미달 시 tests만 보강.
+
+**Assistant:**
+- `FA_ENABLE_COVERAGE`, `feedback_analyzer_tests_cov`, `run_coverage_gate.ps1`/`.sh`, `parse_coverage_gate.py`
+- `test_coverage_boundary.cpp` 경계 TC 8건 · `coverage_boundary.json`
+- `docs/coverage_report.md` 수치 리포트
+
+**검증:**
+- `run_coverage_gate.ps1` → **GATE PASS** (Domain 97.6%, Boundary 85.0%, Overall 98.1%)
+- `ctest` → **71/71 PASS**
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Step 06 Report/Transcript/README/commit/push.
+
+**Assistant:** Report 06 · Transcript 06 · full-transcript · README 4-C `[x]` · commit·push.
+
+**다음:** `refactoring` — `docs/refactoring_plan.md` Phase 0 (DEF-01)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -169,7 +192,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 3 | spec | `test_plan.md` ✅ |
 | 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ |
 | 4-B, 8 | green | FA-TC Green + GM — **63 ctest** ✅ |
-| 4-C | green | 커버리지 수치 gcov — **스텁** |
+| 4-C | green | 커버리지 gcov/lcov — **PASS** (Step 06) |
 | 5~6 | refactoring | refactoring_plan Step |
 | 9 | feature | 미션 6~7 |
 
