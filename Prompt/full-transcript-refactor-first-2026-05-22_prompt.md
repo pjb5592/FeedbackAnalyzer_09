@@ -246,6 +246,30 @@
 
 ---
 
+## Step 10 상세 (2026-05-22)
+
+**User:** `@src/cpp/` — 코드 스멜 확인 · `@Filters`/`@TextAnalyzer` — 헤더/구현 분리 · `@docs/refactoring_plan.md` — Phase 5~7 계획 추가 후 Commit 단위 실행 · `@prompt초안.md` §5 — **5-A 스멜 재점검 → 5-B plan** 선행 순서 추가.
+
+**Assistant (세션 누적):**
+
+| Phase | Steps | 핵심 산출 |
+|-------|-------|-----------|
+| 5 | 5.1~5.4 | `.h/.cpp` 분리, `SentimentClassifier`, `Constants::getCategoryNames`, init dedupe |
+| 6 | 6.1 | Session `getFeedbacks` / `appendFeedback(s)` 캡슐화 |
+| 7 | 7.1~7.3 | `Logger` cpp, `HtmlRenderer::PageModel`, `HttpRouter` 응답 헬퍼 |
+
+- **8 refactor 커밋:** `9a06fb1` … `8ec2f39` (+ plan/docs `3ebcfbc` … `d25ccde`)
+- **ctest:** 67/67 · **GoldenMaster** PASS
+- `prompt초안.md` §5-A/5-B 반영
+
+**User:** [P] 문서·배포 — Step 10 Report/Transcript/full-transcript/README/commit/push.
+
+**Assistant:** Report 10 · Transcript 10 · full-transcript · README Phase 0~7 · commit·push.
+
+**다음:** **TODO #7** `docs/defect_list.md` · `code_quality_report.md` 5-A 갱신(선택) · PR → `main`
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -264,6 +288,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 4-D, 8 | green | Golden Master GM-01~04 — **PASS** (Step 07) |
 | 5 | refactoring | `refactoring_plan.md` ✅ |
 | 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) ✅ |
+| 6b | refactoring | Phase 5~7 후속 스멜 제거 (8 Commit) ✅ (Step 10) |
 | 9 | feature | 미션 6~7 |
 
 ---
