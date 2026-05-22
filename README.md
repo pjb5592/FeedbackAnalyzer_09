@@ -85,8 +85,8 @@ feedback_analyzer_cpp/
 | 4-A | RED — 실패 테스트 | red | `tests/*.cpp`, ctest 의도적 FAIL | [x] |
 | 4-B | GREEN — FA-TC 통과 | green | `tests/support/`, FA-TC 전건 Green | [x] |
 | 4-C | 커버리지 게이트 | green | `docs/coverage_report.md`, Domain≥90% Boundary≥85% | [x] |
-| 5 | 리팩토링 계획 | spec / refactoring | `docs/refactoring_plan.md` | [ ] |
-| 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [ ] |
+| 5 | 리팩토링 계획 | spec / refactoring | `docs/refactoring_plan.md` | [x] (2026-05-22, `refactoring`, Phase 0~4 · 12 Step) |
+| 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [ ] (다음: Phase 0 Step 0.1) |
 | 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [ ] |
 | 8 | Golden Master (4-D) | green | `tests/golden/*.approved.txt`, `docs/golden_master.md` (4-B·4-C 후) | [x] |
 | 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |

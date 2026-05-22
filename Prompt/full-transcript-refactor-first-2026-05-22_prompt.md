@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `green` (Step 07 — 4-D Golden Master 완료, **refactoring 진입 가능**)
+**브랜치:** `refactoring` (Step 08 — 리팩토링 계획 완료, **Phase 0 Step 0.1 착수 가능**)
 
 ---
 
@@ -18,6 +18,7 @@
 | **05** | **green-fa-tc-pass** | Domain support, FA-TC-01~54, GM-01~09, ctest 63/63 | ✅ |
 | **06** | **green-coverage-gate** | gcov/lcov 게이트 PASS, FA-TC-54, Domain 97.6% / Boundary 85% | ✅ |
 | **07** | **green-golden-master** | GM-01~04 `*.approved.txt`, `GoldenMaster` ctest, `docs/golden_master.md` | ✅ |
+| **08** | **spec-refactoring-plan** | `docs/refactoring_plan.md`, Phase 0~4 · 12 Step | ✅ |
 
 ---
 
@@ -201,6 +202,23 @@
 
 ---
 
+## Step 08 상세 (2026-05-22)
+
+**User:** `@docs/code_quality_report.md` `@docs/test_plan.md` `@docs/requirements_analysis.md` `@src/cpp/` — [P] 모던 C++ 리팩토링 코치 — green 기준선 이후 **실행 가능한 Phase 로드맵** → `docs/refactoring_plan.md` (Phase 0~4, Step별 CoT 3문, 1 Step = 1 Commit).
+
+**Assistant:**
+- `docs/refactoring_plan.md` 신규 (한글, 12 Step, ctest·GM 게이트, AC·FA-TC 매핑)
+- `tests/support/` Domain을 레거시 목표 동작으로 명시
+- `src/cpp/` 미수정
+
+**User:** [P] 문서·배포 — Step 08 Report/Transcript/full-transcript/README/commit/push.
+
+**Assistant:** Report 08 · Transcript 08 · full-transcript · README #5 `[x]` · ctest 67/67 확인 · commit·push.
+
+**다음:** `refactoring` — **Phase 0 Step 0.1** (`Filters` 감정 = `Constants`, FA-TC-17/29/32, GM-02)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -217,7 +235,8 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 4-B | green | FA-TC Green — **67 ctest** ✅ |
 | 4-C | green | 커버리지 gcov/lcov — **PASS** (Step 06) |
 | 4-D, 8 | green | Golden Master GM-01~04 — **PASS** (Step 07) |
-| 5~6 | refactoring | refactoring_plan Step |
+| 5 | refactoring | `refactoring_plan.md` ✅ |
+| 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) |
 | 9 | feature | 미션 6~7 |
 
 ---
