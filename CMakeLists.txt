@@ -46,13 +46,17 @@ set(FA_SUPPORT_SOURCES
     tests/support/DomainSentimentAnalyzer.cpp
     tests/support/DomainKeywordCounter.cpp
     tests/support/DomainFeedbackFilter.cpp
+    tests/support/CsvUploadParser.cpp
+    tests/support/InMemoryDownloadSource.cpp
 )
 
 add_executable(feedback_analyzer_tests
     tests/test_main.cpp
     tests/test_text_analyzer_sent.cpp
     tests/test_text_analyzer_kw.cpp
+    tests/test_filters.cpp
     tests/test_consistency.cpp
+    tests/test_csv_session.cpp
     ${FA_LEGACY_SOURCES}
     ${FA_SUPPORT_SOURCES}
 )
