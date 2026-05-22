@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `refactoring` (Step 11 — **TODO #7 defect_list + GM 재점검**)
+**브랜치:** `feature/newFeature` (Step 14 — **TODO #12 qa_final_report**)
 
 ---
 
@@ -22,6 +22,9 @@
 | **09** | **refactor-phase0-4** | `src/cpp/` 12 Step, ctest 67/67, GM·coverage Green | ✅ |
 | **10** | **refactor-phase5-7** | Phase 5~7 8 Step, SentimentClassifier·Session·PageModel | ✅ |
 | **11** | **green-defect-list** | `docs/defect_list.md`, GM drift 없음 재확인 | ✅ |
+| **12** | **feature-newFeature** | FA-TC-55~58, GM-10, Trend·FileHandler·Sentiment DB | ✅ |
+| **13** | **spec-defect-report** | `docs/defect_report.md` process-1.0 | ✅ |
+| **14** | **qa-final-report** | `docs/qa_final_report.md`, ctest/lcov 실측 | ✅ |
 
 ---
 
@@ -312,6 +315,39 @@
 
 ---
 
+## Step 12 상세 (2026-05-22)
+
+**User:** feature/newFeature — 미션 6~7 (Trend, FileHandler, SentimentKeywordStore, AC-SENT-02).
+
+**Assistant:**
+- FA-TC-55~58 · GM-10 · `SentimentClassifier` 가중치 · `FileHandler::saveResult`
+- ctest **79/79** (유닛 + HTTP IT + GM) — Report 12
+- `README.md` TODO #9 `[x]`
+
+**User:** [P] 문서·배포 — Report 12 / Transcript 12 / full-transcript / README / git.
+
+**Assistant:** Report 12 · commit·push.
+
+---
+
+## Step 14 상세 (2026-05-22)
+
+**User:** `@docs/requirements_analysis.md` … `@tests/` — [P] QA 리드 · `docs/qa_final_report.md` (커버리지, 결함, Before/After, 회고) · ctest·lcov 반영.
+
+**Assistant:**
+- `ctest --test-dir build-cov` — **70/70** (`-E NOT_BUILT`) · GoldenMaster PASS
+- `run_coverage_gate.ps1` — Domain **97.3%** · Boundary **92.3%** · Overall **95.9%**
+- `docs/qa_final_report.md` (qa-final-1.0) · README TODO #12 `[x]`
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Report 14 / Transcript 14 / full-transcript / README / git commit·push.
+
+**Assistant:** Report 14 · Transcript 14 · full-transcript Step 14 · commit·push.
+
+**다음:** `feature/newFeature` → `main` PR · Mom Test 수동 · IT 타겟 빌드(선택) · TODO #11 architecture (선택)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -334,6 +370,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 7 | refactoring | `defect_list.md` + GM 재점검 ✅ (Step 11) |
 | 9 | feature | 미션 6~7 ✅ (Step 12) |
 | 10 | spec | `defect_report.md` ✅ (Step 13) |
+| 12 | feature | QA 종합 `qa_final_report.md` ✅ (Step 14) |
 
 ---
 
