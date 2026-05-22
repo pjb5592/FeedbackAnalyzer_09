@@ -41,16 +41,19 @@ build\feedback_analyzer.exe
 ```
 feedback_analyzer_cpp/
 ├── src/cpp/
-│   ├── main.cpp           # HTTP 서버 및 라우팅 (cpp-httplib 기반)
-│   ├── httplib.h           # cpp-httplib 헤더 라이브러리
-│   ├── Feedback.h          # 피드백 데이터 모델
-│   ├── TextAnalyzer.h/cpp  # 텍스트 분석 로직
-│   ├── Filters.h/cpp       # 필터링
-│   ├── UIComponents.h/cpp  # UI 컴포넌트
-│   ├── Session.h/cpp       # 상태 관리
-│   ├── Logger.h/cpp        # 로깅
-│   ├── Constants.h/cpp     # 상수 정의
-│   └── FileHandler.h       # 파일 처리
+│   ├── main.cpp              # 부트스트랩 (Constants·Router·listen)
+│   ├── HttpRouter.h/cpp      # HTTP 라우트·폼 파싱
+│   ├── HtmlRenderer.h/cpp    # HTML 렌더링
+│   ├── httplib.h             # cpp-httplib 헤더 라이브러리
+│   ├── Feedback.h            # 피드백 데이터 모델
+│   ├── TextAnalyzer.h/cpp    # 감정·키워드 분석
+│   ├── Filters.h/cpp         # 필터링
+│   ├── KeywordMatcher.h      # 키워드 매칭 공통
+│   ├── CsvUploadParser.h/cpp # CSV 업로드 파싱
+│   ├── UIComponents.h/cpp    # UI 컴포넌트
+│   ├── Session.h/cpp         # 세션·download 뷰
+│   ├── Logger.h/cpp          # 로깅
+│   └── Constants.h/cpp       # 상수 정의
 ├── CMakeLists.txt          # CMake 빌드 설정
 ├── project_purpose.md      # 프로젝트 목적 문서
 └── README.md               # 프로젝트 설명
@@ -86,8 +89,8 @@ feedback_analyzer_cpp/
 | 4-B | GREEN — FA-TC 통과 | green | `tests/support/`, FA-TC 전건 Green | [x] |
 | 4-C | 커버리지 게이트 | green | `docs/coverage_report.md`, Domain≥90% Boundary≥85% | [x] |
 | 5 | 리팩토링 계획 | spec / refactoring | `docs/refactoring_plan.md` | [x] (2026-05-22, `refactoring`, Phase 0~4 · 12 Step) |
-| 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [ ] (다음: Phase 0 Step 0.1) |
-| 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [ ] |
+| 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [x] (2026-05-22, Phase 0~4 · 12 Commit) |
+| 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [ ] (다음) |
 | 8 | Golden Master (4-D) | green | `tests/golden/*.approved.txt`, `docs/golden_master.md` (4-B·4-C 후) | [x] |
 | 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |
 | 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [ ] |
@@ -106,25 +109,25 @@ feedback_analyzer_cpp/
 
 | Phase | DEF | Step | 내용 | 진행 |
 |-------|-----|------|------|------|
-| **0** | DEF-01 | 0.1 | `Filters` 감정 분기 = `Constants` + `sent` 규칙 | [ ] |
-| **0** | DEF-01 | 0.2 | `S_KEYWORDS`·`initFilterKeywords` 제거 | [ ] |
-| **1** | DEF-02 | 1.1 | `fil` 카테고리 스캔에 `main` 포함 | [ ] |
-| **2** | DEF-03 | 2.1 | Session download 뷰 API | [ ] |
-| **2** | DEF-03/04 | 2.2 | `fil_data` 제거 · analyze/filter/download 연동 | [ ] |
-| **2** | DEF-04 | 2.3 | `CsvUploadParser` 승격 · `/upload` `text` 컬럼 | [ ] |
-| **3** | 중복 | 3.1 | `KeywordMatcher` 공통화 | [ ] |
-| **3** | 네이밍 | 3.2 | `fil`→`filterFeedbacks` 등 API rename | [ ] |
-| **3** | 전역 | 3.3 | `globalSent`/`globalKw`·`cout`·Session dead code 정리 | [ ] |
-| **4** | God Module | 4.1 | `HtmlRenderer` 분리 | [ ] |
-| **4** | God Module | 4.2 | `HttpRouter` 분리 | [ ] |
-| **4** | God Module | 4.3 | `main.cpp` 부트스트랩만 | [ ] |
+| **0** | DEF-01 | 0.1 | `Filters` 감정 분기 = `Constants` + `sent` 규칙 | [x] |
+| **0** | DEF-01 | 0.2 | `S_KEYWORDS`·`initFilterKeywords` 제거 | [x] |
+| **1** | DEF-02 | 1.1 | `fil` 카테고리 스캔에 `main` 포함 | [x] |
+| **2** | DEF-03 | 2.1 | Session download 뷰 API | [x] |
+| **2** | DEF-03/04 | 2.2 | `fil_data` 제거 · analyze/filter/download 연동 | [x] |
+| **2** | DEF-04 | 2.3 | `CsvUploadParser` 승격 · `/upload` `text` 컬럼 | [x] |
+| **3** | 중복 | 3.1 | `KeywordMatcher` 공통화 | [x] |
+| **3** | 네이밍 | 3.2 | `fil`→`filterFeedbacks` 등 API rename | [x] |
+| **3** | 전역 | 3.3 | `globalSent`/`globalKw`·`cout`·Session dead code 정리 | [x] |
+| **4** | God Module | 4.1 | `HtmlRenderer` 분리 | [x] |
+| **4** | God Module | 4.2 | `HttpRouter` 분리 | [x] |
+| **4** | God Module | 4.3 | `main.cpp` 부트스트랩만 | [x] |
 
 **Phase 완료 체크 (GM·FA-TC)**
 
-- [ ] Phase 0 — FA-TC-17/29/32 · **GM-02**
-- [ ] Phase 1 — FA-TC-16/24/30
-- [ ] Phase 2 — FA-TC-33~34, 39~41 · **GM-03**, **GM-04**
-- [ ] Phase 3~4 — GM-01~04 전건 · `feedback_analyzer.exe` smoke
+- [x] Phase 0 — FA-TC-17/29/32 · **GM-02**
+- [x] Phase 1 — FA-TC-16/24/30
+- [x] Phase 2 — FA-TC-33~34, 39~41 · **GM-03**, **GM-04**
+- [x] Phase 3~4 — GM-01~04 전건 · `feedback_analyzer.exe` smoke (FA-TC-44~52)
 
 **목표 계약:** AC-SENT-01 · AC-KW-01/02 · download 뷰 · CSV `text` (→ `docs/defect_list.md` Phase 완료 후 기록)
 

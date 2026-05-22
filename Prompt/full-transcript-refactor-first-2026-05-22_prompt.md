@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `refactoring` (Step 08 — 리팩토링 계획 완료, **Phase 0 Step 0.1 착수 가능**)
+**브랜치:** `refactoring` (Step 09 — **Phase 0~4 리팩토링 실행 완료**, 12 Commit)
 
 ---
 
@@ -19,6 +19,7 @@
 | **06** | **green-coverage-gate** | gcov/lcov 게이트 PASS, FA-TC-54, Domain 97.6% / Boundary 85% | ✅ |
 | **07** | **green-golden-master** | GM-01~04 `*.approved.txt`, `GoldenMaster` ctest, `docs/golden_master.md` | ✅ |
 | **08** | **spec-refactoring-plan** | `docs/refactoring_plan.md`, Phase 0~4 · 12 Step | ✅ |
+| **09** | **refactor-phase0-4** | `src/cpp/` 12 Step, ctest 67/67, GM·coverage Green | ✅ |
 
 ---
 
@@ -219,6 +220,32 @@
 
 ---
 
+## Step 09 상세 (2026-05-22)
+
+**User:** `@docs/refactoring_plan.md` — [P] 모던 C++ 리팩토링 코치 — `refactoring` 브랜치, **현재 Step만** (Phase 0~4, 12 Step, 1 Step = 1 Commit, CoT·ctest·커밋).
+
+**Assistant (세션 누적):**
+
+| Phase | Steps | 커밋 범위 | 게이트 |
+|-------|-------|-----------|--------|
+| 0 | 0.1, 0.2 | DEF-01 감정 단일 소스 | FA-TC-17/29/32, GM-02 |
+| 1 | 1.1 | DEF-02 `main` 스캔 | FA-TC-16/24/30 |
+| 2 | 2.1~2.3 | Session download, `fil_data`, CsvUploadParser | GM-03/04, FA-TC-33~41 |
+| 3 | 3.1~3.3 | KeywordMatcher, rename, globals | coverage |
+| 4 | 4.1~4.3 | HtmlRenderer, HttpRouter, slim main (23줄) | GM-01~04, HTTP IT |
+
+- **12 Commit:** `b6871c6` … `74874ff`
+- **ctest:** 67/67 · **GoldenMaster** · **run_coverage_gate.ps1** PASS
+- `tests/support/` Domain 의미 변경 없음
+
+**User:** [P] 문서·배포 — Step 09 Report/Transcript/full-transcript/README/commit/push.
+
+**Assistant:** Report 09 · Transcript 09 · full-transcript · README #6 `[x]` · commit·push.
+
+**다음:** `refactoring`/`main` — **TODO #7** `docs/defect_list.md` · Mom Test 수동 · PR 머지
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -236,7 +263,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 4-C | green | 커버리지 gcov/lcov — **PASS** (Step 06) |
 | 4-D, 8 | green | Golden Master GM-01~04 — **PASS** (Step 07) |
 | 5 | refactoring | `refactoring_plan.md` ✅ |
-| 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) |
+| 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) ✅ |
 | 9 | feature | 미션 6~7 |
 
 ---
