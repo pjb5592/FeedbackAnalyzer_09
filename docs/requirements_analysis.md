@@ -486,7 +486,7 @@ if current == sFilter: include
 | `docs/test_plan.md` | FA-TC-01 상세, Catch2 이름, GM ID (다음 spec 단계) |
 | `docs/code_quality_report.md` | 스멜·안티패턴 정량 |
 | `docs/refactoring_plan.md` | DEF 해소 Phase |
-| `docs/defect_list.md` | DEF-01~04 재현 스텝 |
+| `docs/defect_list.md` | DEF-01~04 재현·해소·Mom H2/H4/H5/H6·kw/fil 한계 |
 
 ---
 

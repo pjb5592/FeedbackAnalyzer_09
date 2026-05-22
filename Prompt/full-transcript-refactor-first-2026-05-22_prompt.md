@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `refactoring` (Step 09 — **Phase 0~4 리팩토링 실행 완료**, 12 Commit)
+**브랜치:** `refactoring` (Step 11 — **TODO #7 defect_list + GM 재점검**)
 
 ---
 
@@ -20,6 +20,8 @@
 | **07** | **green-golden-master** | GM-01~04 `*.approved.txt`, `GoldenMaster` ctest, `docs/golden_master.md` | ✅ |
 | **08** | **spec-refactoring-plan** | `docs/refactoring_plan.md`, Phase 0~4 · 12 Step | ✅ |
 | **09** | **refactor-phase0-4** | `src/cpp/` 12 Step, ctest 67/67, GM·coverage Green | ✅ |
+| **10** | **refactor-phase5-7** | Phase 5~7 8 Step, SentimentClassifier·Session·PageModel | ✅ |
+| **11** | **green-defect-list** | `docs/defect_list.md`, GM drift 없음 재확인 | ✅ |
 
 ---
 
@@ -270,6 +272,29 @@
 
 ---
 
+## Step 11 상세 (2026-05-22)
+
+**User:** [P] C++ QA — `docs/defect_list.md` (DEF-01~04 재현·해소·FA-TC·GM, Mom H2/H4/H5/H6, kw/fil 한계) · README TODO #7 `[x]`.
+
+**Assistant:**
+- `docs/defect_list.md` 신규 (defect-1.0, 8섹션)
+- 교차 문서 부록·`refactoring_plan` §12.10 `[x]` 동기화
+- `src/cpp/` diff 0
+
+**User:** Golden Master 점검해줘.
+
+**Assistant:**
+- ctest **67/67** · **GoldenMaster** · **GM-01~04** PASS
+- `golden_master_gen` → approved **drift 없음**
+
+**User:** [P] 문서·배포 — Report 11 / Transcript 11 / full-transcript / README / git.
+
+**Assistant:** Report 11 · Transcript 11 · full-transcript · commit·push.
+
+**다음:** Mom Test 수동 (`defect_list.md` §7) · PR → `main` · TODO #9 `feature/newFeature`
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -289,6 +314,7 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 5 | refactoring | `refactoring_plan.md` ✅ |
 | 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) ✅ |
 | 6b | refactoring | Phase 5~7 후속 스멜 제거 (8 Commit) ✅ (Step 10) |
+| 7 | refactoring | `defect_list.md` + GM 재점검 ✅ (Step 11) |
 | 9 | feature | 미션 6~7 |
 
 ---

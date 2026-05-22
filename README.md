@@ -91,7 +91,7 @@ feedback_analyzer_cpp/
 | 4-C | 커버리지 게이트 | green | `docs/coverage_report.md`, Domain≥90% Boundary≥85% | [x] |
 | 5 | 리팩토링 계획 | spec / refactoring | `docs/refactoring_plan.md` | [x] (2026-05-22, Phase 0~7 · v1.1, `prompt초안` §5-A→5-B) |
 | 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [x] (2026-05-22, Phase 0~7 · 20 Step 커밋) |
-| 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [ ] (다음) |
+| 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [x] (2026-05-22, DEF-01~04·Mom H2/H4/H5/H6·kw/fil 한계) |
 | 8 | Golden Master (4-D) | green | `tests/golden/*.approved.txt`, `docs/golden_master.md` (4-B·4-C 후) | [x] |
 | 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |
 | 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [ ] |
@@ -139,7 +139,13 @@ feedback_analyzer_cpp/
 - [x] Phase 3~4 — GM-01~04 전건 · `feedback_analyzer.exe` smoke (FA-TC-44~52)
 - [x] Phase 5~7 — 헤더/cpp · SentimentClassifier · Session · PageModel (FA-TC·GM 회귀 Green)
 
-**목표 계약:** AC-SENT-01 · AC-KW-01/02 · download 뷰 · CSV `text` (→ `docs/defect_list.md` Phase 완료 후 기록)
+**목표 계약:** AC-SENT-01 · AC-KW-01/02 · download 뷰 · CSV `text` — [`docs/defect_list.md`](./docs/defect_list.md) DEF-01~04 해소 기록
+
+**문서·배포 이력 (최근)**
+
+| Step | 날짜 | Report | 내용 |
+|------|------|--------|------|
+| 11 | 2026-05-22 | [`Report/11.green-defect-list-report-2026-05-22.md`](./Report/11.green-defect-list-report-2026-05-22.md) | TODO #7 `defect_list` · GM-01~04 재점검 PASS |
 
 **검증 명령**
 

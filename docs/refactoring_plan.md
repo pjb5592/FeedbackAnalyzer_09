@@ -648,8 +648,8 @@ flowchart LR
 ### 12.10 종료 (refactoring 완료)
 
 - [ ] FA-TC 67/67 · 커버리지 · GM-01~04 (Phase 5~7 후에도)
-- [ ] `docs/defect_list.md` 작성 (TODO #7)
-- [ ] Mom Test H2, H4, H5, H6 **Pass** 수동 체크
+- [x] `docs/defect_list.md` 작성 (TODO #7)
+- [ ] Mom Test H2, H4, H5, H6 **Pass** 수동 체크 (FA-TC/GM Green — `docs/defect_list.md` §7 절차)
 - [ ] `docs/qa_final_report.md` (TODO #12, 선택)
 
 ---
@@ -675,7 +675,7 @@ flowchart LR
 | `docs/code_quality_report.md` | P0~P3 스멜 근거 |
 | `docs/requirements_analysis.md` | HTTP·계약·Mom Test |
 | `docs/golden_master.md` | GM 갱신 절차 |
-| `docs/defect_list.md` | Phase 완료 후 DEF 재현·해소 기록 (**다음 산출물**) |
+| `docs/defect_list.md` | DEF-01~04 재현·해소·Mom H2/H4/H5/H6·kw/fil 한계 (**defect-1.0**) |
 
 ---
 
