@@ -6,6 +6,18 @@ std::vector<Feedback> Session::currentFeedbacks;
 std::vector<Feedback> Session::downloadView_;
 bool Session::hasFilterView_ = false;
 
+const std::vector<Feedback>& Session::getFeedbacks() {
+    return currentFeedbacks;
+}
+
+void Session::appendFeedback(const Feedback& feedback) {
+    currentFeedbacks.push_back(feedback);
+}
+
+void Session::appendFeedbacks(const std::vector<Feedback>& feedbacks) {
+    currentFeedbacks.insert(currentFeedbacks.end(), feedbacks.begin(), feedbacks.end());
+}
+
 void Session::setSessionFeedbacks(const std::vector<Feedback>& feedbacks) {
     currentFeedbacks = feedbacks;
     if (!hasFilterView_) {

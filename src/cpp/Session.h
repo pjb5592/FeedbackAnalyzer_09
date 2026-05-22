@@ -1,6 +1,8 @@
 #pragma once
-#include <vector>
+
 #include <string>
+#include <vector>
+
 #include "Feedback.h"
 
 class Session {
@@ -10,9 +12,9 @@ private:
     static bool hasFilterView_;
 
 public:
-    static std::vector<Feedback>& getCurrentFeedbacks() {
-        return currentFeedbacks;
-    }
+    static const std::vector<Feedback>& getFeedbacks();
+    static void appendFeedback(const Feedback& feedback);
+    static void appendFeedbacks(const std::vector<Feedback>& feedbacks);
 
     static void setSessionFeedbacks(const std::vector<Feedback>& feedbacks);
     static void refreshAfterAnalyze(const std::vector<Feedback>& feedbacks);

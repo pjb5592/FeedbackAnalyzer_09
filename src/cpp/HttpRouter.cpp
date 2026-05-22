@@ -54,14 +54,13 @@ void setHtmlResponse(httplib::Response& res, const std::string& html) {
 
 void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
     server.Get("/", [](const httplib::Request&, httplib::Response& res) {
-        auto& feedbacks = Session::getCurrentFeedbacks();
+        const auto& feedbacks = Session::getFeedbacks();
         setHtmlResponse(res, HtmlRenderer::renderPage(u8"피드백 분석기 시작", "", "",
                                                       {}, {}, feedbacks));
     });
 
     server.Post("/analyze", [&ctx](const httplib::Request& req, httplib::Response& res) {
         try {
-            auto& feedbacks = Session::getCurrentFeedbacks();
             auto params = parseForm(req.body);
             std::string text = params["text"];
 
@@ -70,10 +69,11 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
                 auto end = text.find_last_not_of(" \t\r\n");
                 if (start != std::string::npos) {
                     text = text.substr(start, end - start + 1);
-                    feedbacks.push_back(Feedback(text));
+                    Session::appendFeedback(Feedback(text));
                 }
             }
 
+            const auto& feedbacks = Session::getFeedbacks();
             for (const auto& fb : feedbacks) {
                 Logger::logInfo(fb.getText());
             }
@@ -107,18 +107,15 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
 
     server.Post("/upload", [](const httplib::Request& req, httplib::Response& res) {
         try {
-            auto& feedbacks = Session::getCurrentFeedbacks();
             if (req.form.has_file("file")) {
                 const auto file = req.form.get_file("file");
                 if (!file.content.empty()) {
                     CsvUploadParser parser;
-                    const auto parsed = parser.parse(file.content);
-                    for (const auto& item : parsed) {
-                        feedbacks.push_back(item);
-                    }
+                    Session::appendFeedbacks(parser.parse(file.content));
                     Logger::logInfo(u8"파일이 성공적으로 업로드되었습니다.");
                 }
             }
+            const auto& feedbacks = Session::getFeedbacks();
             Session::setSessionFeedbacks(feedbacks);
             std::string success =
                 std::to_string(feedbacks.size()) + u8"개의 피드백이 입력되었습니다.";
@@ -134,7 +131,7 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
 
     server.Post("/filter", [&ctx](const httplib::Request& req, httplib::Response& res) {
         try {
-            auto& feedbacks = Session::getCurrentFeedbacks();
+            const auto& feedbacks = Session::getFeedbacks();
             auto params = parseForm(req.body);
             std::string sentiment = params["sentiment"];
             std::string keyword = params["keyword"];
