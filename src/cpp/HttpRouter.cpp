@@ -50,13 +50,23 @@ void setHtmlResponse(httplib::Response& res, const std::string& html) {
     res.set_content(html, "text/html; charset=UTF-8");
 }
 
+void renderHtmlPage(httplib::Response& res, const HtmlRenderer::PageModel& model) {
+    setHtmlResponse(res, HtmlRenderer::renderPage(model));
+}
+
+void renderErrorPage(httplib::Response& res, const std::string& errorMessage) {
+    HtmlRenderer::PageModel model;
+    model.error = errorMessage;
+    renderHtmlPage(res, model);
+}
+
 }  // namespace
 
 void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
     server.Get("/", [](const httplib::Request&, httplib::Response& res) {
-        const auto& feedbacks = Session::getFeedbacks();
-        setHtmlResponse(res, HtmlRenderer::renderPage(u8"피드백 분석기 시작", "", "",
-                                                      {}, {}, feedbacks));
+        HtmlRenderer::PageModel model;
+        model.success = u8"피드백 분석기 시작";
+        renderHtmlPage(res, model);
     });
 
     server.Post("/analyze", [&ctx](const httplib::Request& req, httplib::Response& res) {
@@ -81,27 +91,22 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
             Logger::logInfo(u8"현재 " + std::to_string(feedbacks.size()) +
                             u8"개의 피드백이 입력되었습니다.");
 
-            std::string success =
+            HtmlRenderer::PageModel model;
+            model.success =
                 std::to_string(feedbacks.size()) + u8"개의 피드백이 입력되었습니다.";
-            std::map<std::string, int> sentimentResults, keywordResults;
 
             if (!feedbacks.empty()) {
-                sentimentResults = ctx.textAnalyzer.analyzeSentiment(feedbacks);
-                keywordResults = ctx.textAnalyzer.countKeywords(feedbacks);
+                model.sentimentResults = ctx.textAnalyzer.analyzeSentiment(feedbacks);
+                model.keywordResults = ctx.textAnalyzer.countKeywords(feedbacks);
                 Logger::logInfo(u8"감성 분석 완료");
                 Logger::logInfo(u8"키워드 분석 완료");
             }
 
             Session::refreshAfterAnalyze(feedbacks);
-
-            setHtmlResponse(res, HtmlRenderer::renderPage(success, "", "",
-                                                          sentimentResults, keywordResults,
-                                                          feedbacks));
+            renderHtmlPage(res, model);
         } catch (const std::exception& e) {
             Logger::logError(std::string(u8"오류 발생: ") + e.what());
-            setHtmlResponse(res, HtmlRenderer::renderPage("", "",
-                                                          u8"처리 중 오류가 발생했습니다.", {},
-                                                          {}, {}));
+            renderErrorPage(res, u8"처리 중 오류가 발생했습니다.");
         }
     });
 
@@ -117,15 +122,14 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
             }
             const auto& feedbacks = Session::getFeedbacks();
             Session::setSessionFeedbacks(feedbacks);
-            std::string success =
+
+            HtmlRenderer::PageModel model;
+            model.success =
                 std::to_string(feedbacks.size()) + u8"개의 피드백이 입력되었습니다.";
-            setHtmlResponse(res,
-                            HtmlRenderer::renderPage(success, "", "", {}, {}, feedbacks));
+            renderHtmlPage(res, model);
         } catch (const std::exception& e) {
             Logger::logError(std::string(u8"파일 업로드 오류: ") + e.what());
-            setHtmlResponse(res, HtmlRenderer::renderPage("", "",
-                                                          u8"파일 업로드 중 오류가 발생했습니다.",
-                                                          {}, {}, {}));
+            renderErrorPage(res, u8"파일 업로드 중 오류가 발생했습니다.");
         }
     });
 
@@ -136,33 +140,34 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
             std::string sentiment = params["sentiment"];
             std::string keyword = params["keyword"];
 
-            if (!feedbacks.empty()) {
-                auto filtered =
-                    ctx.filters.filterFeedbacks(feedbacks, sentiment, keyword);
-                Session::applyFilterResult(filtered, !filtered.empty());
-                if (!filtered.empty()) {
-                    auto sentimentResults = ctx.textAnalyzer.analyzeSentiment(filtered);
-                    auto keywordResults = ctx.textAnalyzer.countKeywords(filtered);
-                    Logger::logInfo(u8"필터링 결과: " +
-                                    std::to_string(filtered.size()) + u8"개의 피드백");
-                    setHtmlResponse(res, HtmlRenderer::renderPage("", "", "",
-                                                                  sentimentResults,
-                                                                  keywordResults, filtered));
-                } else {
-                    Logger::logWarning(u8"필터링 결과가 없습니다.");
-                    setHtmlResponse(res, HtmlRenderer::renderPage(
-                                            "", u8"필터링 결과가 없습니다.", "", {}, {}, {}));
-                }
-            } else {
+            if (feedbacks.empty()) {
                 Logger::logWarning(u8"분석할 피드백이 없습니다.");
-                setHtmlResponse(res, HtmlRenderer::renderPage(
-                                        "", u8"분석할 피드백이 없습니다.", "", {}, {}, {}));
+                HtmlRenderer::PageModel model;
+                model.warning = u8"분석할 피드백이 없습니다.";
+                renderHtmlPage(res, model);
+                return;
             }
+
+            auto filtered = ctx.filters.filterFeedbacks(feedbacks, sentiment, keyword);
+            Session::applyFilterResult(filtered, !filtered.empty());
+
+            if (filtered.empty()) {
+                Logger::logWarning(u8"필터링 결과가 없습니다.");
+                HtmlRenderer::PageModel model;
+                model.warning = u8"필터링 결과가 없습니다.";
+                renderHtmlPage(res, model);
+                return;
+            }
+
+            Logger::logInfo(u8"필터링 결과: " + std::to_string(filtered.size()) +
+                            u8"개의 피드백");
+            HtmlRenderer::PageModel model;
+            model.sentimentResults = ctx.textAnalyzer.analyzeSentiment(filtered);
+            model.keywordResults = ctx.textAnalyzer.countKeywords(filtered);
+            renderHtmlPage(res, model);
         } catch (const std::exception& e) {
             Logger::logError(std::string(u8"오류 발생: ") + e.what());
-            setHtmlResponse(res, HtmlRenderer::renderPage("", "",
-                                                          u8"처리 중 오류가 발생했습니다.", {},
-                                                          {}, {}));
+            renderErrorPage(res, u8"처리 중 오류가 발생했습니다.");
         }
     });
 
