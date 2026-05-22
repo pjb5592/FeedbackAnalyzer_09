@@ -2,11 +2,12 @@
 
 #include "fixtures/Expectations.h"
 #include "fixtures/FeedbackFixtures.h"
+#include "support/DomainSentimentAnalyzer.hpp"
 #include "support/LegacyTextAnalyzerAdapter.hpp"
 
-TEST_CASE("FA_TC_01_SentimentEmpty", "[fa-tc][p0][sent][legacy]") {
-    LegacyTextAnalyzerAdapter adapter;
-    const auto result = adapter.analyzeSentiment(fa_fixtures::emptyFeedbacks());
+TEST_CASE("FA_TC_01_SentimentEmpty", "[fa-tc][p0][sent][domain]") {
+    DomainSentimentAnalyzer analyzer;
+    const auto result = analyzer.analyze(fa_fixtures::emptyFeedbacks());
     fa_expect::expectSentiment(result, 0, 0, 0);
 }
 
