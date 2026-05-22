@@ -8,8 +8,6 @@
 
 class Filters {
 private:
-    static std::map<std::string, std::vector<std::string>> S_KEYWORDS;
-
     static bool containsAny(const std::string& text, const std::vector<std::string>& keywords) {
         for (const auto& kw : keywords) {
             if (text.find(kw) != std::string::npos) return true;
@@ -18,8 +16,6 @@ private:
     }
 
 public:
-    static void initFilterKeywords();
-
     std::vector<Feedback> fil(const std::vector<Feedback>& dataList,
                               const std::string& sFilter,
                               const std::string& kFilter) {

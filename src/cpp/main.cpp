@@ -232,7 +232,6 @@ static std::vector<std::string> parseCsvLine(const std::string& line) {
 
 int main() {
     Constants::init();
-    Filters::initFilterKeywords();
 
     httplib::Server svr;
 
