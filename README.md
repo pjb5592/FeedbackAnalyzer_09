@@ -121,6 +121,14 @@ feedback_analyzer_cpp/
 | **4** | God Module | 4.1 | `HtmlRenderer` 분리 | [x] |
 | **4** | God Module | 4.2 | `HttpRouter` 분리 | [x] |
 | **4** | God Module | 4.3 | `main.cpp` 부트스트랩만 | [x] |
+| **5** | DRY·헤더 | 5.1 | `Filters`·`TextAnalyzer` `.cpp` 분리 | [ ] |
+| **5** | DRY | 5.2 | `SentimentClassifier` 추출 | [ ] |
+| **5** | Shotgun | 5.3 | 카테고리 `Constants` 단일 소스 | [ ] |
+| **5** | Data | 5.4 | `Constants::init` 중복 제거 | [ ] |
+| **6** | Session | 6.1 | 피드백 접근 캡슐화 | [ ] |
+| **7** | Infra | 7.1 | `Logger` cpp 분리 | [ ] |
+| **7** | View | 7.2 | `HtmlRenderer::PageModel` | [ ] |
+| **7** | Router | 7.3 | `HttpRouter` 응답 DRY | [ ] |
 
 **Phase 완료 체크 (GM·FA-TC)**
 

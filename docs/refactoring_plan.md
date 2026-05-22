@@ -1,13 +1,15 @@
-# Feedback Analyzer — 리팩토링 실행 계획 (Phase 0~4)
+# Feedback Analyzer — 리팩토링 실행 계획 (Phase 0~7)
 
 | 항목 | 내용 |
 |------|------|
-| 문서 버전 | refactor-1.0 |
+| 문서 버전 | refactor-1.1 |
 | 작성 관점 | 모던 C++ 리팩토링 코치 |
 | 전제 브랜치 | **green 완료 후** (`refactoring`에서만 `src/cpp/` 수정) |
 | 기준선 | FA-TC **67/67** Green · 커버리지 게이트 PASS · GM-01~04 approved |
 | 근거 | `docs/code_quality_report.md`, `docs/test_plan.md`, `docs/requirements_analysis.md`, `docs/golden_master.md`, `.cursorrules` §10 |
 | 커밋 규칙 | **1 Step = 1 Commit** (`refactor(phase-N): …`) |
+| Phase 0~4 | **완료** (2026-05-22, 12 Commit) |
+| Phase 5~7 | **후속 스멜 제거** (헤더/구현·DRY·캡슐화·프레젠테이션) |
 
 ---
 
@@ -21,8 +23,11 @@
 6. [Phase 2 — `fil_data` / Session / download 일원화](#phase-2--fil_data--session--download-일원화)
 7. [Phase 3 — `containsAny` 공통화·네이밍](#phase-3--containsany-공통화네이밍)
 8. [Phase 4 — `main.cpp` 분리](#phase-4--maincpp-분리)
-9. [전체 체크리스트](#9-전체-체크리스트)
-10. [문서·브랜치 추적](#10-문서브랜치-추적)
+9. [Phase 5 — 헤더/구현·감성·데이터 DRY](#phase-5--헤더구현감성데이터-dry)
+10. [Phase 6 — Session 캡슐화](#phase-6--session-캡슐화)
+11. [Phase 7 — Logger·Html·Router 정리](#phase-7--loggerhtmlrouter-정리)
+12. [전체 체크리스트](#12-전체-체크리스트)
+13. [문서·브랜치 추적](#13-문서브랜치-추적)
 
 ---
 
@@ -104,7 +109,10 @@ flowchart LR
   P2[Phase 2\nSession+DL+CSV]
   P3[Phase 3\nMatcher+이름]
   P4[Phase 4\nHtml+Router]
-  G --> P0 --> P1 --> P2 --> P3 --> P4
+  P5[Phase 5\nHeader+DRY]
+  P6[Phase 6\nSession]
+  P7[Phase 7\nLogger+View]
+  G --> P0 --> P1 --> P2 --> P3 --> P4 --> P5 --> P6 --> P7
 ```
 
 | Phase | DEF/스멜 | Step 수 | 핵심 산출 |
@@ -114,8 +122,11 @@ flowchart LR
 | **2** | DEF-03, DEF-04 | 3 | `fil_data` 제거, Session download 뷰, `CsvUploadParser` 승격 |
 | **3** | Duplicate, 네이밍 | 3 | `KeywordMatcher`, rename, global·cout 정리 |
 | **4** | God Module | 3 | `HtmlRenderer`, `HttpRouter`, `main` 부트스트랩만 |
+| **5** | Duplicate, Data | 4 | `.h/.cpp` 분리, `SentimentClassifier`, 카테고리 단일 소스, init 중복 제거 |
+| **6** | God Object | 1 | Session mutable 노출 제거 |
+| **7** | Long Method, Header impl | 3 | `Logger` cpp, `PageModel`, Router 응답 DRY |
 
-**총 Step:** 12 · **총 커밋:** 12 (각 Step 1:1)
+**총 Step:** 12 (Phase 0~4) + **8** (Phase 5~7) = **20** · **1 Step = 1 Commit**
 
 ---
 
@@ -443,63 +454,220 @@ flowchart LR
 
 ---
 
-## 9. 전체 체크리스트
+## Phase 5 — 헤더/구현·감성·데이터 DRY
 
-### 9.1 브랜치·문서
+**Phase 목표:** `Filters`·`TextAnalyzer` 비즈니스 로직을 `.cpp`로 이동; `classifySentiment` 단일화; 카테고리 목록·`Constants::init` 중복 제거.
 
-- [ ] `git checkout refactoring` (또는 `green`에서 분기)
-- [ ] 본 문서 `docs/refactoring_plan.md` 검토·승인
-- [ ] `README.md` TODO #5 `[x]`, #6 진행 표시
+**완료 정의:** FA-TC 67/67 · GM-01~04 · 커버리지 게이트 · **동작 변경 0** (rename/이동만).
 
-### 9.2 Phase 0 (DEF-01)
+### Phase 5 체크리스트
 
-- [ ] Step 0.1 — Filters 감정 = Constants + sent 규칙
-- [ ] Step 0.2 — `S_KEYWORDS` 제거
-- [ ] FA-TC-17, 29, 32 · GM-02
+- [ ] Step 5.1 — `Filters`·`TextAnalyzer` 선언/정의 분리
+- [ ] Step 5.2 — `SentimentClassifier` 추출 (`fa::classifySentiment`)
+- [ ] Step 5.3 — `UIComponents` 카테고리 ← `Constants` 단일 소스
+- [ ] Step 5.4 — `Constants::init` 감성 키워드 중복 리터럴 제거
+- [ ] Phase 5 게이트: ctest + GM + 커버리지
 
-### 9.3 Phase 1 (DEF-02)
+---
 
-- [ ] Step 1.1 — `main` skip 제거
-- [ ] FA-TC-16, 24, 30, 32
+### Step 5.1 — `Filters`·`TextAnalyzer` 헤더/구현 분리
 
-### 9.4 Phase 2 (DEF-03, DEF-04)
+| 항목 | 내용 |
+|------|------|
+| **목표** | 헤더에 비즈니스 로직 인라인 금지 — `HttpRouter`·`HtmlRenderer`와 동일 패턴 |
+| **변경 파일** | `src/cpp/Filters.h`, `Filters.cpp`, `TextAnalyzer.h`, `TextAnalyzer.cpp` |
+| **구현 요약** | 헤더는 public API 선언만; `filterFeedbacks`·`analyzeSentiment`·`countKeywords` 본문은 `.cpp` |
+| **ctest** | 전체 `ctest` + `FA_TC_16~28` · `FA_TC_01~08` |
+| **1 Step = 1 Commit** | `refactor(phase-5): Step 5.1 move Filters TextAnalyzer impl to cpp` |
 
-- [ ] Step 2.1 — Session download API
-- [ ] Step 2.2 — `fil_data` 제거
-- [ ] Step 2.3 — CsvUploadParser 승격
-- [ ] FA-TC-33~34, 39~41 · GM-03, GM-04
+**CoT:** (1) 시그니처·의미 동일? (2) `FA_LEGACY_SOURCES`에 `.cpp` 이미 포함? (3) 이번 Step에서 `SentimentClassifier`는 미루는가?
 
-### 9.5 Phase 3 (중복·네이밍)
+---
 
-- [ ] Step 3.1 — KeywordMatcher
-- [ ] Step 3.2 — API rename
-- [ ] Step 3.3 — global·cout·Session dead code
+### Step 5.2 — `SentimentClassifier` 공통화
 
-### 9.6 Phase 4 (God Module)
+| 항목 | 내용 |
+|------|------|
+| **목표** | `Filters.cpp`·`TextAnalyzer.cpp`·`tests/support/Domain*`의 **감성 분류 규칙 단일 함수** |
+| **변경 파일** | `src/cpp/SentimentClassifier.h`, `SentimentClassifier.cpp`, `Filters.cpp`, `TextAnalyzer.cpp`, `CMakeLists.txt` (`FA_LEGACY_SOURCES`), `tests/support/DomainFeedbackFilter.cpp`, `DomainSentimentAnalyzer.cpp` |
+| **구현 요약** | `namespace fa { std::string classifySentiment(const std::string& text); }` — 긍→부→중립 (`Constants::SENTIMENT_KEYWORDS`) |
+| **레거시 허용** | support는 **의미 변경 금지**, `fa::classifySentiment` 호출로 치환만 |
+| **ctest** | `FA_TC_29` · `FA_TC_32` · GM-02 |
+| **1 Step = 1 Commit** | `refactor(phase-5): Step 5.2 extract SentimentClassifier` |
 
-- [ ] Step 4.1 — HtmlRenderer
-- [ ] Step 4.2 — HttpRouter
-- [ ] Step 4.3 — slim main
+---
 
-### 9.7 종료 (refactoring 완료)
+### Step 5.3 — 카테고리 목록 `Constants` 단일 소스
 
-- [ ] FA-TC 67/67 · 커버리지 · GM-01~04
+| 항목 | 내용 |
+|------|------|
+| **목표** | Shotgun Surgery 완화 — `UIComponents::CATS`와 `CATEGORY_KEYWORDS` 키 이중 정의 제거 |
+| **변경 파일** | `Constants.h`, `Constants.cpp`, `UIComponents.h`, `UIComponents.cpp`, `HtmlRenderer.cpp` (필요 시) |
+| **구현 요약** | `Constants::getCategoryNames()` 추가; `UIComponents::getCategories()`가 위임 |
+| **ctest** | `FA_TC_28` · HTTP smoke 선택 |
+| **1 Step = 1 Commit** | `refactor(phase-5): Step 5.3 single source category names` |
+
+---
+
+### Step 5.4 — `Constants::init` 중복 키워드 제거
+
+| 항목 | 내용 |
+|------|------|
+| **목표** | 긍정/부정 initializer **이중 블록** 삭제 (데이터 동일 유지) |
+| **변경 파일** | `src/cpp/Constants.cpp` |
+| **리스크** | 키워드 집합 바이트 동일 — FA-TC-22 등 회귀 없어야 함 |
+| **ctest** | 전체 ctest |
+| **1 Step = 1 Commit** | `refactor(phase-5): Step 5.4 dedupe Constants sentiment keywords` |
+
+---
+
+## Phase 6 — Session 캡슐화
+
+**Phase 목표:** `Session::getCurrentFeedbacks()` **가변 참조 노출** 제거; `HttpRouter`는 명시 API만 사용.
+
+### Phase 6 체크리스트
+
+- [ ] Step 6.1 — Session append/read API · HttpRouter 연동
+- [ ] Phase 6 게이트: ctest + GM-03 + `FA_TC_39~41`
+
+---
+
+### Step 6.1 — Session 피드백 접근 캡슐화
+
+| 항목 | 내용 |
+|------|------|
+| **목표** | God Object 스멜 완화 — static vector 직접 `push_back` 금지 |
+| **변경 파일** | `Session.h`, `Session.cpp`, `HttpRouter.cpp` |
+| **구현 요약** | `getFeedbacks()` → `const` 참조; `appendFeedback` / `appendFeedbacks` 추가; `getCurrentFeedbacks()` 제거 |
+| **레거시 허용** | `setSessionFeedbacks`·`refreshAfterAnalyze`·`applyFilterResult` 시그니처 유지 |
+| **ctest** | 전체 ctest + GM-03 |
+| **1 Step = 1 Commit** | `refactor(phase-6): Step 6.1 encapsulate Session feedbacks` |
+
+---
+
+## Phase 7 — Logger·Html·Router 정리
+
+**Phase 목표:** 헤더 구현·장함수·핸들러 중복 정리. **HTML 바이트 출력 동일** 우선.
+
+### Phase 7 체크리스트
+
+- [ ] Step 7.1 — `Logger` 구현 `.cpp` 이동
+- [ ] Step 7.2 — `HtmlRenderer::PageModel` · 미사용 `feedbacks` 제거
+- [ ] Step 7.3 — `HttpRouter` 오류/성공 응답 헬퍼 DRY
+- [ ] Phase 7 게이트: ctest + GM + FA-TC-44~52 (IT)
+
+---
+
+### Step 7.1 — `Logger` 헤더/구현 분리
+
+| 항목 | 내용 |
+|------|------|
+| **변경 파일** | `Logger.h`, `Logger.cpp` |
+| **구현 요약** | `logInfo`/`logWarning`/`logError`/`logDebug`·`getTimestamp`를 `.cpp`로 이동 |
+| **1 Step = 1 Commit** | `refactor(phase-7): Step 7.1 move Logger impl to cpp` |
+
+---
+
+### Step 7.2 — `HtmlRenderer::PageModel` 도입
+
+| 항목 | 내용 |
+|------|------|
+| **변경 파일** | `HtmlRenderer.h`, `HtmlRenderer.cpp`, `HttpRouter.cpp` |
+| **구현 요약** | `PageModel { success, warning, error, sentimentResults, keywordResults }`; `renderPage(const PageModel&)`; **미사용 `feedbacks` 인자 삭제** |
+| **리스크** | 호출부 전부 갱신 — HTML 출력 문자열 동일 |
+| **1 Step = 1 Commit** | `refactor(phase-7): Step 7.2 HtmlRenderer PageModel` |
+
+---
+
+### Step 7.3 — `HttpRouter` 응답 헬퍼 DRY
+
+| 항목 | 내용 |
+|------|------|
+| **변경 파일** | `HttpRouter.cpp` |
+| **구현 요약** | `renderHtmlPage(PageModel)`·`renderErrorPage(message)` 등 익명 네임스페이스 헬퍼; try/catch 블록 중복 축소 |
+| **1 Step = 1 Commit** | `refactor(phase-7): Step 7.3 HttpRouter response helpers` |
+
+---
+
+## 12. 전체 체크리스트
+
+### 12.1 브랜치·문서
+
+- [x] `git checkout refactoring` (또는 `green`에서 분기)
+- [x] 본 문서 `docs/refactoring_plan.md` 검토·승인 (Phase 0~4)
+- [x] `README.md` TODO #5 `[x]`, #6 Phase 0~4 `[x]`
+- [ ] Phase 5~7 Step별 `[x]` 갱신
+
+### 12.2 Phase 0 (DEF-01)
+
+- [x] Step 0.1 — Filters 감정 = Constants + sent 규칙
+- [x] Step 0.2 — `S_KEYWORDS` 제거
+- [x] FA-TC-17, 29, 32 · GM-02
+
+### 12.3 Phase 1 (DEF-02)
+
+- [x] Step 1.1 — `main` skip 제거
+- [x] FA-TC-16, 24, 30, 32
+
+### 12.4 Phase 2 (DEF-03, DEF-04)
+
+- [x] Step 2.1 — Session download API
+- [x] Step 2.2 — `fil_data` 제거
+- [x] Step 2.3 — CsvUploadParser 승격
+- [x] FA-TC-33~34, 39~41 · GM-03, GM-04
+
+### 12.5 Phase 3 (중복·네이밍)
+
+- [x] Step 3.1 — KeywordMatcher
+- [x] Step 3.2 — API rename
+- [x] Step 3.3 — global·cout·Session dead code
+
+### 12.6 Phase 4 (God Module)
+
+- [x] Step 4.1 — HtmlRenderer
+- [x] Step 4.2 — HttpRouter
+- [x] Step 4.3 — slim main
+
+### 12.7 Phase 5 (헤더/DRY)
+
+- [ ] Step 5.1 — Filters·TextAnalyzer `.cpp`
+- [ ] Step 5.2 — SentimentClassifier
+- [ ] Step 5.3 — 카테고리 단일 소스
+- [ ] Step 5.4 — Constants init dedupe
+
+### 12.8 Phase 6 (Session)
+
+- [ ] Step 6.1 — Session 캡슐화
+
+### 12.9 Phase 7 (프레젠테이션·Router)
+
+- [ ] Step 7.1 — Logger cpp
+- [ ] Step 7.2 — PageModel
+- [ ] Step 7.3 — HttpRouter DRY
+
+### 12.10 종료 (refactoring 완료)
+
+- [ ] FA-TC 67/67 · 커버리지 · GM-01~04 (Phase 5~7 후에도)
 - [ ] `docs/defect_list.md` 작성 (TODO #7)
 - [ ] Mom Test H2, H4, H5, H6 **Pass** 수동 체크
 - [ ] `docs/qa_final_report.md` (TODO #12, 선택)
 
 ---
 
-## 10. 문서·브랜치 추적
+## 13. 문서·브랜치 추적
 
-| Step | DEF | FA-TC (대표) | Mom | GM |
-|------|-----|--------------|-----|-----|
+| Step | DEF/스멜 | FA-TC (대표) | Mom | GM |
+|------|----------|--------------|-----|-----|
 | 0.1~0.2 | DEF-01 | 17, 29, 32 | H4 | GM-02 |
 | 1.1 | DEF-02 | 16, 24, 30 | H2 | — |
 | 2.1~2.2 | DEF-03 | 39~41 | H5 | GM-03 |
 | 2.3 | DEF-04 | 33, 34 | H6 | GM-04 |
 | 3.x | 스멜 | 08, 22 (Domain) | — | 01~04 |
 | 4.x | God Module | 44~50 (P1 IT) | H1 | — |
+| 5.1~5.2 | Duplicate | 01~08, 29, 32 | — | 01~04 |
+| 5.3~5.4 | Shotgun/Data | 28, 22 | — | — |
+| 6.1 | God Object | 39~41 | H5 | GM-03 |
+| 7.x | Long Method | 44~52 | H1 | — |
 
 | 문서 | 역할 |
 |------|------|
@@ -527,6 +695,14 @@ flowchart LR
 | 4.1 | `refactor(phase-4): Step 4.1 …` | `HtmlRenderer.*`, `main.cpp` |
 | 4.2 | `refactor(phase-4): Step 4.2 …` | `HttpRouter.*`, `main.cpp` |
 | 4.3 | `refactor(phase-4): Step 4.3 …` | `main.cpp`, `CMakeLists.txt` |
+| 5.1 | `refactor(phase-5): Step 5.1 …` | `Filters.h/cpp`, `TextAnalyzer.h/cpp` |
+| 5.2 | `refactor(phase-5): Step 5.2 …` | `SentimentClassifier.*`, `Filters.cpp`, `TextAnalyzer.cpp`, support Domain* |
+| 5.3 | `refactor(phase-5): Step 5.3 …` | `Constants.*`, `UIComponents.*` |
+| 5.4 | `refactor(phase-5): Step 5.4 …` | `Constants.cpp` |
+| 6.1 | `refactor(phase-6): Step 6.1 …` | `Session.*`, `HttpRouter.cpp` |
+| 7.1 | `refactor(phase-7): Step 7.1 …` | `Logger.h/cpp` |
+| 7.2 | `refactor(phase-7): Step 7.2 …` | `HtmlRenderer.*`, `HttpRouter.cpp` |
+| 7.3 | `refactor(phase-7): Step 7.3 …` | `HttpRouter.cpp` |
 
 ---
 
@@ -543,4 +719,4 @@ flowchart LR
 
 ---
 
-*다음 단계: `git checkout refactoring` → **Step 0.1** CoT 3문 답변 후 구현·커밋.*
+*다음 단계: Phase 0~4 완료 후 → **Step 5.1** (헤더/구현 분리)부터 1 Step = 1 Commit.*
