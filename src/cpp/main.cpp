@@ -13,7 +13,6 @@
 #include <ctime>
 #include <iomanip>
 
-static std::vector<Feedback> fil_data;
 static TextAnalyzer textAnalyzer;
 static Filters filters;
 static FileHandler fileHandler;
@@ -276,6 +275,8 @@ int main() {
                 Logger::logInfo(u8"키워드 분석 완료");
             }
 
+            Session::refreshAfterAnalyze(feedbacks);
+
             std::string html = renderPage(success, "", "", sentimentResults, keywordResults, feedbacks);
             res.set_content(html, "text/html; charset=UTF-8");
         } catch (const std::exception& e) {
@@ -307,6 +308,7 @@ int main() {
                     Logger::logInfo(u8"파일이 성공적으로 업로드되었습니다.");
                 }
             }
+            Session::setSessionFeedbacks(feedbacks);
             std::string success = std::to_string(feedbacks.size()) + u8"개의 피드백이 입력되었습니다.";
             std::string html = renderPage(success, "", "", {}, {}, feedbacks);
             res.set_content(html, "text/html; charset=UTF-8");
@@ -327,8 +329,8 @@ int main() {
 
             if (!feedbacks.empty()) {
                 auto filtered = filters.fil(feedbacks, sentiment, keyword);
+                Session::applyFilterResult(filtered, !filtered.empty());
                 if (!filtered.empty()) {
-                    fil_data = filtered;
                     auto sentimentResults = textAnalyzer.sent(filtered);
                     auto keywordResults = textAnalyzer.kw(filtered);
                     Logger::logInfo(u8"필터링 결과: " + std::to_string(filtered.size()) + u8"개의 피드백");
@@ -353,15 +355,9 @@ int main() {
 
     // GET /download
     svr.Get("/download", [](const httplib::Request&, httplib::Response& res) {
-        std::ostringstream csv;
-        // UTF-8 BOM
-        csv << "\xEF\xBB\xBF";
-        csv << "text\n";
-        for (const auto& iter : fil_data) {
-            csv << iter.getText() << "\n";
-        }
+        const std::string csv = Session::renderDownloadCsv();
         res.set_header("Content-Disposition", "attachment; filename=\"filtered_feedback.csv\"");
-        res.set_content(csv.str(), "text/csv; charset=UTF-8");
+        res.set_content(csv, "text/csv; charset=UTF-8");
     });
 
     Logger::logInfo(u8"서버가 http://localhost:8080 에서 시작됩니다.");
