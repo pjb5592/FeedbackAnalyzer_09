@@ -7,13 +7,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(cmake/FACoverage.cmake)
 
 add_executable(feedback_analyzer
-    src/cpp/main.cpp
     src/cpp/Constants.cpp
+    src/cpp/CsvUploadParser.cpp
+    src/cpp/SentimentClassifier.cpp
     src/cpp/Filters.cpp
+    src/cpp/HtmlRenderer.cpp
+    src/cpp/HttpRouter.cpp
     src/cpp/Logger.cpp
     src/cpp/Session.cpp
     src/cpp/TextAnalyzer.cpp
     src/cpp/UIComponents.cpp
+    src/cpp/main.cpp
 )
 
 target_include_directories(feedback_analyzer PRIVATE src/cpp)
@@ -40,6 +44,8 @@ FetchContent_MakeAvailable(Catch2)
 
 set(FA_LEGACY_SOURCES
     src/cpp/Constants.cpp
+    src/cpp/CsvUploadParser.cpp
+    src/cpp/SentimentClassifier.cpp
     src/cpp/Filters.cpp
     src/cpp/TextAnalyzer.cpp
 )
@@ -48,7 +54,6 @@ set(FA_SUPPORT_SOURCES
     tests/support/DomainSentimentAnalyzer.cpp
     tests/support/DomainKeywordCounter.cpp
     tests/support/DomainFeedbackFilter.cpp
-    tests/support/CsvUploadParser.cpp
     tests/support/InMemoryDownloadSource.cpp
     tests/support/GoldenMasterRunner.cpp
 )

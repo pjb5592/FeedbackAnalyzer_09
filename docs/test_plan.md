@@ -599,7 +599,7 @@ ctest --output-on-failure
 | `docs/requirements_analysis.md` | FA-001~055 원본 Given-When-Then |
 | `docs/code_quality_report.md` | DEF 근거 코드 |
 | `docs/refactoring_plan.md` | green 후 Phase Step (미작성) |
-| `docs/defect_list.md` | DEF 재현 스텝 (green/7) |
+| `docs/defect_list.md` | DEF 재현·해소·Mom·kw/fil 한계 (defect-1.0) |
 | `docs/golden_master.md` | GM 절차 (green 8) |
 | `docs/coverage_report.md` | 4-C 산출물 |
 

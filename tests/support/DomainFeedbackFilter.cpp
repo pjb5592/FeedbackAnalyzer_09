@@ -2,20 +2,7 @@
 
 #include "Constants.h"
 #include "KeywordMatcher.hpp"
-
-namespace {
-
-std::string classifySentiment(const std::string& text) {
-    if (fa_support::containsAny(text, Constants::SENTIMENT_KEYWORDS[u8"긍정"])) {
-        return u8"긍정";
-    }
-    if (fa_support::containsAny(text, Constants::SENTIMENT_KEYWORDS[u8"부정"])) {
-        return u8"부정";
-    }
-    return u8"중립";
-}
-
-}  // namespace
+#include "SentimentClassifier.h"
 
 std::vector<Feedback> DomainFeedbackFilter::filter(
     const std::vector<Feedback>& feedbacks, const std::string& sentimentFilter,
@@ -24,7 +11,7 @@ std::vector<Feedback> DomainFeedbackFilter::filter(
 
     if (sentimentFilter != u8"전체") {
         for (const auto& feedback : feedbacks) {
-            if (classifySentiment(feedback.getText()) == sentimentFilter) {
+            if (fa::classifySentiment(feedback.getText()) == sentimentFilter) {
                 afterSentiment.push_back(feedback);
             }
         }

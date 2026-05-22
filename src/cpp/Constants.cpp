@@ -3,21 +3,23 @@
 std::map<std::string, std::vector<std::string>> Constants::SENTIMENT_KEYWORDS;
 std::map<std::string, std::map<std::string, std::vector<std::string>>> Constants::CATEGORY_KEYWORDS;
 
+namespace {
+
+std::vector<std::string> categoryNames;
+
+}  // namespace
+
 void Constants::init() {
     SENTIMENT_KEYWORDS[u8"긍정"] = {
         u8"좋아요", u8"만족", u8"감사", u8"최고", u8"좋은", u8"훌륭", u8"추천", u8"좋았어요",
         u8"좋습니다", u8"최고입니다", u8"감사합니다", u8"만족스럽", u8"좋았습니다",
         u8"최고에요", u8"기뻐요", u8"만족합니다", u8"굿", u8"최고다", u8"와우", u8"아주 좋아",
-        u8"좋아요", u8"만족", u8"감사", u8"최고", u8"좋은", u8"훌륭", u8"추천", u8"좋았어요",
-        u8"좋습니다", u8"최고입니다", u8"감사합니다", u8"만족스럽", u8"좋았습니다"
     };
 
     SENTIMENT_KEYWORDS[u8"부정"] = {
         u8"나쁘", u8"불만", u8"실망", u8"최악", u8"별로", u8"불편", u8"불만족", u8"문제",
         u8"불량", u8"불량품", u8"환불", u8"교환", u8"불만족스럽", u8"실망스럽",
         u8"짜증", u8"화남", u8"별로에요", u8"엉망", u8"최악이다", u8"실패", u8"구려",
-        u8"나쁘", u8"불만", u8"실망", u8"최악", u8"별로", u8"불편", u8"불만족", u8"문제",
-        u8"불량", u8"불량품", u8"환불", u8"교환", u8"불만족스럽", u8"실망스럽"
     };
 
     // Category keywords - 배송
@@ -49,4 +51,13 @@ void Constants::init() {
     CATEGORY_KEYWORDS[u8"사용성"]["ease"] = {u8"편리", u8"불편", u8"쉽게", u8"어렵"};
     CATEGORY_KEYWORDS[u8"사용성"]["guide"] = {u8"사용법", u8"설명서", u8"사용방법"};
     CATEGORY_KEYWORDS[u8"사용성"]["action"] = {u8"사용"};
+
+    categoryNames.clear();
+    for (const auto& entry : CATEGORY_KEYWORDS) {
+        categoryNames.push_back(entry.first);
+    }
+}
+
+const std::vector<std::string>& Constants::getCategoryNames() {
+    return categoryNames;
 }

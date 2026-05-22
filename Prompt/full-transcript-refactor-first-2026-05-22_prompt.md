@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `green` (Step 07 — 4-D Golden Master 완료, **refactoring 진입 가능**)
+**브랜치:** `refactoring` (Step 11 — **TODO #7 defect_list + GM 재점검**)
 
 ---
 
@@ -18,6 +18,10 @@
 | **05** | **green-fa-tc-pass** | Domain support, FA-TC-01~54, GM-01~09, ctest 63/63 | ✅ |
 | **06** | **green-coverage-gate** | gcov/lcov 게이트 PASS, FA-TC-54, Domain 97.6% / Boundary 85% | ✅ |
 | **07** | **green-golden-master** | GM-01~04 `*.approved.txt`, `GoldenMaster` ctest, `docs/golden_master.md` | ✅ |
+| **08** | **spec-refactoring-plan** | `docs/refactoring_plan.md`, Phase 0~4 · 12 Step | ✅ |
+| **09** | **refactor-phase0-4** | `src/cpp/` 12 Step, ctest 67/67, GM·coverage Green | ✅ |
+| **10** | **refactor-phase5-7** | Phase 5~7 8 Step, SentimentClassifier·Session·PageModel | ✅ |
+| **11** | **green-defect-list** | `docs/defect_list.md`, GM drift 없음 재확인 | ✅ |
 
 ---
 
@@ -201,6 +205,96 @@
 
 ---
 
+## Step 08 상세 (2026-05-22)
+
+**User:** `@docs/code_quality_report.md` `@docs/test_plan.md` `@docs/requirements_analysis.md` `@src/cpp/` — [P] 모던 C++ 리팩토링 코치 — green 기준선 이후 **실행 가능한 Phase 로드맵** → `docs/refactoring_plan.md` (Phase 0~4, Step별 CoT 3문, 1 Step = 1 Commit).
+
+**Assistant:**
+- `docs/refactoring_plan.md` 신규 (한글, 12 Step, ctest·GM 게이트, AC·FA-TC 매핑)
+- `tests/support/` Domain을 레거시 목표 동작으로 명시
+- `src/cpp/` 미수정
+
+**User:** [P] 문서·배포 — Step 08 Report/Transcript/full-transcript/README/commit/push.
+
+**Assistant:** Report 08 · Transcript 08 · full-transcript · README #5 `[x]` · ctest 67/67 확인 · commit·push.
+
+**다음:** `refactoring` — **Phase 0 Step 0.1** (`Filters` 감정 = `Constants`, FA-TC-17/29/32, GM-02)
+
+---
+
+## Step 09 상세 (2026-05-22)
+
+**User:** `@docs/refactoring_plan.md` — [P] 모던 C++ 리팩토링 코치 — `refactoring` 브랜치, **현재 Step만** (Phase 0~4, 12 Step, 1 Step = 1 Commit, CoT·ctest·커밋).
+
+**Assistant (세션 누적):**
+
+| Phase | Steps | 커밋 범위 | 게이트 |
+|-------|-------|-----------|--------|
+| 0 | 0.1, 0.2 | DEF-01 감정 단일 소스 | FA-TC-17/29/32, GM-02 |
+| 1 | 1.1 | DEF-02 `main` 스캔 | FA-TC-16/24/30 |
+| 2 | 2.1~2.3 | Session download, `fil_data`, CsvUploadParser | GM-03/04, FA-TC-33~41 |
+| 3 | 3.1~3.3 | KeywordMatcher, rename, globals | coverage |
+| 4 | 4.1~4.3 | HtmlRenderer, HttpRouter, slim main (23줄) | GM-01~04, HTTP IT |
+
+- **12 Commit:** `b6871c6` … `74874ff`
+- **ctest:** 67/67 · **GoldenMaster** · **run_coverage_gate.ps1** PASS
+- `tests/support/` Domain 의미 변경 없음
+
+**User:** [P] 문서·배포 — Step 09 Report/Transcript/full-transcript/README/commit/push.
+
+**Assistant:** Report 09 · Transcript 09 · full-transcript · README #6 `[x]` · commit·push.
+
+**다음:** `refactoring`/`main` — **TODO #7** `docs/defect_list.md` · Mom Test 수동 · PR 머지
+
+---
+
+## Step 10 상세 (2026-05-22)
+
+**User:** `@src/cpp/` — 코드 스멜 확인 · `@Filters`/`@TextAnalyzer` — 헤더/구현 분리 · `@docs/refactoring_plan.md` — Phase 5~7 계획 추가 후 Commit 단위 실행 · `@prompt초안.md` §5 — **5-A 스멜 재점검 → 5-B plan** 선행 순서 추가.
+
+**Assistant (세션 누적):**
+
+| Phase | Steps | 핵심 산출 |
+|-------|-------|-----------|
+| 5 | 5.1~5.4 | `.h/.cpp` 분리, `SentimentClassifier`, `Constants::getCategoryNames`, init dedupe |
+| 6 | 6.1 | Session `getFeedbacks` / `appendFeedback(s)` 캡슐화 |
+| 7 | 7.1~7.3 | `Logger` cpp, `HtmlRenderer::PageModel`, `HttpRouter` 응답 헬퍼 |
+
+- **8 refactor 커밋:** `9a06fb1` … `8ec2f39` (+ plan/docs `3ebcfbc` … `d25ccde`)
+- **ctest:** 67/67 · **GoldenMaster** PASS
+- `prompt초안.md` §5-A/5-B 반영
+
+**User:** [P] 문서·배포 — Step 10 Report/Transcript/full-transcript/README/commit/push.
+
+**Assistant:** Report 10 · Transcript 10 · full-transcript · README Phase 0~7 · commit·push.
+
+**다음:** **TODO #7** `docs/defect_list.md` · `code_quality_report.md` 5-A 갱신(선택) · PR → `main`
+
+---
+
+## Step 11 상세 (2026-05-22)
+
+**User:** [P] C++ QA — `docs/defect_list.md` (DEF-01~04 재현·해소·FA-TC·GM, Mom H2/H4/H5/H6, kw/fil 한계) · README TODO #7 `[x]`.
+
+**Assistant:**
+- `docs/defect_list.md` 신규 (defect-1.0, 8섹션)
+- 교차 문서 부록·`refactoring_plan` §12.10 `[x]` 동기화
+- `src/cpp/` diff 0
+
+**User:** Golden Master 점검해줘.
+
+**Assistant:**
+- ctest **67/67** · **GoldenMaster** · **GM-01~04** PASS
+- `golden_master_gen` → approved **drift 없음**
+
+**User:** [P] 문서·배포 — Report 11 / Transcript 11 / full-transcript / README / git.
+
+**Assistant:** Report 11 · Transcript 11 · full-transcript · commit·push.
+
+**다음:** Mom Test 수동 (`defect_list.md` §7) · PR → `main` · TODO #9 `feature/newFeature`
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -217,7 +311,10 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 4-B | green | FA-TC Green — **67 ctest** ✅ |
 | 4-C | green | 커버리지 gcov/lcov — **PASS** (Step 06) |
 | 4-D, 8 | green | Golden Master GM-01~04 — **PASS** (Step 07) |
-| 5~6 | refactoring | refactoring_plan Step |
+| 5 | refactoring | `refactoring_plan.md` ✅ |
+| 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) ✅ |
+| 6b | refactoring | Phase 5~7 후속 스멜 제거 (8 Commit) ✅ (Step 10) |
+| 7 | refactoring | `defect_list.md` + GM 재점검 ✅ (Step 11) |
 | 9 | feature | 미션 6~7 |
 
 ---

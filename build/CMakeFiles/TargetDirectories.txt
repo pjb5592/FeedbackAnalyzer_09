@@ -28,6 +28,7 @@ D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/ContinuousTest.dir
 D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/ContinuousCoverage.dir
 D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/ContinuousMemCheck.dir
 D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/ContinuousSubmit.dir
+D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/golden_master_gen.dir
 D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/feedback_analyzer_integration_tests.dir
 D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/test.dir
 D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/edit_cache.dir

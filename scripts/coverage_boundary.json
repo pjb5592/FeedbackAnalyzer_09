@@ -3,14 +3,14 @@
     "tests/support/DomainSentimentAnalyzer.cpp",
     "tests/support/DomainKeywordCounter.cpp",
     "tests/support/DomainFeedbackFilter.cpp",
-    "tests/support/CsvUploadParser.cpp",
+    "src/cpp/CsvUploadParser.cpp",
     "tests/support/InMemoryDownloadSource.cpp"
   ],
   "overall_files": [
     "tests/support/DomainSentimentAnalyzer.cpp",
     "tests/support/DomainKeywordCounter.cpp",
     "tests/support/DomainFeedbackFilter.cpp",
-    "tests/support/CsvUploadParser.cpp",
+    "src/cpp/CsvUploadParser.cpp",
     "tests/support/InMemoryDownloadSource.cpp",
     "src/cpp/TextAnalyzer.cpp",
     "src/cpp/Filters.cpp",
@@ -20,7 +20,7 @@
     "tests/support/DomainSentimentAnalyzer.cpp": [13],
     "tests/support/DomainKeywordCounter.cpp": [13],
     "tests/support/DomainFeedbackFilter.cpp": [25, 35, 40],
-    "tests/support/CsvUploadParser.cpp": [8, 36, 42, 58],
+    "src/cpp/CsvUploadParser.cpp": [8, 36, 42, 58],
     "tests/support/InMemoryDownloadSource.cpp": [8, 22]
   }
 }

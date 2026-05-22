@@ -18,7 +18,7 @@ public:
         std::ostringstream capture;
         auto* previous = std::cout.rdbuf(capture.rdbuf());
         std::vector<Feedback> result =
-            filters_.fil(dataList, sentimentFilter, keywordFilter);
+            filters_.filterFeedbacks(dataList, sentimentFilter, keywordFilter);
         std::cout.rdbuf(previous);
         return result;
     }

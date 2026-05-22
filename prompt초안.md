@@ -1,128 +1,129 @@
-# Feedback Analyzer — 테스트 우선 TDD/리팩토링 프롬프트 (초안)
+# Feedback Analyzer — TDD/리팩토링 프롬프트 ([P][C][T][F] · 전체 워크플로우)
 
-> 원본: `README.md`, `project_purpose.md`, `prompt1.md`, `src/cpp/`, `docs/TODO.md`  
-> 목적: 대화 이력·중복·모호 표현을 제거하고, **브랜치·커밋 단위로 재실행 가능한 프롬프트**로 정리
+> **기준일:** 2026-05-22 · **브랜치:** `refactoring` (Phase 0~7 완료)  
+> **동기화:** `README.md` TODO · `docs/refactoring_plan.md` v1.1 · `Report/` · `Prompt/`  
+> **구성:** 상단 **진행 스냅샷** + **완료·미완료 단계별 복사 프롬프트** ([P][C][T][F])
+
+---
+
+## 진행 스냅샷 (이력 기준)
+
+| # | 단계 | 브랜치 | 산출물 | 상태 | Report |
+|---|------|--------|--------|------|--------|
+| 0 | `.cursorrules` | spec | `.cursorrules` | ✅ | 00 |
+| 1 | 요구사항 | spec | `docs/requirements_analysis.md` | ✅ | 01 |
+| 2 | 코드 품질 (레거시 기준선) | spec | `docs/code_quality_report.md` | ✅ | 02 |
+| 3 | Test Plan | spec | `docs/test_plan.md` | ✅ | 03 |
+| 4-A | RED | red | `tests/*.cpp` | ✅ | 04 |
+| 4-B | GREEN FA-TC | green | `tests/support/` | ✅ | 05 |
+| 4-C | 커버리지 | green | `docs/coverage_report.md` | ✅ | 06 |
+| 4-D | Golden Master | green | `tests/golden/`, `docs/golden_master.md` | ✅ | 07 |
+| 5-A | 스멜 점검 + 계획 **작성** | spec/refactor | `code_quality_report` §, `refactoring_plan.md` | ✅ | 08 |
+| 5-B | 계획 **갱신** | refactoring | `refactoring_plan.md` (v갱신) | ✅ | 10 |
+| 6 | 리팩토링 실행 | refactoring | Phase 0~7 · **20 Step** | ✅ | 09, 10 |
+| **7** | **결함 문서화** | refactoring | **`docs/defect_list.md`** | **⏭ 다음** | — |
+| 8 | GM 갱신 (§8) | refactor/feature | 4-D와 동일 절차 | ✅ 최초 · Step 후 갱신 | — |
+| 9 | 기능 확장 | feature | 미션 6~7 | ⬜ | — |
+| 10~12 | 프로세스·QA | spec/main | defect_report 등 | ⬜ | — |
+
+**검증 기준선:** FA-TC **67/67** · GM-01~04 · Domain **≥90%** · Boundary **≥85%**
+
+```powershell
+cmake --build build --target feedback_analyzer_tests feedback_analyzer
+ctest --test-dir build --output-on-failure
+ctest --test-dir build -R "^GoldenMaster$"
+.\scripts\run_coverage_gate.ps1 -BuildDir build-cov
+```
 
 ---
 
 ## 사용 방법
 
-1. **공통 컨텍스트**와 **브랜치 전략**을 먼저 읽는다.
-2. 현재 Git 브랜치가 해당 단계와 일치하는지 확인한 뒤, 해당 단계 프롬프트를 그대로 복사해 사용한다.
-3. 단계는 **의존 순서**를 따른다 (이전 단계 산출물 `@` 참조).
-4. **spec**: 프로덕션 코드(`src/cpp/` 기존 파일) 수정 금지 — 문서·테스트 계획만.
-5. **red / green**: 기존 `src/cpp/` 레거시 구현 **수정 금지** — 테스트·신규 어댑터/스텁 파일만 추가.
-6. **green (마무리)**: FA-TC 전건 Green → **4-C 커버리지 게이트(최초 확립)** → **4-D Golden Master** (순서 고정, 동일 브랜치). 커버리지 PASS 전 GM 금지. **§8**은 동일 절차로 회귀·갱신.
-7. **refactoring**: green 완료(TC+커버리지+GM) 후 Phase별 **1 Commit = 1 CoT**.
-8. **feature/newFeature**: 신규 기능 = **Test Case 추가 → 커버리지 보강 → Golden Master 갱신** → 구현; 회귀에 FA-TC+커버리지+GM 포함.
-9. 세션 종료 시 **후처리 프롬프트**를 한 번 실행한다.
+1. **진행 스냅샷**에서 현재 단계(#)를 확인한다.
+2. Git 브랜치가 표와 일치하는지 확인한다.
+3. 아래 **단계별 프롬프트**에서 해당 #의 블록을 복사한다.
+4. 단계 종료 시 **후처리 프롬프트**(문서 말미) 1회 실행.
+5. 리팩토링 재개: `docs/refactoring_plan.md` + §6 **REFACTOR 단일 Step** (Phase 0~7 완료 — 새 Phase만)
 
 ---
 
-## 브랜치 전략 (필수)
+## 브랜치 전략
 
 ```mermaid
 flowchart LR
-    main[main]
-    spec[spec]
-    red[red]
-    green[green]
-    refactor[refactoring]
-    feat[feature/newFeature]
-
-    main --> spec
-    spec --> red
-    red --> green
-    green --> refactor
-    refactor --> feat
+    main[main] --> spec[spec]
+    spec --> red[red]
+    red --> green[green]
+    green --> refactor[refactoring]
+    refactor --> feat[feature/newFeature]
     feat --> main
 ```
 
-| 브랜치 | 역할 | 기존 `src/cpp/` 수정 | 허용 작업 | 완료 조건 |
-|--------|------|----------------------|-----------|-----------|
-| **spec** | 요구사항·품질·**Test Plan** | ❌ 금지 | `docs/*.md`, `.cursorrules`, `tests/` 골격(빈/RED 스켈레톤) 설계 문서 | `docs/test_plan.md` 확정, 코드 diff 없음 |
-| **red** | 실패 테스트만 | ❌ 금지 | `tests/`, `CMakeLists.txt` 테스트 타겟, **신규** 헤더/스텁(링크용) | `ctest` 실패가 **의도된 RED** |
-| **green** | 테스트 통과 · **커버리지** · **Golden Master** | ❌ 금지 (레거시 파일) | **신규** support 모듈 · `tests/golden/` · gcov/lcov 스크립트 | **선행:** FA-TC 전건 Green → **커버리지 게이트** → **Golden Master** → refactoring 병합 |
-| **refactoring** | 구조 개선 | ✅ 계획서 Phase별 허용 범위만 | `docs/refactoring_plan.md` Step N → 1 Commit → `ctest` Green 유지 | Phase 체크리스트 완료 |
-| **feature/newFeature** | 확장 기능 | ✅ 기능 범위 내 | **TC 추가(RED→GREEN)** → **커버리지 보강** → **GM 스냅샷 갱신** → 구현 | 기능 FA-TC Green + `run_coverage_gate` PASS + GM 회귀 Green |
+| 브랜치 | `src/cpp/` 수정 | 완료 조건 |
+|--------|-----------------|-----------|
+| **spec** | ❌ 금지 | 문서·계획만 |
+| **red** | ❌ 금지 | 의도적 RED (`tests/`·support만) |
+| **green** | ⚠️ **최소만** | FA-TC → 커버리지 → GM |
+| **refactoring** | ✅ plan Step 범위 | ctest+GM+커버리지 Green |
+| **feature** | ✅ 기능 범위 | TC+커버리지+GM 회귀 |
 
-**브랜치 작업 명령 (예시)**
+**green 브랜치 `src/cpp/` 규칙**
+
+| 허용 | 금지·미룸 |
+|------|-----------|
+| FA-TC·커버리지·GM에 **필요한 최소** 레거시 수정 | God Module·대규모 rename |
+| 우선 `tests/support/` | `refactoring_plan` 없는 구조 개편 |
+| CoT: support만으로 불가한 이유·최소 diff | 계약 변경 without TC/GM |
+
+**커밋 접두어:** `docs(spec):` · `test(red):` · `feat(green):` · `refactor(phase-N):` · `docs(refactoring):` · `feat(feature):`
+
+**CoT:** 1 TC = 1 Commit · 1 Refactor Step = 1 Commit
+
+**브랜치 전환 (예시):**
 
 ```bash
-git checkout main
-git pull
+git checkout main && git pull
 git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
 ```
 
-**커밋 규칙 (Chain-of-Thought)**
-
-- **Test Case**: 1 TC = 1 CoT 블록 = 1 Commit  
-  - CoT 필수 항목: `Given` / `When` / `Then` / `왜 이 순서인가` / `실패 기대 메시지`
-- **Refactoring**: 1 Phase Step = 1 CoT 블록 = 1 Commit  
-  - CoT 필수 항목: `냄새` / `목표` / `변경 파일` / `롤백 방법` / `ctest` 검증
-- 커밋 메시지 접두어: `docs(spec):`, `test(red):`, `feat(green):`, `refactor:`, `feat(feature):`
-
 ---
 
-## 공통 컨텍스트 (모든 단계에 적용)
+## 공통 컨텍스트
+
+### A. 리팩터링 전 레거시 스냅샷 (단계 0~4·RED/GREEN 재실행 참고)
 
 | 항목 | 내용 |
 |------|------|
-| 프로젝트 | Feedback Analyzer — C++17, CMake 3.14+, cpp-httplib, `http://localhost:8080` |
-| 도메인 | 한국어 피드백 → 키워드 분류(5카테고리) → 감정(긍정/중립/부정) → 필터 → CSV 다운로드 |
-| 성격 | **의도적 레거시** — 리팩토링·TDD 학습용 (프로덕션 품질 아님) |
-| 감정 분류 | `TextAnalyzer::sent` — 긍정 키워드 → 부정 키워드 → **나머지 중립** |
-| 필터 감정 | `Filters::fil` — `S_KEYWORDS` 별도 정의, **중립 키워드 매칭 시에만** 중립 |
-| 키워드 분류 | `TextAnalyzer::kw` — `"main"` 서브키만 사용 |
-| 키워드 필터 | `Filters::fil` — `"main"` 서브키 **스킵** → 집계·필터 **불일치** (P0 버그) |
-| 상태 | `Session::currentFeedbacks`, `TextAnalyzer::globalSent/Kw`, `main.cpp` `fil_data` |
-| CSV | README: `text` 컬럼 — 구현: **첫 컬럼** + 헤더 1행 스킵 |
-| HTTP | `GET /`, `POST /analyze`, `POST /upload`, `POST /filter`, `GET /download` |
-| 테스트 | Given-When-Then · Catch2 · 경계·불일치 시나리오 필수 |
-| 커버리지 | **green 브랜치**에서 측정 · 목표 **라인 90%+** (미션 1) · 대상: `TextAnalyzer`, `Filters`, `tests/support/` |
-| 커버리지 게이트 | Domain(핵심 분류 로직) **≥90%** · Boundary(경계·예외 분기) **≥85%** · 미달 시 **테스트만** 보강 (레거시 수정 금지) |
-| Golden Master | **green 4-D**: 최초 커버리지 PASS 후 GM 확립 · **§8**: 4-D와 **동일 절차**로 refactoring·feature 시 회귀·갱신 |
-| 리팩토링 | **refactoring** 브랜치 진입 전 green 완료 필수 · ctest+GM+커버리지 Green 유지 |
-| 검증 명령 | `cmake --build build && ctest` · `scripts/run_coverage_gate.ps1` (또는 동등 스크립트) |
-| 산출물 언어 | 설명·문서 **한글**, 코드·식별자는 기존 규칙 준수 |
+| 감정 | `TextAnalyzer::sent` — 긍→부→중립 / `Filters::fil` — `S_KEYWORDS`·중립 키워드 매칭 |
+| 키워드 | `kw`는 `main`만 / `fil`은 `main` skip → DEF-02 |
+| 상태 | `fil_data`, `globalSent/Kw`, God Module `main.cpp` |
+| 미사용 | `FileHandler.h` |
 
-**프롬프트 구조:** `[P]` 역할 · `[C]` 맥락 · `[T]` 작업 · `[F]` 산출물 형식 · `[CoT]` 사고 과정(커밋 단위)
+**P0 결함:** DEF-01~04 (→ `docs/code_quality_report.md`, `docs/test_plan.md`)
 
-**주요 소스 경로**
+### B. 현재 코드베이스 (refactoring Phase 0~7 이후)
 
-| 역할 | 경로 |
+| 항목 | 내용 |
 |------|------|
-| 서버·God Module | `src/cpp/main.cpp` |
-| 감정·키워드 집계 | `src/cpp/TextAnalyzer.h` |
-| 필터 | `src/cpp/Filters.h`, `Filters.cpp` |
-| 키워드 사전 | `src/cpp/Constants.h`, `Constants.cpp` |
-| 도메인 모델 | `src/cpp/Feedback.h` |
-| 세션 | `src/cpp/Session.h`, `Session.cpp` |
-| UI 카테고리 | `src/cpp/UIComponents.h`, `UIComponents.cpp` |
-| 로깅 | `src/cpp/Logger.h`, `Logger.cpp` |
-| 미사용 | `src/cpp/FileHandler.h` |
-| 빌드 | `CMakeLists.txt` |
-| 학습 목적 | `project_purpose.md` |
-| 분석 산출 | `docs/TODO.md` |
+| 진입점 | `main.cpp` (~23줄) · `HttpRouter` · `HtmlRenderer::PageModel` |
+| 감성 | `fa::classifySentiment` (`SentimentClassifier`) |
+| 필터 | `Filters::filterFeedbacks` · 키워드 필터는 전 서브맵 스캔 |
+| 세션 | `Session::getFeedbacks` / `appendFeedback(s)` |
+| 삭제됨 | `FileHandler`, `S_KEYWORDS`, `fil_data`, `globalSent/Kw` |
 
-**P0 알려진 결함 (테스트·리팩토링 우선 대상)**
+**DEF 해소 Phase:** 0~2 (→ `docs/defect_list.md` TODO #7)
 
-| ID | 현상 | 검증 문장 예 |
-|----|------|----------------|
-| DEF-01 | 감정: Analyzer vs Filters 규칙 불일치 | `보통 배송은 괜찮아요` — 집계 중립 vs 필터 0건 |
-| DEF-02 | 키워드: `main` 사용 vs 스킵 | 동일 문장으로 `kw` 카운트 ≠ `fil` 매칭 |
-| DEF-03 | `/download` — `fil_data`만 사용 | 필터 전 다운로드 빈/잔여 데이터 |
-| DEF-04 | CSV `text` 컬럼 미인식 | 헤더명 `text` 무시, `fields[0]`만 |
+**프롬프트 구조:** `[P]` 역할 · `[C]` 맥락 · `[T]` 작업 · `[F]` 산출물 · `[CoT]` 커밋 단위
 
 ---
 
 ## 단계별 프롬프트
 
-> **브랜치 열:** 각 단계 제목에 권장 브랜치를 표기한다.
+> 각 절: **상태** · **[P][C][T][F] 복사 블록** · **완료 기준**
 
 ---
 
-### 0. 프로젝트 규칙 (.cursorrules) — `spec`
+### 0. 프로젝트 규칙 (.cursorrules) — `spec` · ✅
 
 ```
 @README.md
@@ -138,22 +139,21 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
     - CoT: TC·Refactor 각각 Given-When-Then / 냄새-목표-검증
     - 도메인: DEF-01~04, Mom Test 가설(H1~H6), 미션 1~7 로드맵
     - 테스트: Given-When-Then, 경계(전체/긍정/부정/중립, 카테고리 5종)
-    - green 완료: FA-TC 전건 Green → 커버리지 게이트(최초) → 4-D Golden Master (§8과 동일 절차)
-    - feature: TC 추가 → 커버리지 보강 → Golden Master 갱신 → 회귀(FA-TC+커버리지+GM)
+    - green 완료: FA-TC 전건 Green → 커버리지 게이트 → Golden Master (순서 고정)
     - 설명은 한글로 표현
-    - Commit 시 mesage는 한글로 표현    
+    - Commit 시 mesage는 한글로 표현
     - 프롬프트 진행 시 README에 항목 별 TODO를 추가. 진행여부 반영
 [F] `.cursorrules` 완성 텍스트 (한글)
 ```
 
-**완료 기준:** `.cursorrules` 생성 · **코드 diff 없음**
+**완료 기준:** `.cursorrules` · `src/cpp/` diff 0 · Report **00**
 
 ---
 
-### 1. 요구사항 분석 — `spec`
+### 1. 요구사항 분석 — `spec` · ✅
 
 ```
-@README.md @project_purpose.md
+@README.md @project_purpose.md 
 
 [P] 시니어 C++ QA 엔지니어
 [C] Feedback Analyzer — README·학습 미션 기반 도메인 요구사항
@@ -169,16 +169,16 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
 [F] Markdown → docs/requirements_analysis.md (한글)
 ```
 
-**완료 기준:** `docs/requirements_analysis.md` · **기존 코드 수정 없음**
+**완료 기준:** `docs/requirements_analysis.md` (FA-001~055) · `src/cpp/` diff 0 · Report **01**
 
 ---
 
-### 2. 코드 품질 분석 — `spec`
+### 2. 코드 품질 분석 — `spec` · ✅
 
 ```
-@src/cpp/main.cpp @src/cpp/TextAnalyzer.h @src/cpp/Filters.h
-@src/cpp/Constants.h @src/cpp/Session.h @src/cpp/Feedback.h
-@README.md
+@src/cpp/main.cpp @src/cpp/TextAnalyzer.h @src/cpp/Filters.h 
+@src/cpp/Constants.h @src/cpp/Session.h @src/cpp/Feedback.h 
+@README.md 
 
 [P] 시니어 C++ 아키텍트 + 모던 C++ 리뷰어
 [C] 의도적 코드 스멜 포함 레거시 — SOLID·Code Smell 정적 분석
@@ -187,20 +187,18 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
     - Feature Envy (Filters ↔ Constants), Shotgun Surgery, Lava Flow (FileHandler)
     - DEF-01~04 근거 코드 위치
     - 리팩토링 우선순위 P0~P3 (근거 포함)
-    - mom test(Rob Fitzpatrick 인터뷰 방법론)에 의한 품질 분석 진행
-    - Code Smell 분석석
 [F] docs/code_quality_report.md (한글)
 ```
 
-**완료 기준:** `docs/code_quality_report.md` · **코드 수정 없음**
+**완료 기준:** `docs/code_quality_report.md` · `src/cpp/` diff 0 · Report **02**
 
 ---
 
-### 3. 테스트 계획 (Test Plan) — `spec` ★
+### 3. 테스트 계획 (Test Plan) — `spec` · ✅
 
 ```
-@README.md @project_purpose.md @docs/requirements_analysis.md
-@docs/code_quality_report.md @src/cpp/TextAnalyzer.h @src/cpp/Filters.h
+@README.md @docs/project_purpose.md @docs/requirements_analysis.md 
+@docs/code_quality_report.md @src/cpp/TextAnalyzer.h @src/cpp/Filters.h 
 
 [P] 시니어 QA 리드
 [C] spec 브랜치 — **프로덕션 코드 수정 금지**, Test Plan만 작성
@@ -216,16 +214,16 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
     - **CoT 템플릿** per TC (커밋 단위 작성 예시 3건)
     - Fake/Fixture: in-memory Feedback 벡터, 샘플 CSV 문자열
     - **커버리지 (green 게이트)**: 측정 대상 파일·Domain/Boundary 정의·90%/85% 통과 기준
-    - **Golden Master**: green **4-D**에서 최초 확립(GM-01~) · **§8**과 동일 절차로 feature 시 TC·커버리지 반영 후 스냅샷 갱신
+    - **Golden Master (green, TC 전건 Green 후)**: 시나리오 ID(GM-01~), 스냅샷 경로, 갱신 규칙
     - red/green 제약: 레거시 파일 변경 없이 테스트 가능한 **Seam** 설계
 [F] docs/test_plan.md (한글) + TC-ID 목록
 ```
 
-**완료 기준:** `docs/test_plan.md` 확정 · **`src/cpp/` 기존 파일 diff 0**
+**완료 기준:** `docs/test_plan.md` (FA-TC-01~55) · `src/cpp/` diff 0 · Report **03**
 
 ---
 
-### 4-A. RED — 실패 테스트 (CoT·커밋 단위) — `red`
+### 4-A. RED — 실패 테스트 — `red` · ✅
 
 ```
 @docs/test_plan.md @src/cpp/TextAnalyzer.h @src/cpp/Filters.h
@@ -246,22 +244,14 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
 [F] tests/*.cpp + CMake diff · ctest **의도적 FAIL** · 커밋 로그에 CoT 요약
 ```
 
-**완료 기준:** P0 TC RED 전부 커밋됨 · `ctest` 실패가 계획과 일치 · **레거시 .cpp/.h diff 없음**
-
-**RED 단일 TC 프롬프트 (복사용)**
-
-```
-브랜치 red. FA-TC-XX 한 건만 RED로 작성해줘.
-제약: src/cpp 기존 파일 수정 금지. CoT(Given/When/Then/실패이유) 먼저 보여주고,
-tests/ 와 CMake만 변경. 커밋 메시지: test(red): FA-TC-XX <slug>
-```
+**완료 기준:** FA-TC-01~15 RED · `src/cpp/` diff 0 · ctest 14 PASS / 3 FAIL(의도) · Report **04**
 
 ---
 
-### 4-B. GREEN — 최소 통과 (CoT) — `green`
+### 4-B. GREEN — FA-TC 통과 — `green` · ✅
 
 ```
-@docs/test_plan.md @tests/ @docs/code_quality_report.md
+@docs/test_plan.md @tests/ @docs/code_quality_report.md 
 
 [P] 시니어 C++ 개발자 (TDD)
 [C] green 브랜치 — **기존 레거시 src/cpp 최소 수정**
@@ -277,23 +267,21 @@ tests/ 와 CMake만 변경. 커밋 메시지: test(red): FA-TC-XX <slug>
 [F] 커밋별 diff + CoT · ctest Green
 ```
 
-**완료 기준:** test_plan **FA-TC 전건** Green · **레거시 본체 diff 없음** (신규 support 모듈만)  
-→ 이후 **4-C 커버리지(최초 확립)** → **4-D Golden Master** (같은 `green` 브랜치, 커버리지 PASS 후만)
-
-**GREEN 단일 TC 프롬프트 (복사용)**
+**추가 User (동일 Step):**
 
 ```
-브랜치 green. FA-TC-XX만 GREEN.
-제약: 레거시 src/cpp 최소 수정. 요청시 진행. tests/support 신규 코드만.
-CoT 후 구현. 커밋: feat(green): FA-TC-XX <slug>. ctest 확인.
+다음 단계 진행
 ```
+
+```
+전체 Test Case 실행
+```
+
+**완료 기준:** FA-TC·GM support Green · `src/cpp/` diff 0(이력) · ctest **63/63** → 이후 67/67 · Report **05**
 
 ---
 
-### 4-C. 커버리지 게이트 — `green` ★
-
-> **선행 조건:** 4-B에서 test_plan **FA-TC 전건** `ctest` Green  
-> **다음 단계:** 4-D Golden Master (동일 `green` 브랜치, **최초 커버리지 PASS 후만**)
+### 4-C. 커버리지 게이트 — `green` · ✅
 
 ```
 @docs/test_plan.md @tests/ @CMakeLists.txt
@@ -309,32 +297,16 @@ CoT 후 구현. 커밋: feat(green): FA-TC-XX <slug>. ctest 확인.
        - 전체 라인: **≥90%** (project_purpose 미션 1)
     4) 미달 시: **tests/ 만** 추가 (1 갭 = 1 CoT = 1 Commit), 레거시 src/cpp 최소 수정.
     5) 통과 시: `docs/coverage_report.md` — 파일별 %, Miss 라인, 측정 명령
-    6) 통과 확인 후 **반드시 4-D Golden Master** 진행 (이 단계에서 GM 파일 생성·갱신 금지)
 [F] 스크립트 + (필요 시) 테스트 diff + coverage_report · 게이트 PASS 로그
 ```
 
-**완료 기준:** `run_coverage_gate` PASS · `docs/coverage_report.md` · `ctest` 전건 Green 유지  
-→ **다음:** 4-D Golden Master (동일 `green` 브랜치)
-
-**커버리지 단일 갭 프롬프트 (복사용)**
-
-```
-브랜치 green. 커버리지 게이트 FAIL 구간만 보강해줘.
-선행: FA-TC 전건 Green 확인됨.
-제약: 레거시 src/cpp 최소 수정. CoT 후 커밋: test(green): coverage-<slug>
-완료: run_coverage_gate PASS && ctest Green
-다음: 4-D Golden Master — 커버리지 PASS 확인 후에만
-```
+**완료 기준:** Domain 97.6% · Boundary 85.0% · `run_coverage_gate` PASS · Report **06**
 
 ---
 
-### 4-D. Golden Master / 회귀 — `green` ★
+### 4-D. Golden Master — 최초 확립 — `green` · ✅
 
-> **선행 조건 (필수):**  
-> 1) 4-B — test_plan **FA-TC 전건** `ctest` Green  
-> 2) 4-C — **커버리지 게이트** PASS (최초 확립)  
-> **금지:** TC 미완료·커버리지 FAIL 상태에서 Golden 파일 생성/갱신  
-> **브랜치:** `refactoring` / `feature` **진입 전** `green`에서 완료 · 이후 갱신은 **§8** (동일 절차)
+> §8 갱신 절차는 본 절과 동일 — Step·기능 변경 후 재사용
 
 ```
 @docs/test_plan.md @tests/ @docs/coverage_report.md
@@ -352,179 +324,193 @@ CoT 후 구현. 커밋: feat(green): FA-TC-XX <slug>. ctest 확인.
 [F] 테스트 코드 + golden 파일 + 문서 · `ctest` **전체** Green (FA-TC + GoldenMaster)
 ```
 
-**완료 기준:** Golden Master ctest PASS · FA-TC·커버리지 게이트 **회귀 Green** · `green` → `refactoring` 병합 가능
-
-**Golden Master 프롬프트 (복사용)**
-
-```
-브랜치 green. Golden Master만 진행해줘. (4-D: 최초 확립)
-선행 확인: FA-TC 전건 ctest Green && run_coverage_gate PASS.
-위 조건 미충족이면 Golden 작업 중단하고 부족 항목부터 완료.
-CoT 후 GM-XX 하나씩 커밋: test(green): GM-XX <slug>
-```
+**완료 기준:** GM-01~04 PASS · ctest FA-TC+GoldenMaster Green · Report **07**
 
 ---
 
-### 5. 리팩토링 계획 — `spec` 또는 `refactoring` 진입 전
+### 5. 리팩토링 계획 — `spec` / `refactoring` · ✅
+
+> **순서:** **5-A** 스멜 점검 + `refactoring_plan.md` **작성** → **5-B** plan **갱신** → **6** Step 실행
+
+#### 5-A. 스멜 점검 + 리팩토링 계획 작성 — `spec` / `refactoring` · ✅
 
 ```
-@docs/code_quality_report.md @docs/test_plan.md @docs/requirements_analysis.md
-@src/cpp/
+@src/cpp/ @docs/code_quality_report.md @docs/test_plan.md
+@docs/requirements_analysis.md @README.md
+
+[P] 시니어 C++ 아키텍트 + 모던 C++ 리팩토링 코치
+[C] green 완료(FA-TC·커버리지·GM Green) 직후 — **src/cpp/ 수정 금지**, 분석·문서만
+[T]
+    1) Code Smell 정적 점검
+       - @src/cpp/ 전 파일 (httplib 제외)
+       - docs/code_quality_report.md(단계 2·레거시) 대비 해소/잔존 diff
+       - DEF-01~04·FA-TC·GM 매핑, P0~P3 우선순위
+    2) docs/refactoring_plan.md **최초 작성**
+       - Phase 0: DEF-01 감정 단일 소스 (Constants 병합)
+       - Phase 1: DEF-02 키워드 규칙 통일 (main 키 정책)
+       - Phase 2: fil_data / Session / download 일원화
+       - Phase 3: containsAny 공통화, 네이밍 (fil→filterFeedbacks)
+       - Phase 4: main.cpp 분리 (HtmlRenderer, Router)
+       - 각 Step: 목표 / 변경 파일 / 리스크 / 롤백 / ctest / **CoT 질문 3개**
+       - **1 Step = 1 Commit** 명시
+    - 리팩터링 커밋·구현은 이 단계에서 수행하지 않음
+[F]
+    - docs/code_quality_report.md §「green 이후」갱신 (한글)
+    - docs/refactoring_plan.md (Phase 0~4 체크리스트, 한글)
+```
+
+**완료 기준:** `code_quality_report` §갱신 · `refactoring_plan.md` 최초본 · `src/cpp/` diff 0 · Report **08**
+
+---
+
+#### 5-B. 리팩토링 계획 갱신 — `refactoring` · ✅
+
+```
+@docs/refactoring_plan.md @docs/code_quality_report.md @docs/test_plan.md
+@src/cpp/ @README.md
 
 [P] 모던 C++ 리팩토링 코치
-[C] green 브랜치 **완료 후** 기준선 (FA-TC Green + 커버리지 게이트 + Golden Master) — **실행 가능한 Phase 로드맵**
-[T] docs/refactoring_plan.md 작성
-    - Phase 0: DEF-01 감정 단일 소스 (Constants 병합)
-    - Phase 1: DEF-02 키워드 규칙 통일 (main 키 정책)
-    - Phase 2: fil_data / Session / download 일원화
-    - Phase 3: containsAny 공통화, 네이밍 (fil→filterFeedbacks)
-    - Phase 4: main.cpp 분리 (HtmlRenderer, Router)
-    - 각 Step: 목표 / 변경 파일(레거시 허용) / 리스크 / 롤백 / ctest / **CoT 질문 3개**
-    - **1 Step = 1 Commit** 명시
-[F] docs/refactoring_plan.md (Phase 0~N 체크리스트, 한글)
+[C] 5-A 완료 · Phase 0~4 리팩토링 **실행 완료 후** (또는 실행 중 잔존 스멜 재평가 시)
+    — plan **갱신·추가만**, src/cpp 구현은 **6**에서
+[T] docs/refactoring_plan.md **갱신**
+    1) code_quality §「green·Phase 0~4 이후」·실제 코드 상태 반영
+    2) Phase 0~4 체크리스트 완료 Step [x] 동기화
+    3) 잔존 스멜 → **Phase 5~7** Step 추가·상세화
+       (헤더/cpp 분리, SentimentClassifier, Session 캡슐화, Logger, PageModel, Router DRY 등)
+    4) 각 신규 Step: 목표 / 파일 / 리스크 / 롤백 / ctest·GM / CoT 3문
+    5) 버전·변경 이력(§changelog) 갱신
+[F] docs/refactoring_plan.md v갱신 (Phase 0~7, 한글) · README refactoring TODO 반영
 ```
 
-**완료 기준:** 로드맵 문서 · (선택) spec에서 작성, 실행은 refactoring 브랜치
+**완료 기준:** `refactoring_plan.md` v1.1 (Phase 5~7 포함) · Report **10**
 
 ---
 
-### 6. 리팩토링 실행 (Step-by-Step) — `refactoring`
+### 6. 리팩토링 실행 — `refactoring` · ✅ Phase 0~7
 
 ```
 @docs/refactoring_plan.md @tests/ @src/cpp/
 
 [P] 모던 C++ 리팩토링 코치
-[C] refactoring 브랜치 — 계획서 **현재 Step만** 수행
+[C] refactoring — 5-B plan 갱신 반영 · **현재 Step만** 수행
 [T] Phase N Step M (한 번에 하나)
-    [CoT] 커밋 전 필수:
-      1) 냄새·목표  2) 변경 파일  3) 테스트 영향  4) 롤백  5) ctest 명령
-    - 동작 변경 시: test_plan TC 먼저 갱신 또는 보강
-    - Step 완료: cmake --build build && ctest
-    - 사용자가 "진행"/"계속" 할 때까지 다음 Step 금지
-[F] Step diff + ctest Green · 커밋: refactor: PhaseN-StepM <slug>
+    [CoT] 커밋 전 필수: 냄새·목표 / 변경 파일 / 테스트 영향 / 롤백 / ctest 명령
+    - Phase 0~4 완료 후 Phase 5~7 진행 (plan은 5-B에서 이미 갱신)
+    - 사용자 "진행"/"계속" 전까지 다음 Step 금지
+[F] Step diff + ctest Green · 커밋: refactor(phase-N): Step N.M <slug>
 ```
 
-**완료 기준:** `refactoring_plan.md` 전 Phase 체크 · 회귀 Green
-
-**REFACTOR 단일 Step 프롬프트 (복사용)**
+**Step 진행 (복사용):**
 
 ```
-브랜치 refactoring. docs/refactoring_plan.md Phase N Step M만 실행.
-CoT 5항목 먼저. Step 하나·커밋 하나. ctest Green 필수.
+계속
+```
+
+**완료 기준:** plan 전 Phase 체크 · ctest 67/67 · GM · coverage PASS · Report **09**, **10**
+
+---
+
+**재실행용 (단일 Step 템플릿):**
+
+```
+@docs/refactoring_plan.md @tests/ @src/cpp/
+
+[P] 모던 C++ 리팩토링 코치
+[C] refactoring — docs/refactoring_plan.md Phase N Step M만
+[T] [CoT] 냄새·목표 / 변경 파일 / 테스트 / 롤백 / ctest
+[F] refactor(phase-N): Step N.M <slug> · ctest + GoldenMaster Green
 ```
 
 ---
 
-### 7. 결함 분석·문서화 — `green` (Golden Master 후) 또는 `refactoring`
+### 7. 결함 분석·문서화 — `refactoring` · ⏭ **다음** (실행용 템플릿)
 
 ```
 @src/cpp/ @tests/ @docs/requirements_analysis.md @docs/test_plan.md
+@docs/refactoring_plan.md @README.md
 
 [P] C++ QA 엔지니어
-[C] DEF-01~04 및 FA-TC 결과 대조
-[T]
-    A) ctest·요구사항·경계값 분석 — 버그 위치, Severity, 최소 수정안
-    B) docs/defect_list.md (DEF-001~, ItemType, Steps, Expected, Actual)
-[F] A) 수정은 refactoring Step과 연동 · B) 문서 (한글)
+[C] Phase 0~7 완료 · DEF 문서화
+[T] docs/defect_list.md
+    - DEF-01~04: 재현·해소 Phase/Step·FA-TC·GM
+    - Mom Test H2/H4/H5/H6
+    - kw(main) vs fil(전체 서브키) 한계 명시
+[F] docs/defect_list.md · README TODO #7 [x]
 ```
 
-**완료 기준:** `docs/defect_list.md` + 관련 Step Green
+**완료 기준:** defect_list · PR 준비
 
 ---
 
-### 8. Golden Master / 회귀 — 갱신·회귀 ★
+### 8. Golden Master 갱신 — §8 · ✅ (절차)
 
-> **절차:** **4-D와 동일** ([T]·[F]·완료 기준·CoT·커밋 규칙 그대로 적용)  
-> **적용 시점:** refactoring Step 완료 후 · `feature/newFeature` (§9) · 동작·출력 변경 시 스냅샷 재approve  
-> **선행 조건 (필수):** FA-TC 전건 `ctest` Green · `run_coverage_gate` PASS  
-> **금지:** TC·커버리지 FAIL 상태에서 `tests/golden/` 갱신  
-> **green 최초 확립:** **4-D**에서 1회 수행 — 본 절(§8)은 이후 **갱신·회귀**용
+> **최초 확립:** §4-D와 동일 — **이미 실행 완료**
+
+**Step·기능 후 갱신 (§4-D [T]·[F] 동일):**
 
 ```
-@docs/test_plan.md @tests/ @docs/coverage_report.md @docs/golden_master.md
-
-[P] Golden Master 회귀 테스트 설계자
-[C] refactoring · feature/newFeature — **4-D와 동일 절차**로 GM 유지·갱신
-[T] 4-D [T] 항목 1~5 동일 실행
-    - 변경된 GM-ID만 선택 갱신 가능 (1 GM = 1 CoT = 1 Commit)
-    - `scripts/generate_golden_master.ps1` 실행 전 FA-TC+커버리지 Green 재확인
-    - docs/golden_master.md · test_plan GM 시나리오 동기화
-[F] 4-D [F]와 동일 · `ctest` 전체 Green (FA-TC + GoldenMaster)
-```
-
-**완료 기준:** 4-D **완료 기준**과 동일 · 해당 Step/기능 merge 전 회귀 Green
-
-**Golden Master 갱신 프롬프트 (복사용)**
-
-```
-브랜치 <refactoring|feature/newFeature>. Golden Master 갱신만 진행해줘. (§8, 절차=4-D)
+브랜치 <refactoring|feature/newFeature>. Golden Master 갱신만 (§8, 절차=4-D).
 선행: FA-TC 전건 ctest Green && run_coverage_gate PASS.
-4-D와 동일 CoT·GM-XX 절차. 변경 GM-ID만: test(<branch>): GM-XX <slug>
+4-D와 동일 CoT·GM-XX. 변경된 GM-ID만 선택 갱신.
+커밋: test(<branch>): GM-XX <slug>
 ```
 
 ---
 
-### 9. 기능 개선 — `feature/newFeature`
+### 9. 기능 개선 — `feature/newFeature` · ⬜ (실행용 템플릿)
 
 ```
 @docs/requirements_analysis.md @docs/test_plan.md @tests/ @docs/golden_master.md @src/cpp/
 
 [P] 시니어 C++ 개발자
 [C] feature/newFeature — project_purpose 미션 6~7 (Trend, File DB 등)
-     green 기준선(FA-TC+최초 커버리지+GM) 확보 **이후** 확장
+     green 기준선(FA-TC+커버리지+GM) 이후 확장
 [T] 기능별 **테스트·커버리지·Golden Master·구현** (순서 고정)
     1) test_plan에 기능 TC-ID 추가 (FA-TC-XX) — Given-When-Then·AC 매핑
     2) RED: 기능 TC 1건 = 1 CoT = 1 Commit (`test(feature):` 또는 `test(red):`)
-    3) GREEN: 기능 구현 + TC Green (`feat(feature):`)
-    4) **커버리지**: 신규·변경 분기 포함 — Domain/Boundary 게이트 재측정, 미달 시 tests/만 보강
-    5) **Golden Master (§8, 4-D와 동일 절차)**: 출력·집계·CSV 등 **동작이 바뀌면** GM-ID 스냅샷 갱신
-       - `scripts/generate_golden_master.ps1` — FA-TC+커버리지 Green 재확인 후 approve
-       - docs/golden_master.md · test_plan GM 시나리오 동기화
-    6) (선택) 해당 기능 범위 refactor — Step당 ctest+커버리지+GM 회귀
-    - 1 기능 = CoT 블록 단위로 위 1~5 반복
-    - **회귀 (매 커밋·merge 전):** FA-TC 전건 + run_coverage_gate PASS + GoldenMaster ctest Green
-[F] test_plan 갱신 + tests/ + (필요 시) golden/ + coverage_report + 구현 + docs/feature_changelog.md (선택)
+    3) GREEN: 기능 구현 + TC Green (`feat(feature):`, green **최소 수정** 규칙)
+    4) 커버리지: 신규·변경 분기 포함 Domain/Boundary 재측정, 미달 시 tests/만
+    5) Golden Master (§8, 4-D 동일): 출력·집계·CSV **동작이 바뀌면** GM-ID 갱신
+    6) (선택) 해당 기능 범위 refactor — Step마다 ctest+커버리지+GM 회귀
+    - 1 기능 = CoT 블록 단위로 1~6 반복
+    - 회귀 (매 커밋·merge 전): FA-TC 전건 + run_coverage_gate PASS + GoldenMaster Green
+[F] test_plan 갱신 + tests/ + golden/ + coverage_report + 구현 + (선택) feature_changelog.md
 ```
 
-**완료 기준:** 기능 FA-TC Green · 커버리지 게이트 PASS · GM 회귀 Green · main merge 준비
-
-**기능 단일 추가 프롬프트 (복사용)**
+**기능 단일 (복사용):**
 
 ```
-브랜치 feature/newFeature. <기능명> 한 건만 추가해줘.
-순서: test_plan TC 추가 → RED → GREEN → 커버리지 보강(run_coverage_gate) → Golden Master 갱신(해당 GM-ID).
-제약: 각 단계 CoT 후 1 Commit. 회귀: FA-TC + 커버리지 + GM 전부 Green.
+브랜치 feature/newFeature. <기능명> 한 건.
+TC 추가 → RED → GREEN(최소) → 커버리지 → GM. CoT·1 Commit per 단계.
 ```
 
 ---
 
-### 10. 결함 관리 프로세스 — `spec`
+### 10. 결함 관리 프로세스 — `spec` · ⬜ (실행용 템플릿)
 
 ```
 @docs/defect_list.md @docs/test_plan.md
 
 [P] QA 리드
-[T] docs/defect_report.md — Severity×ItemType, 보고 템플릿, 메트릭
+[T] docs/defect_report.md — Severity×ItemType, 템플릿, 메트릭
 [F] 프로세스 문서 (한글)
 ```
 
-**완료 기준:** `docs/defect_report.md`
-
 ---
 
-### 11. 설계 다이어그램 (선택) — `spec`
+### 11. 설계 다이어그램 (선택) — `spec` · ⬜ (실행용 템플릿)
 
 ```
 @src/cpp/ @docs/refactoring_plan.md
 
 [P] 소프트웨어 아키텍트
-[T] Mermaid — Before/After 클래스·HTTP 흐름
+[T] Mermaid Before/After 클래스·HTTP 흐름
 [F] docs/architecture.md
 ```
 
 ---
 
-### 12. QA 종합 검토 — `refactoring` 또는 `main` 직전
+### 12. QA 종합 검토 — `refactoring` / `main` · ⬜ (실행용 템플릿)
 
 ```
 @docs/requirements_analysis.md @docs/code_quality_report.md
@@ -532,15 +518,13 @@ CoT 5항목 먼저. Step 하나·커밋 하나. ctest Green 필수.
 @tests/
 
 [P] QA 리드
-[T] docs/qa_final_report.md — 커버리지, 결함 패턴, Before/After, AI 회고
-[F] ctest·lcov 수치 반영 후 작성
+[T] docs/qa_final_report.md — 커버리지, 결함, Before/After, 회고
+[F] ctest·lcov 반영
 ```
-
-**완료 기준:** `docs/qa_final_report.md`
 
 ---
 
-## 후처리 프롬프트 (각 단계 완료 후 1회)
+## 후처리 프롬프트 (단계 완료 시 1회)
 
 ```
 [P] 프로젝트 문서·배포 담당
@@ -549,40 +533,33 @@ CoT 5항목 먼저. Step 하나·커밋 하나. ctest Green 필수.
     1) Report/NN.<slug>-report-YYYY-MM-DD.md
        - 브랜치, CoT 요약, 변경 파일, ctest/build 결과, 다음 Step/브랜치
     2) Prompt/NN.<slug>-transcript-YYYY-MM-DD_prompt.md Export
-	- User 프롬프트 + Assistant 전체 대화 (대화형 형식)
+       - User 프롬프트 + Assistant 전체 대화 (대화형 형식)
     3) Prompt/full-transcript-refactor-first-YYYY-MM-DD_prompt.md 갱신
     4) README.md 파일에 진행사항 반영
     5) git add → commit (메시지에 브랜치·TC-ID, 한글 설명) → push
 [F] 생성 파일 목록 + git 결과 (한글)
 ```
 
-**슬러그 예:** `spec-test-plan`, `red-fa-tc-01`, `green-fa-tc-01`, `green-coverage-gate`, `green-golden-master`, `green-gm-01`, `refactor-phase0-step1`, `feature-tc-trend`, `feature-coverage-trend`, `feature-gm-trend`
+**슬러그 예:** `spec-test-plan`, `red-fa-tc-01`, `green-fa-tc-01`, `green-coverage-gate`, `green-golden-master`, `green-gm-01`, `refactor-phase0-step1`, `refactor-phase5-7`, `defect-list`, `feature-tc-trend`, `feature-gm-trend`  
+**다음 NN:** **11** (`defect-list`)
 
 ---
 
-## 단계·브랜치 의존 관계
+## 단계 의존 관계
 
 ```mermaid
 flowchart TD
-    S0[0.cursorrules<br/>spec]
-    S1[1.요구사항<br/>spec]
-    S2[2.코드품질<br/>spec]
-    S1 --> S3[3.Test Plan<br/>spec]
-    S2 --> S3
-    S3 --> R[4-A.RED<br/>red]
-    R --> G[4-B.GREEN TC<br/>green]
-    G --> GC[4-C.Coverage Gate<br/>green]
-    GC --> GD[4-D.Golden Master<br/>green]
-    GD --> RP[5.refactoring_plan]
-    RP --> RF[6.Refactor Steps<br/>refactoring]
-    RF --> GM8[8.GM 갱신·회귀<br/>refactor·feature]
-    GD --> D7[7.결함문서]
-    RF --> D7
-    RF --> F9[9.feature/newFeature]
-    F9 --> GM8
-    D7 --> F9
-    S1 --> S10[10.결함관리<br/>spec]
-    RF --> S12[12.QA종합]
+    S0[0~3 spec] --> R[4-A RED]
+    R --> G[4-B GREEN]
+    G --> GC[4-C Coverage]
+    GC --> GD[4-D GM]
+    GD --> CS[5-A Smell+plan작성]
+    CS --> RF[6 Phase0~4]
+    RF --> UP[5-B plan갱신]
+    UP --> RF2[6 Phase5~7]
+    RF2 --> D7[7 defect_list]
+    D7 --> F9[9 feature]
+    RF2 --> S12[12 QA]
     F9 --> S12
 ```
 
@@ -592,68 +569,99 @@ flowchart TD
 
 | # | 브랜치 | 상황 | 핵심 지시 |
 |---|--------|------|-----------|
-| 1 | spec | 시작 | 코드 수정 금지 · test_plan.md · TC-ID·CoT 템플릿 |
+| 7 | refactoring | **다음** | **#7 defect_list** → PR → **#9 feature** |
+| 1 | spec | 시작 | 코드 수정 금지 · test_plan · TC-ID·CoT |
 | 2 | red | 실패 고정 | 레거시 수정 금지 · 1 TC = 1 Commit · ctest FAIL 의도 |
-| 3 | green | TC 통과 | support만 · FA-TC **전건** Green |
-| 4 | green | 커버리지 | TC Green 후 · Domain≥90% Boundary≥85% · tests만 보강 |
-| 5 | green | Golden Master (4-D) | **최초 커버리지 PASS 후만** · GM-01~ · ctest 전체 Green |
-| 5b | refactor·feature | Golden Master (§8) | **4-D와 동일 절차** · 변경 GM-ID 갱신 · 회귀 3종 Green |
-| 6 | refactoring | 구조 | **green 완료 후** · plan Step·CoT·Green+GM+커버리지 회귀 |
-| 7 | feature | 확장 | TC 추가→RED→GREEN→**커버리지**→**GM 갱신** · FA-TC+커버리지+GM 회귀 |
+| 3 | green | TC 통과 | 우선 support · 필요 시 src/cpp **최소** |
+| 4 | green | 커버리지 | TC Green 후 · Domain≥90% Boundary≥85% |
+| 5 | green | GM (4-D) | **커버리지 PASS 후만** · GM-01~ · ctest 전체 |
+| 5b | refactor·feature | GM (§8) | **4-D와 동일** · 변경 GM-ID만 · 회귀 3종 Green |
+| 6 | refactoring | 구조 | green 완료 후 · plan Step · CoT · Green+GM+커버리지 |
+| 7 | feature | 확장 | TC → RED → GREEN → 커버리지 → GM(§8) |
 
 ---
 
-## 원본 대비 최적화 요약
+## 빠른 복사: 전체 워크플로우
 
-| 개선 항목 | 내용 |
-|-----------|------|
-| 프로젝트 특화 | SHealth 템플릿 → Feedback Analyzer, DEF-01~04, HTTP/Session |
-| 브랜치 전략 | spec → red → green → refactoring → feature/newFeature 명시 |
-| 코드 수정 경계 | spec/red/green 레거시 금지 · refactor/feature만 계획 범위 허용 |
-| CoT·커밋 | TC·Refactor 각각 1 Commit 단위 CoT 필수 |
-| README·미션 | project_purpose 1~7단계를 단계 1·3·6·9·12에 매핑 |
-| 의존성 | `@` 참조·선행 docs·브랜치 표기 |
-| green 게이트 | FA-TC 전건 → 최초 커버리지(90/85%) → 4-D Golden Master → refactoring |
-| GM 갱신 | §8 = 4-D와 동일 절차 · refactoring·feature Step/기능 후 |
-| feature 확장 | TC 추가 → 커버리지 보강 → Golden Master 갱신 → 회귀 3종(FA-TC+커버리지+GM) |
+> **순서 고정** · 각 단계 종료 시 **후처리 프롬프트** 1회 · 상세 문구는 위 **단계별 실제 프롬프트** 참조
+
+```
+Feedback Analyzer C++17 TDD/리팩토링
+브랜치: main → spec → red → green → refactoring → feature/newFeature → main
+
+공통 제약:
+- spec/red: 기존 src/cpp 레거시 수정 금지
+- green: tests/support 우선 · FA-TC·커버리지·GM에 필요한 src/cpp 최소 수정만
+- refactoring: refactoring_plan Phase N Step M · 1 Step = 1 CoT = 1 Commit
+- feature: TC 추가 → RED → GREEN → 커버리지 → GM(§8) → (선택) refactor
+- TC·Refactor: Given-When-Then / 냄새-목표-검증 CoT 필수
+
+── spec ──
+0) @README.md → .cursorrules
+1) @README.md @project_purpose.md → docs/requirements_analysis.md
+2) @src/cpp/* @README.md → docs/code_quality_report.md
+3) @docs/* @TextAnalyzer.h @Filters.h → docs/test_plan.md
+
+── red ──
+4-A) @docs/test_plan.md → Catch2·FA-TC-01~15 RED·ctest 의도적 FAIL
+
+── green (순서 고정) ──
+4-B) @docs/test_plan.md @tests/ → FA-TC GREEN·support Domain
+4-C) @docs/test_plan.md @tests/ @CMakeLists.txt → run_coverage_gate PASS
+4-D) @docs/test_plan.md @tests/ @docs/coverage_report.md → GM-01~04 최초
+
+── refactoring 진입 전 ──
+5-A) @src/cpp/ @docs/* → code_quality §갱신 + refactoring_plan.md **작성** (Phase 0~4)
+5-B) @docs/refactoring_plan.md → plan **갱신** (Phase 0~4 [x] · Phase 5~7 추가)
+
+── refactoring ──
+6)  @docs/refactoring_plan.md → Phase Step별 실행 · Step 간 `계속`
+8)  Step·기능·출력 변경 시 GM 갱신 (§4-D 동일 절차·선행 Green)
+
+── 문서·확장 ──
+7)  @src/cpp/ @tests/ @docs/* → docs/defect_list.md (DEF-01~04·Mom Test)
+9)  feature/newFeature — 미션 6~7 · TC→RED→GREEN→커버리지→GM
+10) docs/defect_report.md (결함 관리 프로세스)
+11) (선택) docs/architecture.md
+12) docs/qa_final_report.md
+
+green/refactoring 완료 게이트 (매 Step·merge 전):
+- ctest FA-TC 전건 Green (현재 67/67)
+- .\scripts\run_coverage_gate.ps1 -BuildDir build-cov  (Domain≥90%, Boundary≥85%)
+- ctest -R "^GoldenMaster$" Green
+
+빌드·검증:
+  cmake --build build --target feedback_analyzer_tests feedback_analyzer
+  ctest --test-dir build --output-on-failure
+
+단계 완료 후처리 (매 NN):
+  Report/NN.<slug>-report-YYYY-MM-DD.md
+  Prompt/NN.<slug>-transcript-YYYY-MM-DD_prompt.md
+  Prompt/full-transcript-refactor-first-YYYY-MM-DD_prompt.md 갱신
+  README.md TODO [x] · git commit(한글) · push
+
+현재 진행 위치: #7 defect_list (브랜치 refactoring)
+```
 
 ---
 
-## 빠른 복사: 전체 워크플로우 (한 번에 지시할 때)
+## 문서 인덱스 (Report / Prompt)
 
-```
-Feedback Analyzer C++17 TDD/리팩토링을 아래 순서·브랜치로 진행해줘.
+| NN | Report | Prompt |
+|----|--------|--------|
+| 00 | `Report/00.spec-cursorrules-report-2026-05-22.md` | `Prompt/00.spec-cursorrules-transcript-2026-05-22_prompt.md` |
+| 01 | `Report/01.spec-requirements-analysis-report-2026-05-22.md` | `Prompt/01.spec-requirements-analysis-transcript-2026-05-22_prompt.md` |
+| 02 | `Report/02.spec-code-quality-report-2026-05-22.md` | `Prompt/02.spec-code-quality-transcript-2026-05-22_prompt.md` |
+| 03 | `Report/03.spec-test-plan-report-2026-05-22.md` | `Prompt/03.spec-test-plan-transcript-2026-05-22_prompt.md` |
+| 04 | `Report/04.red-catch2-red-tests-report-2026-05-22.md` | `Prompt/04.red-catch2-red-tests-transcript-2026-05-22_prompt.md` |
+| 05 | `Report/05.green-fa-tc-pass-report-2026-05-22.md` | `Prompt/05.green-fa-tc-pass-transcript-2026-05-22_prompt.md` |
+| 06 | `Report/06.green-coverage-gate-report-2026-05-22.md` | `Prompt/06.green-coverage-gate-transcript-2026-05-22_prompt.md` |
+| 07 | `Report/07.green-golden-master-report-2026-05-22.md` | `Prompt/07.green-golden-master-transcript-2026-05-22_prompt.md` |
+| 08 | `Report/08.spec-refactoring-plan-report-2026-05-22.md` | `Prompt/08.spec-refactoring-plan-transcript-2026-05-22_prompt.md` |
+| 09 | `Report/09.refactor-phase0-4-report-2026-05-22.md` | `Prompt/09.refactor-phase0-4-transcript-2026-05-22_prompt.md` |
+| 10 | `Report/10.refactor-phase5-7-report-2026-05-22.md` | `Prompt/10.refactor-phase5-7-transcript-2026-05-22_prompt.md` |
+| 11 | `Report/11.defect-list-report-YYYY-MM-DD.md` (예정) | `Prompt/11.defect-list-transcript-YYYY-MM-DD_prompt.md` (예정) |
 
-브랜치: spec → red → green → refactoring → feature/newFeature
-제약:
-- spec: 코드 수정 금지, docs/test_plan.md 작성
-- red/green: 기존 src/cpp 레거시 수정 금지
-- refactoring: refactoring_plan Step별 1 Commit, CoT 5항목, ctest Green
-- TC·Refactor: Chain-of-Thought 후 1건=1커밋
+**통합:** `Prompt/full-transcript-refactor-first-2026-05-22_prompt.md`
 
-0) spec — .cursorrules
-1) spec — @README.md @project_purpose.md → docs/requirements_analysis.md
-2) spec — @src/cpp → docs/code_quality_report.md
-3) spec — Test Plan → docs/test_plan.md (TC FA-001~, CoT 템플릿)
-4-A) red — P0 TC RED, tests만, 레거시 diff 0
-4-B) green — FA-TC 전건 GREEN (support만, 레거시 diff 0)
-4-C) green — 커버리지 게이트 최초 확립 (Domain≥90%, Boundary≥85%, scripts/run_coverage_gate)
-4-D) green — Golden Master 최초 확립 (4-C PASS 후, GM-01~, ctest 전체 Green)
-8) refactor·feature — Golden Master 갱신·회귀 (4-D와 동일 절차)
-5) spec/refactor — docs/refactoring_plan.md (green 완료 기준선 이후)
-6) refactoring — Step-by-step, 1 Commit/Step, ctest+GM+커버리지 회귀
-7) defect_list.md + 결함 Step 연동
-9) feature/newFeature — TC→커버리지→GM 갱신 후 구현 (미션 6~7, 회귀 3종)
-10) spec — defect_report.md
-11) (선택) architecture.md
-12) qa_final_report.md
-
-green 완료 조건 (refactoring 진입 전):
-- FA-TC 전건 ctest Green
-- run_coverage_gate PASS (Domain≥90%, Boundary≥85%)
-- Golden Master ctest Green
-
-검증: cmake --build build && ctest && scripts/run_coverage_gate.ps1
-각 단계: Report + Prompt transcript + full-transcript 갱신 + git commit/push
-설명은 한글.
-```
+*이 파일은 `README.md`·`docs/refactoring_plan.md`와 함께 갱신한다.*
