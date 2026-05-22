@@ -134,7 +134,7 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
     - 브랜치: spec → red → green → refactoring → feature/newFeature
     - spec/red: 기존 src/cpp 레거시 코드 수정 금지
     - green: 최소한의 코드 수정만 가능
-    - refactoring: refactoring_plan Phase·1 Step·1 Commit
+    - refactoring: green 후 **코드 스멜 재점검(5-A)** → refactoring_plan(5-B) → Phase·1 Step·1 Commit
     - CoT: TC·Refactor 각각 Given-When-Then / 냄새-목표-검증
     - 도메인: DEF-01~04, Mom Test 가설(H1~H6), 미션 1~7 로드맵
     - 테스트: Given-When-Then, 경계(전체/긍정/부정/중립, 카테고리 5종)
@@ -368,25 +368,70 @@ CoT 후 GM-XX 하나씩 커밋: test(green): GM-XX <slug>
 
 ### 5. 리팩토링 계획 — `spec` 또는 `refactoring` 진입 전
 
+> **순서 고정:** **5-A 코드 스멜 재점검** → **5-B 리팩토링 로드맵 작성**  
+> green 기준선(FA-TC + 커버리지 + GM) 확보 **이후**, `src/cpp/` **현재 상태**를 기준으로 스멜을 다시 본 뒤 Phase를 설계한다.  
+> (단계 2 `code_quality_report.md`는 **리팩터링 전** 레거시 스냅샷 — 5-A에서 **갱신·보완** 필수)
+
+---
+
+#### 5-A. 코드 스멜 재점검 (선행) — `spec` 또는 `refactoring` ★
+
+```
+@src/cpp/ @docs/code_quality_report.md @docs/test_plan.md
+@docs/requirements_analysis.md @README.md
+
+[P] 시니어 C++ 아키텍트 + 모던 C++ 리팩토링 코치
+[C] green **완료 후** · **src/cpp/ 프로덕션 코드 수정 금지** (읽기·문서만)
+[T] 현재 코드베이스 Code Smell 정적 분석
+    1) @src/cpp/ 전 파일 스캔 (httplib.h 등 서드파티 제외)
+    2) 단계 2 보고서와 **diff**: 이미 해소된 스멜 vs **잔존** 스멜
+    3) 스멜 분류 (근거: 파일·심볼·행 범위)
+       - God Module / God Object (Session 전역 상태 등)
+       - Duplicate Code (classifySentiment, containsAny, 타임스탬프 등)
+       - Feature Envy (Constants map 구조 결합)
+       - Shotgun Surgery (카테고리·키워드 이중 정의)
+       - Long Method / Long Parameter List (renderPage, registerRoutes)
+       - Header에 비즈니스 로직 (Logger, Filters 등)
+       - Lava Flow / Dead Parameter / Magic String
+    4) DEF-01~04와 매핑: **결함 해소 여부** · **잔여 비대칭**(kw `main` vs fil 전체 서브키 등)
+    5) 스멜 → **리팩토링 Phase/Step 후보** 표 (우선순위 P0~P3)
+    6) **테스트 축**: 각 스멜이 FA-TC·GM-ID 중 무엇으로 검증되는지 1줄씩
+[F] docs/code_quality_report.md **갱신** (§「green 이후·리팩터링 전」 또는 동등 절 추가)
+    · 잔존 스멜 요약 표 + Phase 후보 매핑 포함
+```
+
+**완료 기준:** `src/cpp/` diff 0 · 스멜 목록·우선순위·TC/GM 매핑이 문서에 있음 · **5-B 착수 가능**
+
+**5-A 단독 프롬프트 (복사용)**
+
+```
+브랜치 spec 또는 refactoring. green 완료(FA-TC+커버리지+GM) 확인 후
+5-A만 진행: @src/cpp/ 코드 스멜 재점검.
+제약: src/cpp 수정 금지. docs/code_quality_report.md 갱신.
+DEF-01~04 해소/잔존, P0~P3, FA-TC·GM 매핑 표 포함.
+```
+
+---
+
+#### 5-B. 리팩토링 로드맵 작성 — `spec` 또는 `refactoring`
+
 ```
 @docs/code_quality_report.md @docs/test_plan.md @docs/requirements_analysis.md
-@src/cpp/
+@src/cpp/ @docs/golden_master.md
 
 [P] 모던 C++ 리팩토링 코치
-[C] green 브랜치 **완료 후** 기준선 (FA-TC Green + 커버리지 게이트 + Golden Master) — **실행 가능한 Phase 로드맵**
+[C] green 기준선 + **5-A 스멜 재점검 완료** — **실행 가능한 Phase 로드맵**
 [T] docs/refactoring_plan.md 작성
-    - Phase 0: DEF-01 감정 단일 소스 (Constants 병합)
-    - Phase 1: DEF-02 키워드 규칙 통일 (main 키 정책)
-    - Phase 2: fil_data / Session / download 일원화
-    - Phase 3: containsAny 공통화, 네이밍 (fil→filterFeedbacks)
-    - Phase 4: main.cpp 분리 (HtmlRenderer, Router)
-    - 각 Step: 목표 / 변경 파일(레거시 허용) / 리스크 / 롤백 / ctest / **CoT 질문 3개**
-    - **1 Step = 1 Commit** 명시
-    - @README.md 에 green 완료조건 아래에 refactoring TODO 추가
+    - **입력:** 5-A 잔존 스멜·P0~P3 · DEF-01~04 · AC-SENT/KW/DL (test_plan)
+    - Phase 0~4: DEF·God Module·중복 제거 (green Domain 계약에 레거시 정합)
+    - Phase 5~N: 5-A **잔존 스멜** 기반 후속 Phase (헤더/cpp 분리, SentimentClassifier, Session 캡슐화 등)
+    - 각 Step: 목표 / 변경 파일(레거시 허용) / 리스크 / 롤백 / ctest·GM / **CoT 질문 3개**
+    - **1 Step = 1 Commit** · 커밋 메시지 `refactor(phase-N): Step N.M …`
+    - @README.md 에 green 완료조건 아래 refactoring TODO·Phase 표 추가
 [F] docs/refactoring_plan.md (Phase 0~N 체크리스트, 한글)
 ```
 
-**완료 기준:** 로드맵 문서 · (선택) spec에서 작성, 실행은 refactoring 브랜치
+**완료 기준:** 로드맵 문서 · Phase가 **5-A 스멜 우선순위**와 정합 · (선택) spec에서 작성, **실행은 refactoring** 브랜치
 
 ---
 
@@ -575,7 +620,8 @@ flowchart TD
     R --> G[4-B.GREEN TC<br/>green]
     G --> GC[4-C.Coverage Gate<br/>green]
     GC --> GD[4-D.Golden Master<br/>green]
-    GD --> RP[5.refactoring_plan]
+    GD --> CS[5-A.Code Smell<br/>재점검]
+    CS --> RP[5-B.refactoring_plan]
     RP --> RF[6.Refactor Steps<br/>refactoring]
     RF --> GM8[8.GM 갱신·회귀<br/>refactor·feature]
     GD --> D7[7.결함문서]
@@ -599,8 +645,10 @@ flowchart TD
 | 3 | green | TC 통과 | support만 · FA-TC **전건** Green |
 | 4 | green | 커버리지 | TC Green 후 · Domain≥90% Boundary≥85% · tests만 보강 |
 | 5 | green | Golden Master (4-D) | **최초 커버리지 PASS 후만** · GM-01~ · ctest 전체 Green |
+| 5-A | spec/refactor | 코드 스멜 재점검 | green 후 `@src/cpp/` 스캔 · `code_quality_report` 갱신 · **src/cpp diff 0** |
+| 5-B | spec/refactor | refactoring_plan | **5-A 완료 후** · 잔존 스멜·DEF·TC 기반 Phase 0~N 로드맵 |
 | 5b | refactor·feature | Golden Master (§8) | **4-D와 동일 절차** · 변경 GM-ID 갱신 · 회귀 3종 Green |
-| 6 | refactoring | 구조 | **green 완료 후** · plan Step·CoT·Green+GM+커버리지 회귀 |
+| 6 | refactoring | 구조 | **5-B plan 확정 후** · Step·CoT·Green+GM+커버리지 회귀 |
 | 7 | feature | 확장 | TC 추가→RED→GREEN→**커버리지**→**GM 갱신** · FA-TC+커버리지+GM 회귀 |
 
 ---
@@ -615,7 +663,7 @@ flowchart TD
 | CoT·커밋 | TC·Refactor 각각 1 Commit 단위 CoT 필수 |
 | README·미션 | project_purpose 1~7단계를 단계 1·3·6·9·12에 매핑 |
 | 의존성 | `@` 참조·선행 docs·브랜치 표기 |
-| green 게이트 | FA-TC 전건 → 최초 커버리지(90/85%) → 4-D Golden Master → refactoring |
+| green 게이트 | FA-TC 전건 → 최초 커버리지(90/85%) → 4-D Golden Master → **5-A 스멜 재점검** → 5-B plan → refactoring |
 | GM 갱신 | §8 = 4-D와 동일 절차 · refactoring·feature Step/기능 후 |
 | feature 확장 | TC 추가 → 커버리지 보강 → Golden Master 갱신 → 회귀 3종(FA-TC+커버리지+GM) |
 
@@ -642,7 +690,8 @@ Feedback Analyzer C++17 TDD/리팩토링을 아래 순서·브랜치로 진행�
 4-C) green — 커버리지 게이트 최초 확립 (Domain≥90%, Boundary≥85%, scripts/run_coverage_gate)
 4-D) green — Golden Master 최초 확립 (4-C PASS 후, GM-01~, ctest 전체 Green)
 8) refactor·feature — Golden Master 갱신·회귀 (4-D와 동일 절차)
-5) spec/refactor — docs/refactoring_plan.md (green 완료 기준선 이후)
+5-A) spec/refactor — @src/cpp/ 코드 스멜 재점검 → docs/code_quality_report.md 갱신 (src/cpp diff 0)
+5-B) spec/refactor — docs/refactoring_plan.md (5-A 잔존 스멜·DEF·TC 기반 Phase 0~N)
 6) refactoring — Step-by-step, 1 Commit/Step, ctest+GM+커버리지 회귀
 7) defect_list.md + 결함 Step 연동
 9) feature/newFeature — TC→커버리지→GM 갱신 후 구현 (미션 6~7, 회귀 3종)
