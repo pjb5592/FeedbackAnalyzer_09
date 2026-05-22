@@ -465,6 +465,8 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
 [P] 시니어 C++ 개발자
 [C] feature/newFeature — project_purpose 미션 6~7 (Trend, File DB 등)
      green 기준선(FA-TC+커버리지+GM) 이후 확장
+     - saveResult 실제 구현
+     - 감성 분석 정확도 개선: 단순 키워드 매칭 → 가중치 기반 스코어링으로 업그레이드 
 [T] 기능별 **테스트·커버리지·Golden Master·구현** (순서 고정)
     1) test_plan에 기능 TC-ID 추가 (FA-TC-XX) — Given-When-Then·AC 매핑
     2) RED: 기능 TC 1건 = 1 CoT = 1 Commit (`test(feature):` 또는 `test(red):`)

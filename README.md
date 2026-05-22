@@ -93,7 +93,7 @@ feedback_analyzer_cpp/
 | 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [x] (2026-05-22, Phase 0~7 · 20 Step 커밋) |
 | 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [x] (2026-05-22, DEF-01~04·Mom H2/H4/H5/H6·kw/fil 한계) |
 | 8 | Golden Master (4-D) | green | `tests/golden/*.approved.txt`, `docs/golden_master.md` (4-B·4-C 후) | [x] |
-| 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |
+| 9 | 기능 개선 | feature/newFeature | Trend·File DB·saveResult·가중치 감성 (FA-TC-55~58, GM-10) | [x] |
 | 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [ ] |
 | 11 | 설계 다이어그램 (선택) | spec | `docs/architecture.md` | [ ] |
 | 12 | QA 종합 검토 | refactoring / main | `docs/qa_final_report.md` | [ ] |

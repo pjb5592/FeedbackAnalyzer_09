@@ -6,7 +6,8 @@
 | 작성 관점 | 시니어 QA 리드 (TDD·계약 고정) |
 | 브랜치 | **spec** — `src/cpp/` 레거시 **수정 금지** |
 | 근거 | `README.md`, `docs/project_purpose.md`, `docs/requirements_analysis.md`, `docs/code_quality_report.md`, `.cursorrules` |
-| 시나리오 ID | FA-001~055 → 본 문서 **FA-TC-01~55** (1:1) |
+| 시나리오 ID | FA-001~055 → **FA-TC-01~58** (기준 55 + feature 56~58) |
+| feature 브랜치 | `feature/newFeature` — FA-TC-55~58, AC-SENT-02·AC-FILE-01·AC-TREND-01·AC-DB-01 |
 | Catch2 | FetchContent, `ctest` 통합 |
 
 ---
@@ -40,7 +41,7 @@
 | 포함 | 제외 (본 계획) |
 |------|----------------|
 | `TextAnalyzer::sent` / `kw` 유닛 | `refactoring` 브랜치 레거시 수정 |
-| `Filters::fil` 유닛 | 미션 7 Trend·File DB (feature, FA-TC-55 skip) |
+| `Filters::fil` 유닛 | (green 완료) · feature: FA-TC-55~58 |
 | DEF 일관성·경계·CSV·Session 계약 | Logger UI·multi-line (미션 3, 별도 AC) |
 | `tests/support/` Seam·Fixture | 프로덕션 `main.cpp` HTML 스냅샷 전건 (GM은 핵심 흐름만) |
 
@@ -366,7 +367,22 @@ void expectKeywordGe(const std::map<std::string,int>& m,
 | FA-TC-52 | P2 | multi-line | POST `/analyze` | 1 Feedback, `\n` 보존 | 미션3 |
 | FA-TC-53 | P2 | GM fixture | GM-01 ctest | 스냅샷 일치 | §10 |
 | FA-TC-54 | P2 | coverage script | run_coverage_gate | Domain≥90%, Boundary≥85% | §9 |
-| FA-TC-55 | P2 | trend CSV | — | **skip** `[!mayfail]` | feature |
+| FA-TC-55 | P2 | `date,text` trend CSV | `TrendCsvParser` | 일자별 긍·중·부 건수 | AC-TREND-01 |
+| FA-TC-56 | P2 | negation·혼합 극성 | `classifySentiment` | 가중치 스코어·부정 취소 | AC-SENT-02 |
+| FA-TC-57 | P2 | download 뷰 N건 | `FileHandler::saveResult` | UTF-8 BOM CSV 파일 기록 | AC-FILE-01 |
+| FA-TC-58 | P2 | 감정 키워드 파일 | `SentimentKeywordStore` | load 후 분류에 반영 | AC-DB-01 |
+
+### 7.9 feature — 미션 6~7 (FA-TC-55 ~ 58)
+
+| ID | AC | Given | When | Then |
+|----|-----|-------|------|------|
+| FA-TC-55 | AC-TREND-01 | `kCsvTrendTwoDays` (date+text 2일) | `TrendCsvParser::parse` + `TrendAnalyzer::aggregate` | 일자별 `sent.*` 합계 스냅샷 |
+| FA-TC-56 | AC-SENT-02 | `"나쁘지 않아요"` | `fa::classifySentiment` | `중립` (부정 키워드 부정어 취소) |
+| FA-TC-56b | AC-SENT-02 | `"최고입니다 정말 불만 실망 최악"` | `fa::classifySentiment` | `부정` (가중치 합 > 긍정) |
+| FA-TC-57 | AC-FILE-01 | `mixedSentimentSet()` 3건 | `FileHandler::saveResult(path)` | 파일 존재·BOM·`text\n`·행 수=3 |
+| FA-TC-58 | AC-DB-01 | 임시 `.sentiment_db` (긍정:테스트좋음) | `loadFromFile` → `classifySentiment("테스트좋음")` | `긍정` |
+
+**GM (feature):** GM-10 — trend 2일 집계 (`tests/golden/gm10_trend_aggregate.approved.txt`) · FA-TC-55
 
 ---
 
@@ -584,11 +600,14 @@ ctest --output-on-failure
 | FA-TC-52 | FA-052 | P2 | HTTP | — | HttpMultiline | IT | IT |
 | FA-TC-53 | FA-053 | P2 | GM | — | GoldenMaster01 | GM | GM |
 | FA-TC-54 | FA-054 | P2 | cov | — | CoverageGate | script | script |
-| FA-TC-55 | FA-055 | P2 | feature | — | TrendSkip | skip | skip |
+| FA-TC-55 | FA-055 | P2 | feature | — | TrendCsvAggregate | feature | feature |
+| FA-TC-56 | — | P2 | feature | — | WeightedSentiment | feature | feature |
+| FA-TC-57 | — | P2 | feature | — | FileHandlerSave | feature | feature |
+| FA-TC-58 | — | P2 | feature | — | SentimentKeywordDb | feature | feature |
 
 **범례:** C=레거시·Domain 동일 기대 · A=목표 AC(RED FAIL→GREEN Domain PASS) · IT=통합 선택
 
-**총계:** FA-TC **55**건 (P0: 32 · P1: 15 · P2: 8)
+**총계:** FA-TC **58**건 (P0: 32 · P1: 15 · P2: 11)
 
 ---
 
