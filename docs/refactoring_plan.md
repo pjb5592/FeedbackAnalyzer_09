@@ -138,9 +138,9 @@ flowchart LR
 
 ### Phase 0 체크리스트
 
-- [ ] Step 0.1 — `Filters.h` 감정 분기를 `Constants` 기준으로 교체
-- [ ] Step 0.2 — `S_KEYWORDS`·`initFilterKeywords` 제거 및 초기화 정리
-- [ ] Phase 0 게이트: ctest + GM-02 + 커버리지
+- [x] Step 0.1 — `Filters.h` 감정 분기를 `Constants` 기준으로 교체
+- [x] Step 0.2 — `S_KEYWORDS`·`initFilterKeywords` 제거 및 초기화 정리
+- [x] Phase 0 게이트: ctest + GM-02 + 커버리지
 
 ---
 
@@ -194,8 +194,8 @@ flowchart LR
 
 ### Phase 1 체크리스트
 
-- [ ] Step 1.1 — `Filters.h`에서 `main` skip 제거
-- [ ] Phase 1 게이트: ctest + FA-TC-30·32 + GM-02
+- [x] Step 1.1 — `Filters.h`에서 `main` skip 제거
+- [x] Phase 1 게이트: ctest + FA-TC-30·32 + GM-02
 
 ---
 
@@ -228,10 +228,10 @@ flowchart LR
 
 ### Phase 2 체크리스트
 
-- [ ] Step 2.1 — Session에 download 뷰 API 추가
-- [ ] Step 2.2 — `main.cpp`에서 `fil_data` 제거·핸들러 연동
-- [ ] Step 2.3 — `CsvUploadParser` 프로덕션 승격 및 `/upload` 연동
-- [ ] Phase 2 게이트: ctest + GM-02·03·04 + 수동 Mom H5
+- [x] Step 2.1 — Session에 download 뷰 API 추가
+- [x] Step 2.2 — `main.cpp`에서 `fil_data` 제거·핸들러 연동
+- [x] Step 2.3 — `CsvUploadParser` 프로덕션 승격 및 `/upload` 연동
+- [x] Phase 2 게이트: ctest + GM-02·03·04 + 수동 Mom H5
 
 ---
 
@@ -306,10 +306,10 @@ flowchart LR
 
 ### Phase 3 체크리스트
 
-- [ ] Step 3.1 — `KeywordMatcher` 프로덕션 추출
-- [ ] Step 3.2 — `fil` / `sent` / `kw` rename
-- [ ] Step 3.3 — `globalSent`/`globalKw`·`cout`·Session dead 멤버 정리
-- [ ] Phase 3 게이트: ctest + GM-01~04 + 커버리지
+- [x] Step 3.1 — `KeywordMatcher` 프로덕션 추출
+- [x] Step 3.2 — `fil` / `sent` / `kw` rename
+- [x] Step 3.3 — `globalSent`/`globalKw`·`cout`·Session dead 멤버 정리
+- [x] Phase 3 게이트: ctest + GM-01~04 + 커버리지
 
 ---
 
@@ -384,10 +384,10 @@ flowchart LR
 
 ### Phase 4 체크리스트
 
-- [ ] Step 4.1 — `HtmlRenderer` 분리 (`renderPage`, `escapeHtml`)
-- [ ] Step 4.2 — `HttpRouter` (또는 `AppRoutes`) — 라우트·핸들러
-- [ ] Step 4.3 — `main.cpp` 슬림화·CMake 타겟 업데이트
-- [ ] Phase 4 게이트: `feedback_analyzer` 실행 smoke + ctest + GM 전건
+- [x] Step 4.1 — `HtmlRenderer` 분리 (`renderPage`, `escapeHtml`)
+- [x] Step 4.2 — `HttpRouter` (또는 `AppRoutes`) — 라우트·핸들러
+- [x] Step 4.3 — `main.cpp` 슬림화·CMake 타겟 업데이트
+- [x] Phase 4 게이트: `feedback_analyzer` 실행 smoke + ctest + GM 전건
 
 ---
 
