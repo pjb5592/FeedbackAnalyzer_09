@@ -1,0 +1,1301 @@
+Start testing: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+----------------------------------------------------------
+1/63 Testing: FA_TC_51_Sentiment1k
+1/63 Test: FA_TC_51_Sentiment1k
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_51_Sentiment1k"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_51_Sentiment1k" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_51_Sentiment1k"
+Randomness seeded to: 1205861774
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.41 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_51_Sentiment1k" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_51_Sentiment1k" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/63 Testing: FA_TC_54_CoverageGate
+2/63 Test: FA_TC_54_CoverageGate
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_54_CoverageGate"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_54_CoverageGate" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_54_CoverageGate"
+Randomness seeded to: 203416909
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_54_CoverageGate" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_54_CoverageGate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/63 Testing: FA_TC_55_TrendSkip
+3/63 Test: FA_TC_55_TrendSkip
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_55_TrendSkip"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_55_TrendSkip" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_55_TrendSkip"
+Randomness seeded to: 2141113346
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.41 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_55_TrendSkip" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_55_TrendSkip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/63 Testing: FA_TC_53_GoldenMaster01
+4/63 Test: FA_TC_53_GoldenMaster01
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster01"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster01" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster01"
+Randomness seeded to: 2221443475
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster01" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/63 Testing: FA_TC_53_GoldenMaster02
+5/63 Test: FA_TC_53_GoldenMaster02
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster02"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster02" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster02"
+Randomness seeded to: 3511249459
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.41 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster02" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster02" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/63 Testing: FA_TC_53_GoldenMaster03
+6/63 Test: FA_TC_53_GoldenMaster03
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster03"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster03" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster03"
+Randomness seeded to: 2758121286
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster03" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster03" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/63 Testing: FA_TC_53_GoldenMaster04
+7/63 Test: FA_TC_53_GoldenMaster04
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster04"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster04" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster04"
+Randomness seeded to: 2042967558
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster04" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster04" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/63 Testing: FA_TC_53_GoldenMaster05
+8/63 Test: FA_TC_53_GoldenMaster05
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster05"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster05" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster05"
+Randomness seeded to: 2068986576
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster05" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster05" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/63 Testing: FA_TC_53_GoldenMaster06
+9/63 Test: FA_TC_53_GoldenMaster06
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster06"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster06" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster06"
+Randomness seeded to: 1276026651
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster06" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster06" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/63 Testing: FA_TC_53_GoldenMaster07
+10/63 Test: FA_TC_53_GoldenMaster07
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster07"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster07" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster07"
+Randomness seeded to: 86793410
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster07" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster07" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/63 Testing: FA_TC_53_GoldenMaster08
+11/63 Test: FA_TC_53_GoldenMaster08
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster08"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster08" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster08"
+Randomness seeded to: 1259812114
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster08" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster08" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/63 Testing: FA_TC_53_GoldenMaster09
+12/63 Test: FA_TC_53_GoldenMaster09
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_53_GoldenMaster09"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_53_GoldenMaster09" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_53_GoldenMaster09"
+Randomness seeded to: 2449831582
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_53_GoldenMaster09" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_53_GoldenMaster09" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/63 Testing: FA_TC_33_CsvTextHeader
+13/63 Test: FA_TC_33_CsvTextHeader
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_33_CsvTextHeader"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_33_CsvTextHeader" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_33_CsvTextHeader"
+Randomness seeded to: 1936167299
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_33_CsvTextHeader" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_33_CsvTextHeader" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/63 Testing: FA_TC_34_CsvIdTextColumn
+14/63 Test: FA_TC_34_CsvIdTextColumn
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_34_CsvIdTextColumn"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_34_CsvIdTextColumn" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_34_CsvIdTextColumn"
+Randomness seeded to: 1698485904
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_34_CsvIdTextColumn" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_34_CsvIdTextColumn" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/63 Testing: FA_TC_35_CsvEmpty
+15/63 Test: FA_TC_35_CsvEmpty
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_35_CsvEmpty"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_35_CsvEmpty" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_35_CsvEmpty"
+Randomness seeded to: 3832504248
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_35_CsvEmpty" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_35_CsvEmpty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/63 Testing: FA_TC_36_CsvQuoted
+16/63 Test: FA_TC_36_CsvQuoted
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_36_CsvQuoted"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_36_CsvQuoted" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_36_CsvQuoted"
+Randomness seeded to: 2234421385
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_36_CsvQuoted" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_36_CsvQuoted" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/63 Testing: FA_TC_37_CsvCrlf
+17/63 Test: FA_TC_37_CsvCrlf
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_37_CsvCrlf"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_37_CsvCrlf" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_37_CsvCrlf"
+Randomness seeded to: 2626691318
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_37_CsvCrlf" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_37_CsvCrlf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/63 Testing: FA_TC_39_DownloadWithoutFilter
+18/63 Test: FA_TC_39_DownloadWithoutFilter
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_39_DownloadWithoutFilter"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_39_DownloadWithoutFilter" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_39_DownloadWithoutFilter"
+Randomness seeded to: 925208257
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_39_DownloadWithoutFilter" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_39_DownloadWithoutFilter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/63 Testing: FA_TC_40_DownloadAfterFilter
+19/63 Test: FA_TC_40_DownloadAfterFilter
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_40_DownloadAfterFilter"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_40_DownloadAfterFilter" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_40_DownloadAfterFilter"
+Randomness seeded to: 3868696566
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_40_DownloadAfterFilter" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_40_DownloadAfterFilter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/63 Testing: FA_TC_41_DownloadFilterEmptyKeep
+20/63 Test: FA_TC_41_DownloadFilterEmptyKeep
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_41_DownloadFilterEmptyKeep"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_41_DownloadFilterEmptyKeep" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_41_DownloadFilterEmptyKeep"
+Randomness seeded to: 340920101
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_41_DownloadFilterEmptyKeep" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_41_DownloadFilterEmptyKeep" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/63 Testing: FA_TC_42_DownloadStale
+21/63 Test: FA_TC_42_DownloadStale
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_42_DownloadStale"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_42_DownloadStale" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_42_DownloadStale"
+Randomness seeded to: 485757377
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_42_DownloadStale" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_42_DownloadStale" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/63 Testing: FA_TC_43_DownloadUtf8Bom
+22/63 Test: FA_TC_43_DownloadUtf8Bom
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_43_DownloadUtf8Bom"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_43_DownloadUtf8Bom" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_43_DownloadUtf8Bom"
+Randomness seeded to: 1256879830
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_43_DownloadUtf8Bom" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_43_DownloadUtf8Bom" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/63 Testing: FA_TC_16_KeywordMainOnlyMismatch
+23/63 Test: FA_TC_16_KeywordMainOnlyMismatch
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_16_KeywordMainOnlyMismatch"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_16_KeywordMainOnlyMismatch" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_16_KeywordMainOnlyMismatch"
+Randomness seeded to: 1441019759
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_16_KeywordMainOnlyMismatch" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_16_KeywordMainOnlyMismatch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/63 Testing: FA_TC_17_FilterNeutralZero
+24/63 Test: FA_TC_17_FilterNeutralZero
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_17_FilterNeutralZero"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_17_FilterNeutralZero" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_17_FilterNeutralZero"
+Randomness seeded to: 490111546
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_17_FilterNeutralZero" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_17_FilterNeutralZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/63 Testing: FA_TC_29_ConsistencySentFilNeutral
+25/63 Test: FA_TC_29_ConsistencySentFilNeutral
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_29_ConsistencySentFilNeutral"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_29_ConsistencySentFilNeutral" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_29_ConsistencySentFilNeutral"
+Randomness seeded to: 2169899183
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_29_ConsistencySentFilNeutral" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_29_ConsistencySentFilNeutral" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/63 Testing: FA_TC_31_ConsistencyFilteredStats
+26/63 Test: FA_TC_31_ConsistencyFilteredStats
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_31_ConsistencyFilteredStats"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_31_ConsistencyFilteredStats" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_31_ConsistencyFilteredStats"
+Randomness seeded to: 506938783
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_31_ConsistencyFilteredStats" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_31_ConsistencyFilteredStats" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/63 Testing: FA_TC_30_ConsistencyKwFilMain
+27/63 Test: FA_TC_30_ConsistencyKwFilMain
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_30_ConsistencyKwFilMain"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_30_ConsistencyKwFilMain" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_30_ConsistencyKwFilMain"
+Randomness seeded to: 4166910777
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_30_ConsistencyKwFilMain" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_30_ConsistencyKwFilMain" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/63 Testing: FA_TC_32_ConsistencyPostRefactor
+28/63 Test: FA_TC_32_ConsistencyPostRefactor
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_32_ConsistencyPostRefactor"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_32_ConsistencyPostRefactor" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_32_ConsistencyPostRefactor"
+Randomness seeded to: 847585245
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_32_ConsistencyPostRefactor" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_32_ConsistencyPostRefactor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/63 Testing: FA_TC_18_FilterNeutralAll
+29/63 Test: FA_TC_18_FilterNeutralAll
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_18_FilterNeutralAll"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_18_FilterNeutralAll" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_18_FilterNeutralAll"
+Randomness seeded to: 4108499709
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_18_FilterNeutralAll" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_18_FilterNeutralAll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/63 Testing: FA_TC_19_FilterPositive
+30/63 Test: FA_TC_19_FilterPositive
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_19_FilterPositive"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_19_FilterPositive" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_19_FilterPositive"
+Randomness seeded to: 3085137604
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_19_FilterPositive" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_19_FilterPositive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/63 Testing: FA_TC_20_FilterNegative
+31/63 Test: FA_TC_20_FilterNegative
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_20_FilterNegative"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_20_FilterNegative" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_20_FilterNegative"
+Randomness seeded to: 490411799
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_20_FilterNegative" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_20_FilterNegative" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/63 Testing: FA_TC_21_FilterSentimentAll
+32/63 Test: FA_TC_21_FilterSentimentAll
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_21_FilterSentimentAll"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_21_FilterSentimentAll" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_21_FilterSentimentAll"
+Randomness seeded to: 3783103164
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_21_FilterSentimentAll" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_21_FilterSentimentAll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/63 Testing: FA_TC_22_FilterOverlapOk
+33/63 Test: FA_TC_22_FilterOverlapOk
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_22_FilterOverlapOk"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_22_FilterOverlapOk" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_22_FilterOverlapOk"
+Randomness seeded to: 2671022917
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_22_FilterOverlapOk" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_22_FilterOverlapOk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/63 Testing: FA_TC_23_FilterCategoryShipping
+34/63 Test: FA_TC_23_FilterCategoryShipping
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_23_FilterCategoryShipping"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_23_FilterCategoryShipping" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_23_FilterCategoryShipping"
+Randomness seeded to: 3510175726
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_23_FilterCategoryShipping" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_23_FilterCategoryShipping" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/63 Testing: FA_TC_24_FilterMainOnlyZero
+35/63 Test: FA_TC_24_FilterMainOnlyZero
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_24_FilterMainOnlyZero"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_24_FilterMainOnlyZero" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_24_FilterMainOnlyZero"
+Randomness seeded to: 4149674685
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_24_FilterMainOnlyZero" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_24_FilterMainOnlyZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/63 Testing: FA_TC_25_FilterKeywordAll
+36/63 Test: FA_TC_25_FilterKeywordAll
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_25_FilterKeywordAll"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_25_FilterKeywordAll" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_25_FilterKeywordAll"
+Randomness seeded to: 282859772
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_25_FilterKeywordAll" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_25_FilterKeywordAll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/63 Testing: FA_TC_26_FilterIntersection
+37/63 Test: FA_TC_26_FilterIntersection
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_26_FilterIntersection"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_26_FilterIntersection" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_26_FilterIntersection"
+Randomness seeded to: 589627582
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_26_FilterIntersection" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_26_FilterIntersection" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/63 Testing: FA_TC_27_FilterUnknownKeyword
+38/63 Test: FA_TC_27_FilterUnknownKeyword
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_27_FilterUnknownKeyword"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_27_FilterUnknownKeyword" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_27_FilterUnknownKeyword"
+Randomness seeded to: 2148496484
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_27_FilterUnknownKeyword" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_27_FilterUnknownKeyword" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/63 Testing: FA_TC_28_FilterFiveCategories
+39/63 Test: FA_TC_28_FilterFiveCategories
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_28_FilterFiveCategories"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_28_FilterFiveCategories" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_28_FilterFiveCategories"
+Randomness seeded to: 3510700095
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_28_FilterFiveCategories" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_28_FilterFiveCategories" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/63 Testing: FA_TC_09_KeywordShipping
+40/63 Test: FA_TC_09_KeywordShipping
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_09_KeywordShipping"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_09_KeywordShipping" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_09_KeywordShipping"
+Randomness seeded to: 2392298979
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_09_KeywordShipping" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_09_KeywordShipping" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/63 Testing: FA_TC_10_KeywordQuality
+41/63 Test: FA_TC_10_KeywordQuality
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_10_KeywordQuality"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_10_KeywordQuality" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_10_KeywordQuality"
+Randomness seeded to: 864821838
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_10_KeywordQuality" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_10_KeywordQuality" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/63 Testing: FA_TC_11_KeywordPrice
+42/63 Test: FA_TC_11_KeywordPrice
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_11_KeywordPrice"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_11_KeywordPrice" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_11_KeywordPrice"
+Randomness seeded to: 1078040354
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_11_KeywordPrice" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_11_KeywordPrice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/63 Testing: FA_TC_12_KeywordService
+43/63 Test: FA_TC_12_KeywordService
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_12_KeywordService"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_12_KeywordService" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_12_KeywordService"
+Randomness seeded to: 1771013037
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_12_KeywordService" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_12_KeywordService" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/63 Testing: FA_TC_13_KeywordUsability
+44/63 Test: FA_TC_13_KeywordUsability
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_13_KeywordUsability"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_13_KeywordUsability" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_13_KeywordUsability"
+Randomness seeded to: 2509613675
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_13_KeywordUsability" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_13_KeywordUsability" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/63 Testing: FA_TC_14_KeywordNone
+45/63 Test: FA_TC_14_KeywordNone
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_14_KeywordNone"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_14_KeywordNone" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_14_KeywordNone"
+Randomness seeded to: 2996260928
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_14_KeywordNone" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_14_KeywordNone" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/63 Testing: FA_TC_15_KeywordMultiCategory
+46/63 Test: FA_TC_15_KeywordMultiCategory
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_15_KeywordMultiCategory"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_15_KeywordMultiCategory" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_15_KeywordMultiCategory"
+Randomness seeded to: 3349613896
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_15_KeywordMultiCategory" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_15_KeywordMultiCategory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/63 Testing: FA_TC_01_SentimentEmpty
+47/63 Test: FA_TC_01_SentimentEmpty
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_01_SentimentEmpty"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_01_SentimentEmpty" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_01_SentimentEmpty"
+Randomness seeded to: 3145846506
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_01_SentimentEmpty" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_01_SentimentEmpty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/63 Testing: FA_TC_02_SentimentPositive
+48/63 Test: FA_TC_02_SentimentPositive
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_02_SentimentPositive"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_02_SentimentPositive" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_02_SentimentPositive"
+Randomness seeded to: 2562656942
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_02_SentimentPositive" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_02_SentimentPositive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/63 Testing: FA_TC_03_SentimentNegative
+49/63 Test: FA_TC_03_SentimentNegative
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_03_SentimentNegative"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_03_SentimentNegative" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_03_SentimentNegative"
+Randomness seeded to: 4212719534
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_03_SentimentNegative" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_03_SentimentNegative" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/63 Testing: FA_TC_04_SentimentNeutralNoKw
+50/63 Test: FA_TC_04_SentimentNeutralNoKw
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_04_SentimentNeutralNoKw"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_04_SentimentNeutralNoKw" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_04_SentimentNeutralNoKw"
+Randomness seeded to: 4259812275
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_04_SentimentNeutralNoKw" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_04_SentimentNeutralNoKw" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/63 Testing: FA_TC_05_SentimentPartialNeg
+51/63 Test: FA_TC_05_SentimentPartialNeg
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_05_SentimentPartialNeg"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_05_SentimentPartialNeg" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_05_SentimentPartialNeg"
+Randomness seeded to: 339767568
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_05_SentimentPartialNeg" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_05_SentimentPartialNeg" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/63 Testing: FA_TC_06_SentimentNeutralAmbiguous
+52/63 Test: FA_TC_06_SentimentNeutralAmbiguous
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_06_SentimentNeutralAmbiguous"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_06_SentimentNeutralAmbiguous" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_06_SentimentNeutralAmbiguous"
+Randomness seeded to: 1596457490
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_06_SentimentNeutralAmbiguous" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_06_SentimentNeutralAmbiguous" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/63 Testing: FA_TC_07_SentimentPositiveWins
+53/63 Test: FA_TC_07_SentimentPositiveWins
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_07_SentimentPositiveWins"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_07_SentimentPositiveWins" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_07_SentimentPositiveWins"
+Randomness seeded to: 1136013971
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_07_SentimentPositiveWins" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_07_SentimentPositiveWins" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/63 Testing: FA_TC_08_SentimentMixedN
+54/63 Test: FA_TC_08_SentimentMixedN
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_tests.exe" "FA_TC_08_SentimentMixedN"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_08_SentimentMixedN" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+Filters: "FA_TC_08_SentimentMixedN"
+Randomness seeded to: 2431821740
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_08_SentimentMixedN" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_08_SentimentMixedN" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/63 Testing: FA_TC_44_HttpGetRoot
+55/63 Test: FA_TC_44_HttpGetRoot
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_44_HttpGetRoot"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_44_HttpGetRoot" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:44] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+Filters: "FA_TC_44_HttpGetRoot"
+Randomness seeded to: 2627504009
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.89 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_44_HttpGetRoot" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_44_HttpGetRoot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/63 Testing: FA_TC_45_HttpAnalyze
+56/63 Test: FA_TC_45_HttpAnalyze
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_45_HttpAnalyze"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_45_HttpAnalyze" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:45] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:45] INFO: test
+[2026-05-22 09:43:45] INFO: ÌòÑÏû¨ 1Í∞úÏùò ÌîºÎìúÎ∞±Ïù¥ ÏûÖÎ†•ÎêòÏóàÏäµÎãàÎã§.
+[2026-05-22 09:43:45] INFO: Í∞êÏÑ± Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:45] INFO: ÌÇ§ÏõåÎìú Î∂ÑÏÑù ÏôÑÎ£å
+Filters: "FA_TC_45_HttpAnalyze"
+Randomness seeded to: 816364157
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.87 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_45_HttpAnalyze" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_45_HttpAnalyze" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/63 Testing: FA_TC_46_HttpAnalyzeEmpty
+57/63 Test: FA_TC_46_HttpAnalyzeEmpty
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_46_HttpAnalyzeEmpty"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_46_HttpAnalyzeEmpty" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:46] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:46] INFO: keep
+[2026-05-22 09:43:46] INFO: ÌòÑÏû¨ 1Í∞úÏùò ÌîºÎìúÎ∞±Ïù¥ ÏûÖÎ†•ÎêòÏóàÏäµÎãàÎã§.
+[2026-05-22 09:43:46] INFO: Í∞êÏÑ± Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:46] INFO: ÌÇ§ÏõåÎìú Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:46] INFO: keep
+[2026-05-22 09:43:46] INFO: ÌòÑÏû¨ 1Í∞úÏùò ÌîºÎìúÎ∞±Ïù¥ ÏûÖÎ†•ÎêòÏóàÏäµÎãàÎã§.
+[2026-05-22 09:43:46] INFO: Í∞êÏÑ± Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:46] INFO: ÌÇ§ÏõåÎìú Î∂ÑÏÑù ÏôÑÎ£å
+Filters: "FA_TC_46_HttpAnalyzeEmpty"
+Randomness seeded to: 4108311226
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.84 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_46_HttpAnalyzeEmpty" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_46_HttpAnalyzeEmpty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/63 Testing: FA_TC_47_HttpUpload
+58/63 Test: FA_TC_47_HttpUpload
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_47_HttpUpload"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_47_HttpUpload" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:46] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:47] INFO: ÌååÏùºÏù¥ ÏÑ±Í≥µÏ†ÅÏúºÎ°ú ÏóÖÎ°úÎìúÎêòÏóàÏäµÎãàÎã§.
+Filters: "FA_TC_47_HttpUpload"
+Randomness seeded to: 3516254824
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.88 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_47_HttpUpload" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_47_HttpUpload" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/63 Testing: FA_TC_48_HttpFilterEmpty
+59/63 Test: FA_TC_48_HttpFilterEmpty
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_48_HttpFilterEmpty"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_48_HttpFilterEmpty" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:47] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:48] WARNING: Î∂ÑÏÑùÌï† ÌîºÎìúÎ∞±Ïù¥ ÏóÜÏäµÎãàÎã§.
+Filters: "FA_TC_48_HttpFilterEmpty"
+Randomness seeded to: 529587408
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.85 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_48_HttpFilterEmpty" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_48_HttpFilterEmpty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/63 Testing: FA_TC_49_HttpFilterZero
+60/63 Test: FA_TC_49_HttpFilterZero
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_49_HttpFilterZero"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_49_HttpFilterZero" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:48] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:49] INFO: good
+[2026-05-22 09:43:49] INFO: ÌòÑÏû¨ 1Í∞úÏùò ÌîºÎìúÎ∞±Ïù¥ ÏûÖÎ†•ÎêòÏóàÏäµÎãàÎã§.
+[2026-05-22 09:43:49] INFO: Í∞êÏÑ± Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:49] INFO: ÌÇ§ÏõåÎìú Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:49] WARNING: ÌïÑÌÑ∞ÎßÅ Í≤∞Í≥ºÍ∞Ä ÏóÜÏäµÎãàÎã§.
+Filters: "FA_TC_49_HttpFilterZero"
+Randomness seeded to: 4021045579
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.88 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_49_HttpFilterZero" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_49_HttpFilterZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/63 Testing: FA_TC_50_HttpEscapeHtml
+61/63 Test: FA_TC_50_HttpEscapeHtml
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_50_HttpEscapeHtml"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_50_HttpEscapeHtml" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:49] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:49] INFO: <script>
+[2026-05-22 09:43:49] INFO: ÌòÑÏû¨ 1Í∞úÏùò ÌîºÎìúÎ∞±Ïù¥ ÏûÖÎ†•ÎêòÏóàÏäµÎãàÎã§.
+[2026-05-22 09:43:49] INFO: Í∞êÏÑ± Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:49] INFO: ÌÇ§ÏõåÎìú Î∂ÑÏÑù ÏôÑÎ£å
+Filters: "FA_TC_50_HttpEscapeHtml"
+Randomness seeded to: 800489714
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.84 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_50_HttpEscapeHtml" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_50_HttpEscapeHtml" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/63 Testing: FA_TC_38_UploadNoStats
+62/63 Test: FA_TC_38_UploadNoStats
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_38_UploadNoStats"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_38_UploadNoStats" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:50] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:50] INFO: ÌååÏùºÏù¥ ÏÑ±Í≥µÏ†ÅÏúºÎ°ú ÏóÖÎ°úÎìúÎêòÏóàÏäµÎãàÎã§.
+Filters: "FA_TC_38_UploadNoStats"
+Randomness seeded to: 1322951871
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.87 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_38_UploadNoStats" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_38_UploadNoStats" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/63 Testing: FA_TC_52_HttpMultiline
+63/63 Test: FA_TC_52_HttpMultiline
+Command: "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests.exe" "FA_TC_52_HttpMultiline"
+Directory: D:/DEV/FeedbackAnalyzer_09
+"FA_TC_52_HttpMultiline" start time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+Output:
+----------------------------------------------------------
+[2026-05-22 09:43:51] INFO: ÏÑúÎ≤ÑÍ∞Ä http://localhost:8080 ÏóêÏÑú ÏãúÏûëÎê©ÎãàÎã§.
+[2026-05-22 09:43:51] INFO: line1
+line2
+[2026-05-22 09:43:51] INFO: ÌòÑÏû¨ 1Í∞úÏùò ÌîºÎìúÎ∞±Ïù¥ ÏûÖÎ†•ÎêòÏóàÏäµÎãàÎã§.
+[2026-05-22 09:43:51] INFO: Í∞êÏÑ± Î∂ÑÏÑù ÏôÑÎ£å
+[2026-05-22 09:43:51] INFO: ÌÇ§ÏõåÎìú Î∂ÑÏÑù ÏôÑÎ£å
+Filters: "FA_TC_52_HttpMultiline"
+Randomness seeded to: 4210646095
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.86 sec
+----------------------------------------------------------
+Test Passed.
+"FA_TC_52_HttpMultiline" end time: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
+"FA_TC_52_HttpMultiline" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 22 09:43 ¥Î«—πŒ±π «•¡ÿΩ√
