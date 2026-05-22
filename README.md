@@ -146,6 +146,7 @@ feedback_analyzer_cpp/
 | Step | 날짜 | Report | 내용 |
 |------|------|--------|------|
 | 11 | 2026-05-22 | [`Report/11.green-defect-list-report-2026-05-22.md`](./Report/11.green-defect-list-report-2026-05-22.md) | TODO #7 `defect_list` · GM-01~04 재점검 PASS |
+| 12 | 2026-05-22 | [`Report/12.feature-newFeature-report-2026-05-22.md`](./Report/12.feature-newFeature-report-2026-05-22.md) | TODO #9 feature FA-TC-55~58 · GM-10 · ctest 79/79 |
 
 **검증 명령**
 
