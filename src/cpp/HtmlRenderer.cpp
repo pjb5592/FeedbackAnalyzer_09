@@ -41,11 +41,7 @@ std::string HtmlRenderer::escapeHtml(const std::string& s) {
     return out;
 }
 
-std::string HtmlRenderer::renderPage(
-    const std::string& success, const std::string& warning, const std::string& error,
-    const std::map<std::string, int>& sentimentResults,
-    const std::map<std::string, int>& keywordResults,
-    const std::vector<Feedback>& /*feedbacks*/) {
+std::string HtmlRenderer::renderPage(const PageModel& model) {
     std::ostringstream html;
     html << R"(<!DOCTYPE html>
 <html>
@@ -79,9 +75,9 @@ std::string HtmlRenderer::renderPage(
     <h1>Feedback Analyzer</h1>
     <p style="text-align: center; color: #666;">)" << u8"고객 피드백 분석 시스템" << R"(</p>)";
 
-    if (!success.empty()) {
+    if (!model.success.empty()) {
         html << R"(<p class="alert alert-success">)" << getCurrentTimestamp() << " : "
-             << escapeHtml(success) << "</p>";
+             << escapeHtml(model.success) << "</p>";
     }
 
     html << R"(
@@ -136,23 +132,23 @@ std::string HtmlRenderer::renderPage(
         </form>
     </div>)";
 
-    if (!warning.empty()) {
-        html << R"(<p class="alert alert-warning">)" << escapeHtml(warning) << "</p>";
+    if (!model.warning.empty()) {
+        html << R"(<p class="alert alert-warning">)" << escapeHtml(model.warning) << "</p>";
     }
 
-    if (!sentimentResults.empty() || !keywordResults.empty()) {
+    if (!model.sentimentResults.empty() || !model.keywordResults.empty()) {
         html << R"(<div class="section"><h3>)" << u8"분석 결과" << "</h3>";
-        if (!sentimentResults.empty()) {
+        if (!model.sentimentResults.empty()) {
             html << "<h4>" << u8"감정 분포" << R"(</h4><div class="stats">)";
-            for (const auto& entry : sentimentResults) {
+            for (const auto& entry : model.sentimentResults) {
                 html << R"(<div class="stat-item"><div class="stat-number">)" << entry.second
                      << R"(</div><div class="stat-label">)" << entry.first << "</div></div>";
             }
             html << "</div>";
         }
-        if (!keywordResults.empty()) {
+        if (!model.keywordResults.empty()) {
             html << "<h4>" << u8"키워드 분포" << R"(</h4><div class="stats">)";
-            for (const auto& entry : keywordResults) {
+            for (const auto& entry : model.keywordResults) {
                 html << R"(<div class="stat-item"><div class="stat-number">)" << entry.second
                      << R"(</div><div class="stat-label">)" << entry.first << "</div></div>";
             }
@@ -162,8 +158,8 @@ std::string HtmlRenderer::renderPage(
              << "</button></a></div>";
     }
 
-    if (!error.empty()) {
-        html << R"(<p class="alert alert-danger">)" << escapeHtml(error) << "</p>";
+    if (!model.error.empty()) {
+        html << R"(<p class="alert alert-danger">)" << escapeHtml(model.error) << "</p>";
     }
 
     html << "</div></body></html>";
