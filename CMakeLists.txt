@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(cmake/FACoverage.cmake)
 
 add_executable(feedback_analyzer
-    src/cpp/main.cpp
     src/cpp/Constants.cpp
     src/cpp/CsvUploadParser.cpp
     src/cpp/Filters.cpp
@@ -17,6 +16,7 @@ add_executable(feedback_analyzer
     src/cpp/Session.cpp
     src/cpp/TextAnalyzer.cpp
     src/cpp/UIComponents.cpp
+    src/cpp/main.cpp
 )
 
 target_include_directories(feedback_analyzer PRIVATE src/cpp)
