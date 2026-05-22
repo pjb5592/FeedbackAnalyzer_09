@@ -20,7 +20,7 @@
     "tests/support/DomainSentimentAnalyzer.cpp": [13],
     "tests/support/DomainKeywordCounter.cpp": [13],
     "tests/support/DomainFeedbackFilter.cpp": [25, 35, 40],
-    "src/cpp/CsvUploadParser.cpp": [8, 36, 42, 58],
+    "src/cpp/CsvUploadParser.cpp": [8, 36, 58],
     "tests/support/InMemoryDownloadSource.cpp": [8, 22]
   }
 }

@@ -1,0 +1,6 @@
+trend.2024-01-01.positive=1
+trend.2024-01-01.neutral=0
+trend.2024-01-01.negative=0
+trend.2024-01-02.positive=0
+trend.2024-01-02.neutral=0
+trend.2024-01-02.negative=1

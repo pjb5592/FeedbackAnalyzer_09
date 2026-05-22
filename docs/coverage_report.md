@@ -7,19 +7,19 @@
 
 | Metric | Threshold | Measured | Status |
 |--------|-----------|----------|--------|
-| Domain | >= 90% | 97.6% | PASS |
-| Boundary (branches @ boundary lines) | >= 85% | 85.0% | PASS |
-| Overall | >= 90% | 98.0% | PASS |
-| Boundary lines (aux) | — | 100.0% (11/11) | — |
+| Domain | >= 90% | 97.3% | PASS |
+| Boundary (branches @ boundary lines) | >= 85% | 92.3% | PASS |
+| Overall | >= 90% | 95.9% | PASS |
+| Boundary lines (aux) | — | 100.0% (8/8) | — |
 
 ## Per-file (Domain)
 
 | File | Line % | Hit/Total | Miss lines | Branch % |
 |------|--------|-----------|------------|----------|
-| `tests/support/DomainSentimentAnalyzer.cpp` | 94.4% | 17/18 | 27 | 58.8% |
+| `tests/support/DomainSentimentAnalyzer.cpp` | 88.9% | 8/9 | 17 | 55.6% |
 | `tests/support/DomainKeywordCounter.cpp` | 92.9% | 13/14 | 27 | 68.2% |
-| `tests/support/DomainFeedbackFilter.cpp` | 100.0% | 27/27 | — | 70.0% |
-| `src/cpp/CsvUploadParser.cpp` | 97.7% | 43/44 | 43 | 68.3% |
+| `tests/support/DomainFeedbackFilter.cpp` | 100.0% | 21/21 | — | 75.0% |
+| `src/cpp/CsvUploadParser.cpp` | 97.7% | 43/44 | 43 | 70.0% |
 | `tests/support/InMemoryDownloadSource.cpp` | 100.0% | 23/23 | — | 72.7% |
 
 ## Commands

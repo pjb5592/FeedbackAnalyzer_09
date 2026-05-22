@@ -29,3 +29,7 @@ TEST_CASE("GM-03 download CSV", "[fa-tc][p2][gm][gm-03]") {
 TEST_CASE("GM-04 upload CSV", "[fa-tc][p2][gm][gm-04]") {
     requireGolden("gm04_upload_csv.approved.txt", fa_golden::runGm04());
 }
+
+TEST_CASE("GM-10 trend aggregate", "[fa-tc][p2][gm][gm-10][feature]") {
+    requireGolden("gm10_trend_aggregate.approved.txt", fa_golden::runGm10());
+}

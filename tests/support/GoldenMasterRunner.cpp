@@ -3,6 +3,8 @@
 #include <sstream>
 
 #include "CsvUploadParser.hpp"
+#include "TrendAnalyzer.h"
+#include "TrendCsvParser.h"
 #include "DomainFeedbackFilter.hpp"
 #include "DomainKeywordCounter.hpp"
 #include "DomainSentimentAnalyzer.hpp"
@@ -77,6 +79,25 @@ std::string runGm04() {
     if (rows.size() >= 2) {
         out << "upload.row0=" << rows[0].getText() << '\n';
         out << "upload.row1=" << rows[1].getText() << '\n';
+    }
+    return out.str();
+}
+
+// GM-10: trend CSV — date buckets with weighted sentiment (feature).
+std::string runGm10() {
+    TrendCsvParser parser;
+    const auto rows = parser.parse(fa_csv::kCsvTrendTwoDays);
+    TrendAnalyzer analyzer;
+    const auto byDate = analyzer.aggregateByDate(rows);
+    std::ostringstream out;
+    for (const auto& dayEntry : byDate) {
+        const auto& bucket = dayEntry.second;
+        out << "trend." << dayEntry.first << ".positive="
+            << bucket.at(u8"긍정") << '\n';
+        out << "trend." << dayEntry.first << ".neutral="
+            << bucket.at(u8"중립") << '\n';
+        out << "trend." << dayEntry.first << ".negative="
+            << bucket.at(u8"부정") << '\n';
     }
     return out.str();
 }
