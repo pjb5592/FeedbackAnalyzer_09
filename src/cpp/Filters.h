@@ -1,55 +1,13 @@
 #pragma once
+
 #include <string>
 #include <vector>
-#include <map>
+
 #include "Feedback.h"
-#include "Constants.h"
-#include "KeywordMatcher.h"
 
 class Filters {
 public:
     std::vector<Feedback> filterFeedbacks(const std::vector<Feedback>& dataList,
-                                          const std::string& sFilter,
-                                          const std::string& kFilter) {
-        std::vector<Feedback> tmpFiltered;
-
-        if (sFilter != u8"전체") {
-            for (const auto& item : dataList) {
-                std::string txt = item.getText();
-                std::string currentSentiment = u8"중립";
-
-                if (fa::containsAny(txt, Constants::SENTIMENT_KEYWORDS[u8"긍정"])) {
-                    currentSentiment = u8"긍정";
-                } else if (fa::containsAny(txt, Constants::SENTIMENT_KEYWORDS[u8"부정"])) {
-                    currentSentiment = u8"부정";
-                }
-
-                if (currentSentiment == sFilter) {
-                    tmpFiltered.push_back(item);
-                }
-            }
-        } else {
-            tmpFiltered = dataList;
-        }
-
-        std::vector<Feedback> finalFiltered;
-        if (kFilter != u8"전체") {
-            for (const auto& item : tmpFiltered) {
-                std::string txt = item.getText();
-                if (Constants::CATEGORY_KEYWORDS.count(kFilter)) {
-                    const auto& catMap = Constants::CATEGORY_KEYWORDS[kFilter];
-                    for (const auto& subEntry : catMap) {
-                        if (fa::containsAny(txt, subEntry.second)) {
-                            finalFiltered.push_back(item);
-                            break;
-                        }
-                    }
-                }
-            }
-        } else {
-            finalFiltered = tmpFiltered;
-        }
-
-        return finalFiltered;
-    }
+                                          const std::string& sentimentFilter,
+                                          const std::string& keywordFilter);
 };
