@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `green` (Step 06 — 4-C 완료, refactoring 진입 가능)
+**브랜치:** `green` (Step 07 — 4-D Golden Master 완료, **refactoring 진입 가능**)
 
 ---
 
@@ -17,6 +17,7 @@
 | **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ |
 | **05** | **green-fa-tc-pass** | Domain support, FA-TC-01~54, GM-01~09, ctest 63/63 | ✅ |
 | **06** | **green-coverage-gate** | gcov/lcov 게이트 PASS, FA-TC-54, Domain 97.6% / Boundary 85% | ✅ |
+| **07** | **green-golden-master** | GM-01~04 `*.approved.txt`, `GoldenMaster` ctest, `docs/golden_master.md` | ✅ |
 
 ---
 
@@ -178,6 +179,28 @@
 
 ---
 
+## Step 07 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@tests/` `@docs/coverage_report.md` — [P] Golden Master 설계자 — **green**, FA-TC·커버리지 Green **이후** — GM-01~04(analyze·filter 중립·download·upload), `*.approved.txt`, `GoldenMaster` ctest, `generate_golden_master.ps1`, `docs/golden_master.md`.
+
+**Assistant:**
+- GM-01~04 Domain 스냅샷 · 구 GM-05~09 제거
+- `golden_master_gen`, `add_test(NAME GoldenMaster)`, approve 스크립트(게이트 선행)
+- `docs/golden_master.md` 절차·diff 해석
+
+**검증:**
+- `ctest` → **67/67 PASS**
+- `ctest -R GoldenMaster` → PASS
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Step 07 Report/Transcript/README/commit/push.
+
+**Assistant:** Report 07 · Transcript 07 · full-transcript · README 8·green 게이트 갱신 · commit·push.
+
+**다음:** `spec`/`refactoring` — `docs/refactoring_plan.md` (Phase 0 DEF-01)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -191,8 +214,9 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 2 | spec | `code_quality_report.md` ✅ |
 | 3 | spec | `test_plan.md` ✅ |
 | 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ |
-| 4-B, 8 | green | FA-TC Green + GM — **63 ctest** ✅ |
+| 4-B | green | FA-TC Green — **67 ctest** ✅ |
 | 4-C | green | 커버리지 gcov/lcov — **PASS** (Step 06) |
+| 4-D, 8 | green | Golden Master GM-01~04 — **PASS** (Step 07) |
 | 5~6 | refactoring | refactoring_plan Step |
 | 9 | feature | 미션 6~7 |
 

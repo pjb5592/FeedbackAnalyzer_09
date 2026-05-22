@@ -91,6 +91,31 @@ catch_discover_tests(feedback_analyzer_tests
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
+add_executable(golden_master_gen
+    tests/tools/golden_master_gen.cpp
+    src/cpp/Constants.cpp
+    ${FA_SUPPORT_SOURCES}
+)
+target_include_directories(golden_master_gen PRIVATE
+    src/cpp
+    tests
+    tests/fixtures
+    tests/support
+)
+if(MSVC)
+    target_compile_options(golden_master_gen PRIVATE /utf-8)
+else()
+    target_compile_options(golden_master_gen PRIVATE -finput-charset=UTF-8)
+endif()
+
+add_test(NAME GoldenMaster
+    COMMAND $<TARGET_FILE:feedback_analyzer_tests> "[gm]"
+)
+set_tests_properties(GoldenMaster PROPERTIES
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    LABELS "golden;gm;p2"
+)
+
 if(FA_ENABLE_COVERAGE)
     add_custom_target(feedback_analyzer_tests_cov
         COMMAND ${CMAKE_COMMAND}

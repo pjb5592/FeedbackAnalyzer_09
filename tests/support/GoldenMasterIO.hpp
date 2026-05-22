@@ -15,18 +15,6 @@ inline std::filesystem::path goldenRoot() {
     return std::filesystem::path("..") / "tests" / "golden";
 }
 
-inline std::string loadFile(const std::string& name) {
-    const auto path = goldenRoot() / name;
-    std::ifstream in(path, std::ios::binary);
-    std::ostringstream buffer;
-    buffer << in.rdbuf();
-    std::string content = buffer.str();
-    while (!content.empty() && (content.back() == '\n' || content.back() == '\r')) {
-        content.pop_back();
-    }
-    return content + '\n';
-}
-
 inline std::string normalizeNewlines(std::string text) {
     std::string out;
     out.reserve(text.size());
@@ -41,6 +29,29 @@ inline std::string normalizeNewlines(std::string text) {
         }
     }
     return out;
+}
+
+inline std::string loadFile(const std::string& name) {
+    const auto path = goldenRoot() / name;
+    std::ifstream in(path, std::ios::binary);
+    std::ostringstream buffer;
+    buffer << in.rdbuf();
+    std::string content = buffer.str();
+    while (!content.empty() && (content.back() == '\n' || content.back() == '\r')) {
+        content.pop_back();
+    }
+    return content + '\n';
+}
+
+inline void writeFile(const std::string& name, const std::string& body) {
+    const auto path = goldenRoot() / name;
+    std::filesystem::create_directories(path.parent_path());
+    std::ofstream out(path, std::ios::binary);
+    std::string normalized = normalizeNewlines(body);
+    if (!normalized.empty() && normalized.back() != '\n') {
+        normalized += '\n';
+    }
+    out << normalized;
 }
 
 }  // namespace fa_golden

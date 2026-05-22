@@ -1,3 +1,0 @@
-csv.count=2
-csv.row0=행1
-csv.row1=행2
