@@ -5,8 +5,6 @@
 std::vector<Feedback> Session::currentFeedbacks;
 std::vector<Feedback> Session::downloadView_;
 bool Session::hasFilterView_ = false;
-std::map<std::string, std::string> Session::internalData;
-std::map<std::string, std::string> Session::filterOptions;
 
 void Session::setSessionFeedbacks(const std::vector<Feedback>& feedbacks) {
     currentFeedbacks = feedbacks;

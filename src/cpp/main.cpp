@@ -217,8 +217,7 @@ int main() {
 
     // GET /
     svr.Get("/", [](const httplib::Request&, httplib::Response& res) {
-        Session::initSessionStateUgly();
-        auto& feedbacks = Session::getOldDataFromSession("current_feedbacks");
+        auto& feedbacks = Session::getCurrentFeedbacks();
         std::string html = renderPage(u8"피드백 분석기 시작", "", "", {}, {}, feedbacks);
         res.set_content(html, "text/html; charset=UTF-8");
     });

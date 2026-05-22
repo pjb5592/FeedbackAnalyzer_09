@@ -7,10 +7,6 @@
 #include "KeywordMatcher.h"
 
 class TextAnalyzer {
-private:
-    static std::map<std::string, int> globalSent;
-    static std::map<std::string, int> globalKw;
-
 public:
     std::map<std::string, int> analyzeSentiment(const std::vector<Feedback>& feedbacks) {
         std::map<std::string, int> res;
@@ -29,7 +25,6 @@ public:
             res[s]++;
         }
 
-        globalSent = res;
         return res;
     }
 
@@ -52,7 +47,6 @@ public:
             }
         }
 
-        globalKw = res2;
         return res2;
     }
 };

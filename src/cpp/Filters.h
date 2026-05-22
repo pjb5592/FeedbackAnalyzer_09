@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <iostream>
 #include "Feedback.h"
 #include "Constants.h"
 #include "KeywordMatcher.h"
@@ -49,10 +48,6 @@ public:
             }
         } else {
             finalFiltered = tmpFiltered;
-        }
-
-        for (const auto& i : finalFiltered) {
-            std::cout << i.getText() << std::endl;
         }
 
         return finalFiltered;
