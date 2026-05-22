@@ -82,13 +82,13 @@ feedback_analyzer_cpp/
 | 1 | 요구사항 분석 | spec | `docs/requirements_analysis.md` | [x] |
 | 2 | 코드 품질 분석 | spec | `docs/code_quality_report.md` | [x] |
 | 3 | 테스트 계획 (Test Plan) | spec | `docs/test_plan.md` | [x] |
-| 4-A | RED — 실패 테스트 | red | `tests/*.cpp`, ctest 의도적 FAIL | [ ] |
-| 4-B | GREEN — FA-TC 통과 | green | `tests/support/`, FA-TC 전건 Green | [ ] |
-| 4-C | 커버리지 게이트 | green | `docs/coverage_report.md`, Domain≥90% Boundary≥85% | [ ] |
+| 4-A | RED — 실패 테스트 | red | `tests/*.cpp`, ctest 의도적 FAIL | [x] |
+| 4-B | GREEN — FA-TC 통과 | green | `tests/support/`, FA-TC 전건 Green | [x] |
+| 4-C | 커버리지 게이트 | green | `docs/coverage_report.md`, Domain≥90% Boundary≥85% | [x] |
 | 5 | 리팩토링 계획 | spec / refactoring | `docs/refactoring_plan.md` | [ ] |
 | 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [ ] |
 | 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [ ] |
-| 8 | Golden Master | green | `tests/golden/`, `docs/golden_master.md` (4-B·4-C 완료 후) | [ ] |
+| 8 | Golden Master (4-D) | green | `tests/golden/*.approved.txt`, `docs/golden_master.md` (4-B·4-C 후) | [x] |
 | 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |
 | 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [ ] |
 | 11 | 설계 다이어그램 (선택) | spec | `docs/architecture.md` | [ ] |
@@ -96,13 +96,29 @@ feedback_analyzer_cpp/
 
 **green 완료 조건 (refactoring 진입 전, 순서 고정)**
 
-- [ ] FA-TC 전건 `ctest` Green
-- [ ] `scripts/run_coverage_gate.ps1` PASS
-- [ ] Golden Master `ctest` Green
+- [x] FA-TC 전건 `ctest` Green (**67/67**, 2026-05-22)
+- [x] `scripts/run_coverage_gate.ps1` PASS (Domain **97.6%** · Boundary **85.0%** · Overall **98.1%**)
+- [x] Golden Master `ctest` Green (**GM-01~04**, `GoldenMaster` 집계, FA-TC-53)
 
 **검증 명령**
 
 ```bash
-cmake --build build && ctest
-scripts/run_coverage_gate.ps1
+cmake --build build
+ctest --test-dir build --output-on-failure
+ctest --test-dir build -R "^GoldenMaster$"
+.\scripts\run_coverage_gate.ps1 -BuildDir build-cov
+```
+
+**Golden Master 재생성 (게이트 통과 후):**
+
+```powershell
+.\scripts\generate_golden_master.ps1 -Force
+```
+
+**테스트 타겟:** `feedback_analyzer_tests` (Catch2) · `golden_master_gen` (스냅샷 생성)
+
+**커버리지 게이트 (4-C):**
+
+```powershell
+.\scripts\run_coverage_gate.ps1 -BuildDir build-cov
 ```

@@ -1,0 +1,3 @@
+upload.count=2
+upload.row0=행1
+upload.row1=행2

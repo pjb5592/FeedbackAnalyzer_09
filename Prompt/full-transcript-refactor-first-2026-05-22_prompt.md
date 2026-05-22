@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `red` (Step 04-A 진행 중)
+**브랜치:** `green` (Step 07 — 4-D Golden Master 완료, **refactoring 진입 가능**)
 
 ---
 
@@ -14,7 +14,10 @@
 | **01** | **spec-requirements-analysis** | `docs/requirements_analysis.md`, FA-001~055 | ✅ |
 | **02** | **spec-code-quality** | `docs/code_quality_report.md`, DEF·P0~P3 | ✅ |
 | **03** | **spec-test-plan** | `docs/test_plan.md`, FA-TC-01~55, GM-01~09 | ✅ |
-| **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ (1차) |
+| **04-A** | **red-catch2-red-tests** | Catch2, FA-TC-01~15 PASS, FA-TC-16·17·29 FAIL | ✅ |
+| **05** | **green-fa-tc-pass** | Domain support, FA-TC-01~54, GM-01~09, ctest 63/63 | ✅ |
+| **06** | **green-coverage-gate** | gcov/lcov 게이트 PASS, FA-TC-54, Domain 97.6% / Boundary 85% | ✅ |
+| **07** | **green-golden-master** | GM-01~04 `*.approved.txt`, `GoldenMaster` ctest, `docs/golden_master.md` | ✅ |
 
 ---
 
@@ -128,6 +131,76 @@
 
 ---
 
+## Step 05 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@tests/` — [P] 시니어 C++ (TDD) — **green**, 레거시 무수정 — RED TC 1건씩 GREEN, CoT, ctest Green.
+
+**Assistant:**
+- `DomainSentimentAnalyzer`, `DomainKeywordCounter`, `DomainFeedbackFilter`, `CsvUploadParser`, `InMemoryDownloadSource`, `GoldenMasterRunner`
+- DEF-01/02/03/04 support에서 해소 · FA-TC-18~43·30~32·08 추가
+- HTTP 통합 FA-TC-38·44~52 · GM-01~09 · FA-TC-51/54/55
+- `src/cpp/` diff 0 · green 커밋 12건
+
+**검증:**
+- `ctest` → **63/63 PASS**
+- `feedback_analyzer` → ✅
+
+**User:** 다음 단계 진행 → 63 TC Green 완료.
+
+**User:** 전체 Test Case 실행 → 63/63 PASS 확인.
+
+**User:** [P] 문서·배포 — Step 05 Report/Transcript/README/commit/push.
+
+**Assistant:** Report 05 · Transcript 05 · full-transcript · README 4-B·8 `[x]` · commit·push.
+
+**다음:** `green` 4-C gcov 본게이트 → `refactoring` Phase 0
+
+---
+
+## Step 06 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@tests/` `@CMakeLists.txt` — [P] 시니어 C++ QA + 빌드 — **green**, FA-TC Green 직후 GM 이전 — 커버리지 측정·게이트(Domain≥90%, Boundary≥85%, Overall≥90%), 미달 시 tests만 보강.
+
+**Assistant:**
+- `FA_ENABLE_COVERAGE`, `feedback_analyzer_tests_cov`, `run_coverage_gate.ps1`/`.sh`, `parse_coverage_gate.py`
+- `test_coverage_boundary.cpp` 경계 TC 8건 · `coverage_boundary.json`
+- `docs/coverage_report.md` 수치 리포트
+
+**검증:**
+- `run_coverage_gate.ps1` → **GATE PASS** (Domain 97.6%, Boundary 85.0%, Overall 98.1%)
+- `ctest` → **71/71 PASS**
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Step 06 Report/Transcript/README/commit/push.
+
+**Assistant:** Report 06 · Transcript 06 · full-transcript · README 4-C `[x]` · commit·push.
+
+**다음:** `refactoring` — `docs/refactoring_plan.md` Phase 0 (DEF-01)
+
+---
+
+## Step 07 상세 (2026-05-22)
+
+**User:** `@docs/test_plan.md` `@tests/` `@docs/coverage_report.md` — [P] Golden Master 설계자 — **green**, FA-TC·커버리지 Green **이후** — GM-01~04(analyze·filter 중립·download·upload), `*.approved.txt`, `GoldenMaster` ctest, `generate_golden_master.ps1`, `docs/golden_master.md`.
+
+**Assistant:**
+- GM-01~04 Domain 스냅샷 · 구 GM-05~09 제거
+- `golden_master_gen`, `add_test(NAME GoldenMaster)`, approve 스크립트(게이트 선행)
+- `docs/golden_master.md` 절차·diff 해석
+
+**검증:**
+- `ctest` → **67/67 PASS**
+- `ctest -R GoldenMaster` → PASS
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Step 07 Report/Transcript/README/commit/push.
+
+**Assistant:** Report 07 · Transcript 07 · full-transcript · README 8·green 게이트 갱신 · commit·push.
+
+**다음:** `spec`/`refactoring` — `docs/refactoring_plan.md` (Phase 0 DEF-01)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -140,8 +213,10 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 1 | spec | `requirements_analysis.md` ✅ |
 | 2 | spec | `code_quality_report.md` ✅ |
 | 3 | spec | `test_plan.md` ✅ |
-| 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ (1차) |
-| 4-B~C, 8 | green | GREEN → 커버리지 → GM |
+| 4-A | red | FA-TC RED — **01~15·16·17·29** ✅ |
+| 4-B | green | FA-TC Green — **67 ctest** ✅ |
+| 4-C | green | 커버리지 gcov/lcov — **PASS** (Step 06) |
+| 4-D, 8 | green | Golden Master GM-01~04 — **PASS** (Step 07) |
 | 5~6 | refactoring | refactoring_plan Step |
 | 9 | feature | 미션 6~7 |
 
