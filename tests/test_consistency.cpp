@@ -1,35 +1,35 @@
 #include <catch2/catch_test_macros.hpp>
 
 #include "fixtures/FeedbackFixtures.h"
-#include "support/LegacyFiltersAdapter.hpp"
-#include "support/LegacyTextAnalyzerAdapter.hpp"
+#include "support/DomainFeedbackFilter.hpp"
+#include "support/DomainKeywordCounter.hpp"
+#include "support/DomainSentimentAnalyzer.hpp"
 
-TEST_CASE("FA_TC_16_KeywordMainOnlyMismatch", "[fa-tc][p0][kw][def-02][legacy]") {
+TEST_CASE("FA_TC_16_KeywordMainOnlyMismatch", "[fa-tc][p0][kw][def-02][domain]") {
     const auto feedbacks = fa_fixtures::mainOnlyQuality();
-    LegacyTextAnalyzerAdapter analyzer;
-    LegacyFiltersAdapter filter;
+    DomainKeywordCounter counter;
+    DomainFeedbackFilter filter;
 
-    const auto kw = analyzer.countKeywords(feedbacks);
-    const auto filtered =
-        filter.filter(feedbacks, u8"전체", u8"품질");
+    const auto kw = counter.count(feedbacks);
+    const auto filtered = filter.filter(feedbacks, u8"전체", u8"품질");
 
     REQUIRE(kw.at(u8"품질") >= 1);
     REQUIRE(filtered.size() >= 1);
 }
 
-TEST_CASE("FA_TC_17_FilterNeutralZero", "[fa-tc][p0][fil][def-01][legacy]") {
+TEST_CASE("FA_TC_17_FilterNeutralZero", "[fa-tc][p0][fil][def-01][domain]") {
     const auto feedbacks = fa_fixtures::def01NeutralAmbiguous();
-    LegacyFiltersAdapter filter;
+    DomainFeedbackFilter filter;
     const auto filtered = filter.filter(feedbacks, u8"중립", u8"전체");
     REQUIRE(filtered.size() == 1);
 }
 
-TEST_CASE("FA_TC_29_ConsistencySentFilNeutral", "[fa-tc][p0][def-01][legacy]") {
+TEST_CASE("FA_TC_29_ConsistencySentFilNeutral", "[fa-tc][p0][def-01][domain]") {
     const auto feedbacks = fa_fixtures::def01NeutralAmbiguous();
-    LegacyTextAnalyzerAdapter analyzer;
-    LegacyFiltersAdapter filter;
+    DomainSentimentAnalyzer analyzer;
+    DomainFeedbackFilter filter;
 
-    const auto sent = analyzer.analyzeSentiment(feedbacks);
+    const auto sent = analyzer.analyze(feedbacks);
     const auto filtered = filter.filter(feedbacks, u8"중립", u8"전체");
 
     REQUIRE(sent.at(u8"중립") == 1);
