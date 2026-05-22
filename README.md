@@ -149,6 +149,7 @@ feedback_analyzer_cpp/
 | 12 | 2026-05-22 | [`Report/12.feature-newFeature-report-2026-05-22.md`](./Report/12.feature-newFeature-report-2026-05-22.md) | TODO #9 feature FA-TC-55~58 · GM-10 · ctest 79/79 |
 | 13 | 2026-05-22 | [`Report/13.spec-defect-report-report-2026-05-22.md`](./Report/13.spec-defect-report-report-2026-05-22.md) | TODO #10 `defect_report` process-1.0 · Severity×ItemType·메트릭 |
 | 14 | 2026-05-22 | [`Report/14.qa-final-report-report-2026-05-22.md`](./Report/14.qa-final-report-report-2026-05-22.md) | TODO #12 `qa_final_report` · ctest 70/70 · lcov PASS · GM |
+| 15 | 2026-05-22 | [`Report/15.docs-cursor-report-report-2026-05-22.md`](./Report/15.docs-cursor-report-report-2026-05-22.md) | [`docs/report.md`](./docs/report.md) Cursor AI 종합 · DEF·전후 C++ · ctest 70/70 |
 
 **검증 명령**
 
