@@ -2,20 +2,7 @@
 
 #include "Constants.h"
 #include "KeywordMatcher.h"
-
-namespace {
-
-std::string classifySentiment(const std::string& text) {
-    if (fa::containsAny(text, Constants::SENTIMENT_KEYWORDS[u8"긍정"])) {
-        return u8"긍정";
-    }
-    if (fa::containsAny(text, Constants::SENTIMENT_KEYWORDS[u8"부정"])) {
-        return u8"부정";
-    }
-    return u8"중립";
-}
-
-}  // namespace
+#include "SentimentClassifier.h"
 
 std::map<std::string, int> TextAnalyzer::analyzeSentiment(
     const std::vector<Feedback>& feedbacks) {
@@ -25,7 +12,7 @@ std::map<std::string, int> TextAnalyzer::analyzeSentiment(
     result[u8"부정"] = 0;
 
     for (const auto& feedback : feedbacks) {
-        result[classifySentiment(feedback.getText())]++;
+        result[fa::classifySentiment(feedback.getText())]++;
     }
 
     return result;

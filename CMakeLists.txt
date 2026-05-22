@@ -9,6 +9,7 @@ include(cmake/FACoverage.cmake)
 add_executable(feedback_analyzer
     src/cpp/Constants.cpp
     src/cpp/CsvUploadParser.cpp
+    src/cpp/SentimentClassifier.cpp
     src/cpp/Filters.cpp
     src/cpp/HtmlRenderer.cpp
     src/cpp/HttpRouter.cpp
@@ -44,6 +45,7 @@ FetchContent_MakeAvailable(Catch2)
 set(FA_LEGACY_SOURCES
     src/cpp/Constants.cpp
     src/cpp/CsvUploadParser.cpp
+    src/cpp/SentimentClassifier.cpp
     src/cpp/Filters.cpp
     src/cpp/TextAnalyzer.cpp
 )

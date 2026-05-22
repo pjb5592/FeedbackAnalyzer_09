@@ -2,18 +2,9 @@
 
 #include "Constants.h"
 #include "KeywordMatcher.h"
+#include "SentimentClassifier.h"
 
 namespace {
-
-std::string classifySentiment(const std::string& text) {
-    if (fa::containsAny(text, Constants::SENTIMENT_KEYWORDS[u8"긍정"])) {
-        return u8"긍정";
-    }
-    if (fa::containsAny(text, Constants::SENTIMENT_KEYWORDS[u8"부정"])) {
-        return u8"부정";
-    }
-    return u8"중립";
-}
 
 std::vector<Feedback> filterBySentiment(const std::vector<Feedback>& dataList,
                                       const std::string& sentimentFilter) {
@@ -23,7 +14,7 @@ std::vector<Feedback> filterBySentiment(const std::vector<Feedback>& dataList,
 
     std::vector<Feedback> result;
     for (const auto& item : dataList) {
-        if (classifySentiment(item.getText()) == sentimentFilter) {
+        if (fa::classifySentiment(item.getText()) == sentimentFilter) {
             result.push_back(item);
         }
     }
