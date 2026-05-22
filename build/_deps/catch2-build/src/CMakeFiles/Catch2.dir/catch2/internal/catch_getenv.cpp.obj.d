@@ -1,0 +1,32 @@
+_deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_getenv.cpp.obj: \
+ D:\DEV\FeedbackAnalyzer_09\build\_deps\catch2-src\src\catch2\internal\catch_getenv.cpp \
+ D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/src/catch2/internal/catch_getenv.hpp \
+ D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/src/catch2/internal/catch_platform.hpp \
+ D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/src/catch2/internal/catch_compiler_capabilities.hpp \
+ D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-build/generated-includes/catch2/catch_user_config.hpp \
+ D:/mingw64/include/c++/15.2.0/cstddef \
+ D:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ D:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ D:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ D:/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ D:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ D:/mingw64/include/c++/15.2.0/bits/version.h \
+ D:/mingw64/include/c++/15.2.0/cstdlib \
+ D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ D:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
+ D:/mingw64/x86_64-w64-mingw32/include/limits.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ D:/mingw64/include/c++/15.2.0/stdlib.h \
+ D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+ D:/mingw64/x86_64-w64-mingw32/include/errno.h \
+ D:/mingw64/include/c++/15.2.0/bits/std_abs.h
