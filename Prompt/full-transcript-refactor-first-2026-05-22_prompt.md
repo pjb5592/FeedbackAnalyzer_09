@@ -2,7 +2,7 @@
 
 **프로젝트:** Feedback Analyzer_09  
 **갱신:** 2026-05-22  
-**브랜치:** `refactoring` (Step 11 — **TODO #7 defect_list + GM 재점검**)
+**브랜치:** `feature/newFeature` (Step 15 — **`docs/report.md` Cursor AI 종합**)
 
 ---
 
@@ -22,6 +22,10 @@
 | **09** | **refactor-phase0-4** | `src/cpp/` 12 Step, ctest 67/67, GM·coverage Green | ✅ |
 | **10** | **refactor-phase5-7** | Phase 5~7 8 Step, SentimentClassifier·Session·PageModel | ✅ |
 | **11** | **green-defect-list** | `docs/defect_list.md`, GM drift 없음 재확인 | ✅ |
+| **12** | **feature-newFeature** | FA-TC-55~58, GM-10, Trend·FileHandler·Sentiment DB | ✅ |
+| **13** | **spec-defect-report** | `docs/defect_report.md` process-1.0 | ✅ |
+| **14** | **qa-final-report** | `docs/qa_final_report.md`, ctest/lcov 실측 | ✅ |
+| **15** | **docs-cursor-report** | `docs/report.md`, 분석·개선·전후 C++·향후 과제 | ✅ |
 
 ---
 
@@ -295,6 +299,75 @@
 
 ---
 
+## Step 13 상세 (2026-05-22)
+
+**User:** `@docs/defect_list.md` `@docs/test_plan.md` — [P] QA 리드 · `docs/defect_report.md` (Severity×ItemType, 템플릿, 메트릭, 한글 프로세스).
+
+**Assistant:**
+- `docs/defect_report.md` 신규 (process-1.0): 매트릭스·템플릿·M1~M12·G1~G5·DEF-01~04 예시
+- `defect_list.md` · `test_plan.md` 부록 · README TODO #10 `[x]`
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Report 13 / Transcript 13 / full-transcript / README / git.
+
+**Assistant:** Report 13 · Transcript 13 · full-transcript · commit·push.
+
+**다음:** TODO #11 `architecture.md` (선택) · TODO #12 `qa_final_report.md` · feature → main PR
+
+---
+
+## Step 12 상세 (2026-05-22)
+
+**User:** feature/newFeature — 미션 6~7 (Trend, FileHandler, SentimentKeywordStore, AC-SENT-02).
+
+**Assistant:**
+- FA-TC-55~58 · GM-10 · `SentimentClassifier` 가중치 · `FileHandler::saveResult`
+- ctest **79/79** (유닛 + HTTP IT + GM) — Report 12
+- `README.md` TODO #9 `[x]`
+
+**User:** [P] 문서·배포 — Report 12 / Transcript 12 / full-transcript / README / git.
+
+**Assistant:** Report 12 · commit·push.
+
+---
+
+## Step 14 상세 (2026-05-22)
+
+**User:** `@docs/requirements_analysis.md` … `@tests/` — [P] QA 리드 · `docs/qa_final_report.md` (커버리지, 결함, Before/After, 회고) · ctest·lcov 반영.
+
+**Assistant:**
+- `ctest --test-dir build-cov` — **70/70** (`-E NOT_BUILT`) · GoldenMaster PASS
+- `run_coverage_gate.ps1` — Domain **97.3%** · Boundary **92.3%** · Overall **95.9%**
+- `docs/qa_final_report.md` (qa-final-1.0) · README TODO #12 `[x]`
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Report 14 / Transcript 14 / full-transcript / README / git commit·push.
+
+**Assistant:** Report 14 · Transcript 14 · full-transcript Step 14 · commit·push.
+
+**다음:** `feature/newFeature` → `main` PR · Mom Test 수동 · IT 타겟 빌드(선택) · TODO #11 architecture (선택)
+
+---
+
+## Step 15 상세 (2026-05-22)
+
+**User:** [P] 프로젝트 문서 담당 — Cursor AI 분석 결과 → `docs/report.md` (배경·표·개선 내역·C++ Before/After·효과·향후 과제) · 순수 Markdown.
+
+**Assistant:**
+- `docs/code_quality_report.md` · `qa_final_report.md` · `defect_list.md` · `Report/00~14` 종합
+- `docs/report.md` 신규 — DEF-01~04·Phase 0~7·ctest 70/70·lcov 수치 반영
+- `src/cpp/` diff 0
+
+**User:** [P] 문서·배포 — Report 15 / Transcript 15 / full-transcript / README / git commit·push.
+
+**Assistant:**
+- `ctest --test-dir build-cov -E NOT_BUILT` — **70/70 PASS**
+- Report 15 · Transcript 15 · README Step 15 · commit·push
+
+**다음:** `feature/newFeature` → `main` PR · TODO #11 `architecture.md` (선택)
+
+---
+
 ## 브랜치·의존 로드맵 (참고)
 
 ```
@@ -315,7 +388,10 @@ main → spec → red → green → refactoring → feature/newFeature → main
 | 6 | refactoring | Phase 0~4 Step 실행 (12 Commit) ✅ |
 | 6b | refactoring | Phase 5~7 후속 스멜 제거 (8 Commit) ✅ (Step 10) |
 | 7 | refactoring | `defect_list.md` + GM 재점검 ✅ (Step 11) |
-| 9 | feature | 미션 6~7 |
+| 9 | feature | 미션 6~7 ✅ (Step 12) |
+| 10 | spec | `defect_report.md` ✅ (Step 13) |
+| 12 | feature | QA 종합 `qa_final_report.md` ✅ (Step 14) |
+| — | feature | Cursor AI 종합 `docs/report.md` ✅ (Step 15) |
 
 ---
 

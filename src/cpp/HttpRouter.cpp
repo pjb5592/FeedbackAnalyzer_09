@@ -6,6 +6,7 @@
 
 #include "CsvUploadParser.h"
 #include "Feedback.h"
+#include "FileHandler.h"
 #include "HtmlRenderer.h"
 #include "Logger.h"
 #include "Session.h"
@@ -172,6 +173,8 @@ void HttpRouter::registerRoutes(httplib::Server& server, AppContext& ctx) {
     });
 
     server.Get("/download", [](const httplib::Request&, httplib::Response& res) {
+        const auto& view = Session::getDownloadView();
+        FileHandler::saveResult(view, "filtered_feedback.csv");
         const std::string csv = Session::renderDownloadCsv();
         res.set_header("Content-Disposition",
                        "attachment; filename=\"filtered_feedback.csv\"");

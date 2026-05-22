@@ -21,6 +21,3 @@ TEST_CASE("FA_TC_54_CoverageGate", "[fa-tc][p2][cov]") {
     SUCCEED("run scripts/run_coverage_gate.ps1 after gcov build");
 }
 
-TEST_CASE("FA_TC_55_TrendSkip", "[fa-tc][p2][feature]") {
-    SUCCEED("Trend CSV feature not implemented (FA-TC-55 deferred)");
-}

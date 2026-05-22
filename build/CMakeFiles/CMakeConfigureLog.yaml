@@ -11,11 +11,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "D:/mingw64/share/cmake-4.3/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeMinGWFindMake.cmake:5 (find_program)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
-    description: "Program used to build from build.ninja files."
+    description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
@@ -25,11 +25,8 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "ninja-build"
-      - "ninja"
-      - "samu"
+      - "mingw32-make.exe"
     candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -62,551 +59,45 @@ events:
       - "C:/Program Files/cursor/resources/app/bin/"
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
+      - "/REGISTRY-NOTFOUND/bin/"
+      - "c:/MinGW/bin/"
+      - "/MinGW/bin/"
+      - "/REGISTRY-NOTFOUND/MinGW/bin/"
     searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/ninja-build.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/ninja-build.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/ninja-build"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/ninja.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/ninja.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/ninja"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/samu.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/samu.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/samu"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ninja-build.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ninja-build.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ninja-build"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ninja.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ninja.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ninja"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/samu.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/samu.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/samu"
-      - "C:/Windows/System32/ninja-build.com"
-      - "C:/Windows/System32/ninja-build.exe"
-      - "C:/Windows/System32/ninja-build"
-      - "C:/Windows/System32/ninja.com"
-      - "C:/Windows/System32/ninja.exe"
-      - "C:/Windows/System32/ninja"
-      - "C:/Windows/System32/samu.com"
-      - "C:/Windows/System32/samu.exe"
-      - "C:/Windows/System32/samu"
-      - "C:/Windows/ninja-build.com"
-      - "C:/Windows/ninja-build.exe"
-      - "C:/Windows/ninja-build"
-      - "C:/Windows/ninja.com"
-      - "C:/Windows/ninja.exe"
-      - "C:/Windows/ninja"
-      - "C:/Windows/samu.com"
-      - "C:/Windows/samu.exe"
-      - "C:/Windows/samu"
-      - "C:/Windows/System32/wbem/ninja-build.com"
-      - "C:/Windows/System32/wbem/ninja-build.exe"
-      - "C:/Windows/System32/wbem/ninja-build"
-      - "C:/Windows/System32/wbem/ninja.com"
-      - "C:/Windows/System32/wbem/ninja.exe"
-      - "C:/Windows/System32/wbem/ninja"
-      - "C:/Windows/System32/wbem/samu.com"
-      - "C:/Windows/System32/wbem/samu.exe"
-      - "C:/Windows/System32/wbem/samu"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/ninja-build.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/ninja-build.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/ninja-build"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/ninja.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/ninja.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/ninja"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/samu.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/samu.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/samu"
-      - "C:/Windows/System32/OpenSSH/ninja-build.com"
-      - "C:/Windows/System32/OpenSSH/ninja-build.exe"
-      - "C:/Windows/System32/OpenSSH/ninja-build"
-      - "C:/Windows/System32/OpenSSH/ninja.com"
-      - "C:/Windows/System32/OpenSSH/ninja.exe"
-      - "C:/Windows/System32/OpenSSH/ninja"
-      - "C:/Windows/System32/OpenSSH/samu.com"
-      - "C:/Windows/System32/OpenSSH/samu.exe"
-      - "C:/Windows/System32/OpenSSH/samu"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ninja-build.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ninja-build.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ninja-build"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ninja.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ninja.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ninja"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/samu.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/samu.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/samu"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ninja-build.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ninja-build.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ninja-build"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ninja.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ninja.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ninja"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/samu.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/samu.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/samu"
-      - "C:/Program Files/Bandizip/ninja-build.com"
-      - "C:/Program Files/Bandizip/ninja-build.exe"
-      - "C:/Program Files/Bandizip/ninja-build"
-      - "C:/Program Files/Bandizip/ninja.com"
-      - "C:/Program Files/Bandizip/ninja.exe"
-      - "C:/Program Files/Bandizip/ninja"
-      - "C:/Program Files/Bandizip/samu.com"
-      - "C:/Program Files/Bandizip/samu.exe"
-      - "C:/Program Files/Bandizip/samu"
-      - "D:/platform-tools/ninja-build.com"
-      - "D:/platform-tools/ninja-build.exe"
-      - "D:/platform-tools/ninja-build"
-      - "D:/platform-tools/ninja.com"
-      - "D:/platform-tools/ninja.exe"
-      - "D:/platform-tools/ninja"
-      - "D:/platform-tools/samu.com"
-      - "D:/platform-tools/samu.exe"
-      - "D:/platform-tools/samu"
-      - "C:/Program Files/dotnet/ninja-build.com"
-      - "C:/Program Files/dotnet/ninja-build.exe"
-      - "C:/Program Files/dotnet/ninja-build"
-      - "C:/Program Files/dotnet/ninja.com"
-      - "C:/Program Files/dotnet/ninja.exe"
-      - "C:/Program Files/dotnet/ninja"
-      - "C:/Program Files/dotnet/samu.com"
-      - "C:/Program Files/dotnet/samu.exe"
-      - "C:/Program Files/dotnet/samu"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ninja-build.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ninja-build.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ninja-build"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ninja.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ninja.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ninja"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/samu.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/samu.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/samu"
-      - "C:/Program Files/WireGuard/ninja-build.com"
-      - "C:/Program Files/WireGuard/ninja-build.exe"
-      - "C:/Program Files/WireGuard/ninja-build"
-      - "C:/Program Files/WireGuard/ninja.com"
-      - "C:/Program Files/WireGuard/ninja.exe"
-      - "C:/Program Files/WireGuard/ninja"
-      - "C:/Program Files/WireGuard/samu.com"
-      - "C:/Program Files/WireGuard/samu.exe"
-      - "C:/Program Files/WireGuard/samu"
-      - "C:/Program Files/Tailscale/ninja-build.com"
-      - "C:/Program Files/Tailscale/ninja-build.exe"
-      - "C:/Program Files/Tailscale/ninja-build"
-      - "C:/Program Files/Tailscale/ninja.com"
-      - "C:/Program Files/Tailscale/ninja.exe"
-      - "C:/Program Files/Tailscale/ninja"
-      - "C:/Program Files/Tailscale/samu.com"
-      - "C:/Program Files/Tailscale/samu.exe"
-      - "C:/Program Files/Tailscale/samu"
-      - "C:/Program Files/Microsoft VS Code/bin/ninja-build.com"
-      - "C:/Program Files/Microsoft VS Code/bin/ninja-build.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/ninja-build"
-      - "C:/Program Files/Microsoft VS Code/bin/ninja.com"
-      - "C:/Program Files/Microsoft VS Code/bin/ninja.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/ninja"
-      - "C:/Program Files/Microsoft VS Code/bin/samu.com"
-      - "C:/Program Files/Microsoft VS Code/bin/samu.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/samu"
-      - "D:/mingw64/bin/ninja-build.com"
-      - "D:/mingw64/bin/ninja-build.exe"
-      - "D:/mingw64/bin/ninja-build"
-      - "D:/mingw64/bin/ninja.com"
-    found: "D:/mingw64/bin/ninja.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/mingw32-make.exe.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/mingw32-make.exe"
+      - "C:/Windows/System32/mingw32-make.exe.com"
+      - "C:/Windows/System32/mingw32-make.exe"
+      - "C:/Windows/mingw32-make.exe.com"
+      - "C:/Windows/mingw32-make.exe"
+      - "C:/Windows/System32/wbem/mingw32-make.exe.com"
+      - "C:/Windows/System32/wbem/mingw32-make.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mingw32-make.exe.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mingw32-make.exe"
+      - "C:/Windows/System32/OpenSSH/mingw32-make.exe.com"
+      - "C:/Windows/System32/OpenSSH/mingw32-make.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mingw32-make.exe.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mingw32-make.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/mingw32-make.exe.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/mingw32-make.exe"
+      - "C:/Program Files/Bandizip/mingw32-make.exe.com"
+      - "C:/Program Files/Bandizip/mingw32-make.exe"
+      - "D:/platform-tools/mingw32-make.exe.com"
+      - "D:/platform-tools/mingw32-make.exe"
+      - "C:/Program Files/dotnet/mingw32-make.exe.com"
+      - "C:/Program Files/dotnet/mingw32-make.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mingw32-make.exe.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mingw32-make.exe"
+      - "C:/Program Files/WireGuard/mingw32-make.exe.com"
+      - "C:/Program Files/WireGuard/mingw32-make.exe"
+      - "C:/Program Files/Tailscale/mingw32-make.exe.com"
+      - "C:/Program Files/Tailscale/mingw32-make.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/mingw32-make.exe.com"
+      - "C:/Program Files/Microsoft VS Code/bin/mingw32-make.exe"
+      - "D:/mingw64/bin/mingw32-make.exe.com"
+    found: "D:/mingw64/bin/mingw32-make.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
-        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
-        - "C:\\Program Files\\Bandizip\\"
-        - "C:\\WINDOWS\\system32"
-        - "C:\\WINDOWS"
-        - "C:\\WINDOWS\\System32\\Wbem"
-        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "D:\\platform-tools"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files\\WireGuard\\"
-        - "C:\\Program Files\\Tailscale\\"
-        - "C:\\Program Files\\Microsoft VS Code\\bin"
-        - "D:\\mingw64\\bin"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Cppcheck"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\LLVM\\bin"
-        - "C:\\ProgramData\\chocolatey\\bin"
-        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\JB\\.dotnet\\tools"
-        - "C:\\ProgramData\\chocolatey\\bin"
-        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
-        - "C:\\Strawberry\\c\\bin"
-        - "C:\\Strawberry\\perl\\site\\bin"
-        - "C:\\Strawberry\\perl\\bin"
-        - "D:\\DEV\\Batch"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\cursor\\resources\\app\\bin"
-        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\JB\\.dotnet\\tools"
-        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
-        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:63 (find_program)"
-      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER"
-    description: "CXX compiler"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "c++"
-      - "g++"
-      - "cl"
-      - "bcc"
-      - "icx"
-      - "clang++"
-    candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
-      - "C:/Program Files/Bandizip/"
-      - "D:/platform-tools/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files/WireGuard/"
-      - "C:/Program Files/Tailscale/"
-      - "C:/Program Files/Microsoft VS Code/bin/"
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Cppcheck/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/LLVM/bin/"
-      - "C:/ProgramData/chocolatey/bin/"
-      - "C:/Users/JB/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/JB/.dotnet/tools/"
-      - "C:/ProgramData/chocolatey/lib/lcov/tools/bin/"
-      - "C:/Strawberry/c/bin/"
-      - "C:/Strawberry/perl/site/bin/"
-      - "C:/Strawberry/perl/bin/"
-      - "D:/DEV/Batch/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/cursor/resources/app/bin/"
-      - "C:/Users/JB/AppData/Local/Python/bin/"
-      - "C:/Users/JB/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/c++.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/c++.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/c++"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/g++.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/g++.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/g++"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/cl.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/cl.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/cl"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/bcc.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/bcc.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/bcc"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/icx.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/icx.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/icx"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/clang++.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/clang++.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/clang++"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/c++.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/c++.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/c++"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/g++.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/g++.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/g++"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/cl.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/cl.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/cl"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/bcc.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/bcc.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/bcc"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/icx.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/icx.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/icx"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/clang++.com"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/clang++.exe"
-      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/clang++"
-      - "C:/Windows/System32/c++.com"
-      - "C:/Windows/System32/c++.exe"
-      - "C:/Windows/System32/c++"
-      - "C:/Windows/System32/g++.com"
-      - "C:/Windows/System32/g++.exe"
-      - "C:/Windows/System32/g++"
-      - "C:/Windows/System32/cl.com"
-      - "C:/Windows/System32/cl.exe"
-      - "C:/Windows/System32/cl"
-      - "C:/Windows/System32/bcc.com"
-      - "C:/Windows/System32/bcc.exe"
-      - "C:/Windows/System32/bcc"
-      - "C:/Windows/System32/icx.com"
-      - "C:/Windows/System32/icx.exe"
-      - "C:/Windows/System32/icx"
-      - "C:/Windows/System32/clang++.com"
-      - "C:/Windows/System32/clang++.exe"
-      - "C:/Windows/System32/clang++"
-      - "C:/Windows/c++.com"
-      - "C:/Windows/c++.exe"
-      - "C:/Windows/c++"
-      - "C:/Windows/g++.com"
-      - "C:/Windows/g++.exe"
-      - "C:/Windows/g++"
-      - "C:/Windows/cl.com"
-      - "C:/Windows/cl.exe"
-      - "C:/Windows/cl"
-      - "C:/Windows/bcc.com"
-      - "C:/Windows/bcc.exe"
-      - "C:/Windows/bcc"
-      - "C:/Windows/icx.com"
-      - "C:/Windows/icx.exe"
-      - "C:/Windows/icx"
-      - "C:/Windows/clang++.com"
-      - "C:/Windows/clang++.exe"
-      - "C:/Windows/clang++"
-      - "C:/Windows/System32/wbem/c++.com"
-      - "C:/Windows/System32/wbem/c++.exe"
-      - "C:/Windows/System32/wbem/c++"
-      - "C:/Windows/System32/wbem/g++.com"
-      - "C:/Windows/System32/wbem/g++.exe"
-      - "C:/Windows/System32/wbem/g++"
-      - "C:/Windows/System32/wbem/cl.com"
-      - "C:/Windows/System32/wbem/cl.exe"
-      - "C:/Windows/System32/wbem/cl"
-      - "C:/Windows/System32/wbem/bcc.com"
-      - "C:/Windows/System32/wbem/bcc.exe"
-      - "C:/Windows/System32/wbem/bcc"
-      - "C:/Windows/System32/wbem/icx.com"
-      - "C:/Windows/System32/wbem/icx.exe"
-      - "C:/Windows/System32/wbem/icx"
-      - "C:/Windows/System32/wbem/clang++.com"
-      - "C:/Windows/System32/wbem/clang++.exe"
-      - "C:/Windows/System32/wbem/clang++"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/c++.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/c++.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/c++"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang++.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang++.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang++"
-      - "C:/Windows/System32/OpenSSH/c++.com"
-      - "C:/Windows/System32/OpenSSH/c++.exe"
-      - "C:/Windows/System32/OpenSSH/c++"
-      - "C:/Windows/System32/OpenSSH/g++.com"
-      - "C:/Windows/System32/OpenSSH/g++.exe"
-      - "C:/Windows/System32/OpenSSH/g++"
-      - "C:/Windows/System32/OpenSSH/cl.com"
-      - "C:/Windows/System32/OpenSSH/cl.exe"
-      - "C:/Windows/System32/OpenSSH/cl"
-      - "C:/Windows/System32/OpenSSH/bcc.com"
-      - "C:/Windows/System32/OpenSSH/bcc.exe"
-      - "C:/Windows/System32/OpenSSH/bcc"
-      - "C:/Windows/System32/OpenSSH/icx.com"
-      - "C:/Windows/System32/OpenSSH/icx.exe"
-      - "C:/Windows/System32/OpenSSH/icx"
-      - "C:/Windows/System32/OpenSSH/clang++.com"
-      - "C:/Windows/System32/OpenSSH/clang++.exe"
-      - "C:/Windows/System32/OpenSSH/clang++"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/c++.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/c++.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/c++"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/g++.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/g++.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/g++"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/cl.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/cl.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/cl"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/bcc.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/bcc.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/bcc"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/icx.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/icx.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/icx"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/clang++.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/clang++.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/clang++"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/c++.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/c++.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/c++"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/g++.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/g++.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/g++"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/cl.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/cl.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/cl"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/bcc.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/bcc.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/bcc"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/icx.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/icx.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/icx"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/clang++.com"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/clang++.exe"
-      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/clang++"
-      - "C:/Program Files/Bandizip/c++.com"
-      - "C:/Program Files/Bandizip/c++.exe"
-      - "C:/Program Files/Bandizip/c++"
-      - "C:/Program Files/Bandizip/g++.com"
-      - "C:/Program Files/Bandizip/g++.exe"
-      - "C:/Program Files/Bandizip/g++"
-      - "C:/Program Files/Bandizip/cl.com"
-      - "C:/Program Files/Bandizip/cl.exe"
-      - "C:/Program Files/Bandizip/cl"
-      - "C:/Program Files/Bandizip/bcc.com"
-      - "C:/Program Files/Bandizip/bcc.exe"
-      - "C:/Program Files/Bandizip/bcc"
-      - "C:/Program Files/Bandizip/icx.com"
-      - "C:/Program Files/Bandizip/icx.exe"
-      - "C:/Program Files/Bandizip/icx"
-      - "C:/Program Files/Bandizip/clang++.com"
-      - "C:/Program Files/Bandizip/clang++.exe"
-      - "C:/Program Files/Bandizip/clang++"
-      - "D:/platform-tools/c++.com"
-      - "D:/platform-tools/c++.exe"
-      - "D:/platform-tools/c++"
-      - "D:/platform-tools/g++.com"
-      - "D:/platform-tools/g++.exe"
-      - "D:/platform-tools/g++"
-      - "D:/platform-tools/cl.com"
-      - "D:/platform-tools/cl.exe"
-      - "D:/platform-tools/cl"
-      - "D:/platform-tools/bcc.com"
-      - "D:/platform-tools/bcc.exe"
-      - "D:/platform-tools/bcc"
-      - "D:/platform-tools/icx.com"
-      - "D:/platform-tools/icx.exe"
-      - "D:/platform-tools/icx"
-      - "D:/platform-tools/clang++.com"
-      - "D:/platform-tools/clang++.exe"
-      - "D:/platform-tools/clang++"
-      - "C:/Program Files/dotnet/c++.com"
-      - "C:/Program Files/dotnet/c++.exe"
-      - "C:/Program Files/dotnet/c++"
-      - "C:/Program Files/dotnet/g++.com"
-      - "C:/Program Files/dotnet/g++.exe"
-      - "C:/Program Files/dotnet/g++"
-      - "C:/Program Files/dotnet/cl.com"
-      - "C:/Program Files/dotnet/cl.exe"
-      - "C:/Program Files/dotnet/cl"
-      - "C:/Program Files/dotnet/bcc.com"
-      - "C:/Program Files/dotnet/bcc.exe"
-      - "C:/Program Files/dotnet/bcc"
-      - "C:/Program Files/dotnet/icx.com"
-      - "C:/Program Files/dotnet/icx.exe"
-      - "C:/Program Files/dotnet/icx"
-      - "C:/Program Files/dotnet/clang++.com"
-      - "C:/Program Files/dotnet/clang++.exe"
-      - "C:/Program Files/dotnet/clang++"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/c++.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/c++.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/c++"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/g++.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/g++.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/g++"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/cl.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/cl.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/cl"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/bcc.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/bcc.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/bcc"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/icx.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/icx.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/icx"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/clang++.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/clang++.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/clang++"
-      - "C:/Program Files/WireGuard/c++.com"
-      - "C:/Program Files/WireGuard/c++.exe"
-      - "C:/Program Files/WireGuard/c++"
-      - "C:/Program Files/WireGuard/g++.com"
-      - "C:/Program Files/WireGuard/g++.exe"
-      - "C:/Program Files/WireGuard/g++"
-      - "C:/Program Files/WireGuard/cl.com"
-      - "C:/Program Files/WireGuard/cl.exe"
-      - "C:/Program Files/WireGuard/cl"
-      - "C:/Program Files/WireGuard/bcc.com"
-      - "C:/Program Files/WireGuard/bcc.exe"
-      - "C:/Program Files/WireGuard/bcc"
-      - "C:/Program Files/WireGuard/icx.com"
-      - "C:/Program Files/WireGuard/icx.exe"
-      - "C:/Program Files/WireGuard/icx"
-      - "C:/Program Files/WireGuard/clang++.com"
-      - "C:/Program Files/WireGuard/clang++.exe"
-      - "C:/Program Files/WireGuard/clang++"
-      - "C:/Program Files/Tailscale/c++.com"
-      - "C:/Program Files/Tailscale/c++.exe"
-      - "C:/Program Files/Tailscale/c++"
-      - "C:/Program Files/Tailscale/g++.com"
-      - "C:/Program Files/Tailscale/g++.exe"
-      - "C:/Program Files/Tailscale/g++"
-      - "C:/Program Files/Tailscale/cl.com"
-      - "C:/Program Files/Tailscale/cl.exe"
-      - "C:/Program Files/Tailscale/cl"
-      - "C:/Program Files/Tailscale/bcc.com"
-      - "C:/Program Files/Tailscale/bcc.exe"
-      - "C:/Program Files/Tailscale/bcc"
-      - "C:/Program Files/Tailscale/icx.com"
-      - "C:/Program Files/Tailscale/icx.exe"
-      - "C:/Program Files/Tailscale/icx"
-      - "C:/Program Files/Tailscale/clang++.com"
-      - "C:/Program Files/Tailscale/clang++.exe"
-      - "C:/Program Files/Tailscale/clang++"
-      - "C:/Program Files/Microsoft VS Code/bin/c++.com"
-      - "C:/Program Files/Microsoft VS Code/bin/c++.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/c++"
-      - "C:/Program Files/Microsoft VS Code/bin/g++.com"
-      - "C:/Program Files/Microsoft VS Code/bin/g++.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/g++"
-      - "C:/Program Files/Microsoft VS Code/bin/cl.com"
-      - "C:/Program Files/Microsoft VS Code/bin/cl.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/cl"
-      - "C:/Program Files/Microsoft VS Code/bin/bcc.com"
-      - "C:/Program Files/Microsoft VS Code/bin/bcc.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/bcc"
-      - "C:/Program Files/Microsoft VS Code/bin/icx.com"
-      - "C:/Program Files/Microsoft VS Code/bin/icx.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/icx"
-      - "C:/Program Files/Microsoft VS Code/bin/clang++.com"
-      - "C:/Program Files/Microsoft VS Code/bin/clang++.exe"
-      - "C:/Program Files/Microsoft VS Code/bin/clang++"
-      - "D:/mingw64/bin/c++.com"
-    found: "D:/mingw64/bin/c++.exe"
-    search_context:
-      ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -674,7 +165,6 @@ events:
     found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -723,20 +213,957 @@ events:
       - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: D:/mingw64/bin/c++.exe 
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
       Build flags: 
       Id flags:  
       
       The output was:
-      0
+      no such file or directory
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c 
       
-      The CXX compiler identification is GNU, found in:
-        D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/4.3.1/CompilerIdCXX/a.exe
+      The output was:
+      no such file or directory
       
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --c++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --ec++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --c++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --ec++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
   -
     kind: "find-v1"
     backtrace:
@@ -757,8 +1184,7 @@ events:
     names:
       - "ar"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -774,6 +1200,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -791,11 +1218,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/ar.com"
+      - "C:/mingw64/bin/ar.exe"
+      - "C:/mingw64/bin/ar"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ar.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ar.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ar"
+      - "C:/Windows/System32/ar.com"
+      - "C:/Windows/System32/ar.exe"
+      - "C:/Windows/System32/ar"
+      - "C:/Windows/ar.com"
+      - "C:/Windows/ar.exe"
+      - "C:/Windows/ar"
+      - "C:/Windows/System32/wbem/ar.com"
+      - "C:/Windows/System32/wbem/ar.exe"
+      - "C:/Windows/System32/wbem/ar"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ar.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ar.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ar"
+      - "C:/Windows/System32/OpenSSH/ar.com"
+      - "C:/Windows/System32/OpenSSH/ar.exe"
+      - "C:/Windows/System32/OpenSSH/ar"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ar.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ar.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ar"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ar.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ar.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ar"
+      - "C:/Program Files/Bandizip/ar.com"
+      - "C:/Program Files/Bandizip/ar.exe"
+      - "C:/Program Files/Bandizip/ar"
+      - "D:/platform-tools/ar.com"
+      - "D:/platform-tools/ar.exe"
+      - "D:/platform-tools/ar"
+      - "C:/Program Files/dotnet/ar.com"
+      - "C:/Program Files/dotnet/ar.exe"
+      - "C:/Program Files/dotnet/ar"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ar.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ar.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ar"
+      - "C:/Program Files/WireGuard/ar.com"
+      - "C:/Program Files/WireGuard/ar.exe"
+      - "C:/Program Files/WireGuard/ar"
+      - "C:/Program Files/Tailscale/ar.com"
+      - "C:/Program Files/Tailscale/ar.exe"
+      - "C:/Program Files/Tailscale/ar"
+      - "C:/Program Files/Microsoft VS Code/bin/ar.com"
+      - "C:/Program Files/Microsoft VS Code/bin/ar.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/ar"
       - "D:/mingw64/bin/ar.com"
     found: "D:/mingw64/bin/ar.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -856,8 +1330,7 @@ events:
     names:
       - "ranlib"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -873,6 +1346,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -890,11 +1364,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/ranlib.com"
+      - "C:/mingw64/bin/ranlib.exe"
+      - "C:/mingw64/bin/ranlib"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ranlib.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ranlib.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ranlib"
+      - "C:/Windows/System32/ranlib.com"
+      - "C:/Windows/System32/ranlib.exe"
+      - "C:/Windows/System32/ranlib"
+      - "C:/Windows/ranlib.com"
+      - "C:/Windows/ranlib.exe"
+      - "C:/Windows/ranlib"
+      - "C:/Windows/System32/wbem/ranlib.com"
+      - "C:/Windows/System32/wbem/ranlib.exe"
+      - "C:/Windows/System32/wbem/ranlib"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ranlib.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ranlib.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ranlib"
+      - "C:/Windows/System32/OpenSSH/ranlib.com"
+      - "C:/Windows/System32/OpenSSH/ranlib.exe"
+      - "C:/Windows/System32/OpenSSH/ranlib"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ranlib.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ranlib.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ranlib"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ranlib.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ranlib.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ranlib"
+      - "C:/Program Files/Bandizip/ranlib.com"
+      - "C:/Program Files/Bandizip/ranlib.exe"
+      - "C:/Program Files/Bandizip/ranlib"
+      - "D:/platform-tools/ranlib.com"
+      - "D:/platform-tools/ranlib.exe"
+      - "D:/platform-tools/ranlib"
+      - "C:/Program Files/dotnet/ranlib.com"
+      - "C:/Program Files/dotnet/ranlib.exe"
+      - "C:/Program Files/dotnet/ranlib"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ranlib.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ranlib.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ranlib"
+      - "C:/Program Files/WireGuard/ranlib.com"
+      - "C:/Program Files/WireGuard/ranlib.exe"
+      - "C:/Program Files/WireGuard/ranlib"
+      - "C:/Program Files/Tailscale/ranlib.com"
+      - "C:/Program Files/Tailscale/ranlib.exe"
+      - "C:/Program Files/Tailscale/ranlib"
+      - "C:/Program Files/Microsoft VS Code/bin/ranlib.com"
+      - "C:/Program Files/Microsoft VS Code/bin/ranlib.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/ranlib"
       - "D:/mingw64/bin/ranlib.com"
     found: "D:/mingw64/bin/ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -955,8 +1476,7 @@ events:
     names:
       - "strip"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -972,6 +1492,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -989,11 +1510,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/strip.com"
+      - "C:/mingw64/bin/strip.exe"
+      - "C:/mingw64/bin/strip"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/strip.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/strip.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/strip"
+      - "C:/Windows/System32/strip.com"
+      - "C:/Windows/System32/strip.exe"
+      - "C:/Windows/System32/strip"
+      - "C:/Windows/strip.com"
+      - "C:/Windows/strip.exe"
+      - "C:/Windows/strip"
+      - "C:/Windows/System32/wbem/strip.com"
+      - "C:/Windows/System32/wbem/strip.exe"
+      - "C:/Windows/System32/wbem/strip"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/strip.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/strip.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/strip"
+      - "C:/Windows/System32/OpenSSH/strip.com"
+      - "C:/Windows/System32/OpenSSH/strip.exe"
+      - "C:/Windows/System32/OpenSSH/strip"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/strip.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/strip.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/strip"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/strip.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/strip.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/strip"
+      - "C:/Program Files/Bandizip/strip.com"
+      - "C:/Program Files/Bandizip/strip.exe"
+      - "C:/Program Files/Bandizip/strip"
+      - "D:/platform-tools/strip.com"
+      - "D:/platform-tools/strip.exe"
+      - "D:/platform-tools/strip"
+      - "C:/Program Files/dotnet/strip.com"
+      - "C:/Program Files/dotnet/strip.exe"
+      - "C:/Program Files/dotnet/strip"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/strip.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/strip.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/strip"
+      - "C:/Program Files/WireGuard/strip.com"
+      - "C:/Program Files/WireGuard/strip.exe"
+      - "C:/Program Files/WireGuard/strip"
+      - "C:/Program Files/Tailscale/strip.com"
+      - "C:/Program Files/Tailscale/strip.exe"
+      - "C:/Program Files/Tailscale/strip"
+      - "C:/Program Files/Microsoft VS Code/bin/strip.com"
+      - "C:/Program Files/Microsoft VS Code/bin/strip.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/strip"
       - "D:/mingw64/bin/strip.com"
     found: "D:/mingw64/bin/strip.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1054,8 +1622,7 @@ events:
     names:
       - "ld"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1071,6 +1638,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1088,11 +1656,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/ld.com"
+      - "C:/mingw64/bin/ld.exe"
+      - "C:/mingw64/bin/ld"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ld.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ld.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/ld"
+      - "C:/Windows/System32/ld.com"
+      - "C:/Windows/System32/ld.exe"
+      - "C:/Windows/System32/ld"
+      - "C:/Windows/ld.com"
+      - "C:/Windows/ld.exe"
+      - "C:/Windows/ld"
+      - "C:/Windows/System32/wbem/ld.com"
+      - "C:/Windows/System32/wbem/ld.exe"
+      - "C:/Windows/System32/wbem/ld"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ld.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ld.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ld"
+      - "C:/Windows/System32/OpenSSH/ld.com"
+      - "C:/Windows/System32/OpenSSH/ld.exe"
+      - "C:/Windows/System32/OpenSSH/ld"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ld.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ld.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ld"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ld.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ld.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/ld"
+      - "C:/Program Files/Bandizip/ld.com"
+      - "C:/Program Files/Bandizip/ld.exe"
+      - "C:/Program Files/Bandizip/ld"
+      - "D:/platform-tools/ld.com"
+      - "D:/platform-tools/ld.exe"
+      - "D:/platform-tools/ld"
+      - "C:/Program Files/dotnet/ld.com"
+      - "C:/Program Files/dotnet/ld.exe"
+      - "C:/Program Files/dotnet/ld"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ld.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ld.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/ld"
+      - "C:/Program Files/WireGuard/ld.com"
+      - "C:/Program Files/WireGuard/ld.exe"
+      - "C:/Program Files/WireGuard/ld"
+      - "C:/Program Files/Tailscale/ld.com"
+      - "C:/Program Files/Tailscale/ld.exe"
+      - "C:/Program Files/Tailscale/ld"
+      - "C:/Program Files/Microsoft VS Code/bin/ld.com"
+      - "C:/Program Files/Microsoft VS Code/bin/ld.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/ld"
       - "D:/mingw64/bin/ld.com"
     found: "D:/mingw64/bin/ld.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1153,8 +1768,7 @@ events:
     names:
       - "nm"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1170,6 +1784,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1187,11 +1802,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/nm.com"
+      - "C:/mingw64/bin/nm.exe"
+      - "C:/mingw64/bin/nm"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/nm.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/nm.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/nm"
+      - "C:/Windows/System32/nm.com"
+      - "C:/Windows/System32/nm.exe"
+      - "C:/Windows/System32/nm"
+      - "C:/Windows/nm.com"
+      - "C:/Windows/nm.exe"
+      - "C:/Windows/nm"
+      - "C:/Windows/System32/wbem/nm.com"
+      - "C:/Windows/System32/wbem/nm.exe"
+      - "C:/Windows/System32/wbem/nm"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/nm.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/nm.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/nm"
+      - "C:/Windows/System32/OpenSSH/nm.com"
+      - "C:/Windows/System32/OpenSSH/nm.exe"
+      - "C:/Windows/System32/OpenSSH/nm"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/nm.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/nm.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/nm"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/nm.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/nm.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/nm"
+      - "C:/Program Files/Bandizip/nm.com"
+      - "C:/Program Files/Bandizip/nm.exe"
+      - "C:/Program Files/Bandizip/nm"
+      - "D:/platform-tools/nm.com"
+      - "D:/platform-tools/nm.exe"
+      - "D:/platform-tools/nm"
+      - "C:/Program Files/dotnet/nm.com"
+      - "C:/Program Files/dotnet/nm.exe"
+      - "C:/Program Files/dotnet/nm"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/nm.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/nm.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/nm"
+      - "C:/Program Files/WireGuard/nm.com"
+      - "C:/Program Files/WireGuard/nm.exe"
+      - "C:/Program Files/WireGuard/nm"
+      - "C:/Program Files/Tailscale/nm.com"
+      - "C:/Program Files/Tailscale/nm.exe"
+      - "C:/Program Files/Tailscale/nm"
+      - "C:/Program Files/Microsoft VS Code/bin/nm.com"
+      - "C:/Program Files/Microsoft VS Code/bin/nm.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/nm"
       - "D:/mingw64/bin/nm.com"
     found: "D:/mingw64/bin/nm.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1252,8 +1914,7 @@ events:
     names:
       - "objdump"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1269,6 +1930,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1286,11 +1948,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/objdump.com"
+      - "C:/mingw64/bin/objdump.exe"
+      - "C:/mingw64/bin/objdump"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/objdump.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/objdump.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/objdump"
+      - "C:/Windows/System32/objdump.com"
+      - "C:/Windows/System32/objdump.exe"
+      - "C:/Windows/System32/objdump"
+      - "C:/Windows/objdump.com"
+      - "C:/Windows/objdump.exe"
+      - "C:/Windows/objdump"
+      - "C:/Windows/System32/wbem/objdump.com"
+      - "C:/Windows/System32/wbem/objdump.exe"
+      - "C:/Windows/System32/wbem/objdump"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/objdump.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/objdump.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/objdump"
+      - "C:/Windows/System32/OpenSSH/objdump.com"
+      - "C:/Windows/System32/OpenSSH/objdump.exe"
+      - "C:/Windows/System32/OpenSSH/objdump"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/objdump.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/objdump.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/objdump"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/objdump.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/objdump.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/objdump"
+      - "C:/Program Files/Bandizip/objdump.com"
+      - "C:/Program Files/Bandizip/objdump.exe"
+      - "C:/Program Files/Bandizip/objdump"
+      - "D:/platform-tools/objdump.com"
+      - "D:/platform-tools/objdump.exe"
+      - "D:/platform-tools/objdump"
+      - "C:/Program Files/dotnet/objdump.com"
+      - "C:/Program Files/dotnet/objdump.exe"
+      - "C:/Program Files/dotnet/objdump"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/objdump.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/objdump.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/objdump"
+      - "C:/Program Files/WireGuard/objdump.com"
+      - "C:/Program Files/WireGuard/objdump.exe"
+      - "C:/Program Files/WireGuard/objdump"
+      - "C:/Program Files/Tailscale/objdump.com"
+      - "C:/Program Files/Tailscale/objdump.exe"
+      - "C:/Program Files/Tailscale/objdump"
+      - "C:/Program Files/Microsoft VS Code/bin/objdump.com"
+      - "C:/Program Files/Microsoft VS Code/bin/objdump.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/objdump"
       - "D:/mingw64/bin/objdump.com"
     found: "D:/mingw64/bin/objdump.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1351,8 +2060,7 @@ events:
     names:
       - "objcopy"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1368,6 +2076,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1385,11 +2094,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/objcopy.com"
+      - "C:/mingw64/bin/objcopy.exe"
+      - "C:/mingw64/bin/objcopy"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/objcopy.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/objcopy.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/objcopy"
+      - "C:/Windows/System32/objcopy.com"
+      - "C:/Windows/System32/objcopy.exe"
+      - "C:/Windows/System32/objcopy"
+      - "C:/Windows/objcopy.com"
+      - "C:/Windows/objcopy.exe"
+      - "C:/Windows/objcopy"
+      - "C:/Windows/System32/wbem/objcopy.com"
+      - "C:/Windows/System32/wbem/objcopy.exe"
+      - "C:/Windows/System32/wbem/objcopy"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/objcopy.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/objcopy.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/objcopy"
+      - "C:/Windows/System32/OpenSSH/objcopy.com"
+      - "C:/Windows/System32/OpenSSH/objcopy.exe"
+      - "C:/Windows/System32/OpenSSH/objcopy"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/objcopy.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/objcopy.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/objcopy"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/objcopy.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/objcopy.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/objcopy"
+      - "C:/Program Files/Bandizip/objcopy.com"
+      - "C:/Program Files/Bandizip/objcopy.exe"
+      - "C:/Program Files/Bandizip/objcopy"
+      - "D:/platform-tools/objcopy.com"
+      - "D:/platform-tools/objcopy.exe"
+      - "D:/platform-tools/objcopy"
+      - "C:/Program Files/dotnet/objcopy.com"
+      - "C:/Program Files/dotnet/objcopy.exe"
+      - "C:/Program Files/dotnet/objcopy"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/objcopy.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/objcopy.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/objcopy"
+      - "C:/Program Files/WireGuard/objcopy.com"
+      - "C:/Program Files/WireGuard/objcopy.exe"
+      - "C:/Program Files/WireGuard/objcopy"
+      - "C:/Program Files/Tailscale/objcopy.com"
+      - "C:/Program Files/Tailscale/objcopy.exe"
+      - "C:/Program Files/Tailscale/objcopy"
+      - "C:/Program Files/Microsoft VS Code/bin/objcopy.com"
+      - "C:/Program Files/Microsoft VS Code/bin/objcopy.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/objcopy"
       - "D:/mingw64/bin/objcopy.com"
     found: "D:/mingw64/bin/objcopy.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1450,8 +2206,7 @@ events:
     names:
       - "readelf"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1467,6 +2222,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1484,11 +2240,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/readelf.com"
+      - "C:/mingw64/bin/readelf.exe"
+      - "C:/mingw64/bin/readelf"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/readelf.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/readelf.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/readelf"
+      - "C:/Windows/System32/readelf.com"
+      - "C:/Windows/System32/readelf.exe"
+      - "C:/Windows/System32/readelf"
+      - "C:/Windows/readelf.com"
+      - "C:/Windows/readelf.exe"
+      - "C:/Windows/readelf"
+      - "C:/Windows/System32/wbem/readelf.com"
+      - "C:/Windows/System32/wbem/readelf.exe"
+      - "C:/Windows/System32/wbem/readelf"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/readelf.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/readelf.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/readelf"
+      - "C:/Windows/System32/OpenSSH/readelf.com"
+      - "C:/Windows/System32/OpenSSH/readelf.exe"
+      - "C:/Windows/System32/OpenSSH/readelf"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/readelf.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/readelf.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/readelf"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/readelf.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/readelf.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/readelf"
+      - "C:/Program Files/Bandizip/readelf.com"
+      - "C:/Program Files/Bandizip/readelf.exe"
+      - "C:/Program Files/Bandizip/readelf"
+      - "D:/platform-tools/readelf.com"
+      - "D:/platform-tools/readelf.exe"
+      - "D:/platform-tools/readelf"
+      - "C:/Program Files/dotnet/readelf.com"
+      - "C:/Program Files/dotnet/readelf.exe"
+      - "C:/Program Files/dotnet/readelf"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/readelf.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/readelf.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/readelf"
+      - "C:/Program Files/WireGuard/readelf.com"
+      - "C:/Program Files/WireGuard/readelf.exe"
+      - "C:/Program Files/WireGuard/readelf"
+      - "C:/Program Files/Tailscale/readelf.com"
+      - "C:/Program Files/Tailscale/readelf.exe"
+      - "C:/Program Files/Tailscale/readelf"
+      - "C:/Program Files/Microsoft VS Code/bin/readelf.com"
+      - "C:/Program Files/Microsoft VS Code/bin/readelf.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/readelf"
       - "D:/mingw64/bin/readelf.com"
     found: "D:/mingw64/bin/readelf.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1549,8 +2352,7 @@ events:
     names:
       - "dlltool"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1566,6 +2368,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1583,11 +2386,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/dlltool.com"
+      - "C:/mingw64/bin/dlltool.exe"
+      - "C:/mingw64/bin/dlltool"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/dlltool.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/dlltool.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/dlltool"
+      - "C:/Windows/System32/dlltool.com"
+      - "C:/Windows/System32/dlltool.exe"
+      - "C:/Windows/System32/dlltool"
+      - "C:/Windows/dlltool.com"
+      - "C:/Windows/dlltool.exe"
+      - "C:/Windows/dlltool"
+      - "C:/Windows/System32/wbem/dlltool.com"
+      - "C:/Windows/System32/wbem/dlltool.exe"
+      - "C:/Windows/System32/wbem/dlltool"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/dlltool.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/dlltool.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/dlltool"
+      - "C:/Windows/System32/OpenSSH/dlltool.com"
+      - "C:/Windows/System32/OpenSSH/dlltool.exe"
+      - "C:/Windows/System32/OpenSSH/dlltool"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dlltool.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dlltool.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dlltool"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/dlltool.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/dlltool.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/dlltool"
+      - "C:/Program Files/Bandizip/dlltool.com"
+      - "C:/Program Files/Bandizip/dlltool.exe"
+      - "C:/Program Files/Bandizip/dlltool"
+      - "D:/platform-tools/dlltool.com"
+      - "D:/platform-tools/dlltool.exe"
+      - "D:/platform-tools/dlltool"
+      - "C:/Program Files/dotnet/dlltool.com"
+      - "C:/Program Files/dotnet/dlltool.exe"
+      - "C:/Program Files/dotnet/dlltool"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/dlltool.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/dlltool.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/dlltool"
+      - "C:/Program Files/WireGuard/dlltool.com"
+      - "C:/Program Files/WireGuard/dlltool.exe"
+      - "C:/Program Files/WireGuard/dlltool"
+      - "C:/Program Files/Tailscale/dlltool.com"
+      - "C:/Program Files/Tailscale/dlltool.exe"
+      - "C:/Program Files/Tailscale/dlltool"
+      - "C:/Program Files/Microsoft VS Code/bin/dlltool.com"
+      - "C:/Program Files/Microsoft VS Code/bin/dlltool.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/dlltool"
       - "D:/mingw64/bin/dlltool.com"
     found: "D:/mingw64/bin/dlltool.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1648,8 +2498,7 @@ events:
     names:
       - "addr2line"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1665,6 +2514,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1682,11 +2532,58 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/mingw64/bin/addr2line.com"
+      - "C:/mingw64/bin/addr2line.exe"
+      - "C:/mingw64/bin/addr2line"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/addr2line.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/addr2line.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/addr2line"
+      - "C:/Windows/System32/addr2line.com"
+      - "C:/Windows/System32/addr2line.exe"
+      - "C:/Windows/System32/addr2line"
+      - "C:/Windows/addr2line.com"
+      - "C:/Windows/addr2line.exe"
+      - "C:/Windows/addr2line"
+      - "C:/Windows/System32/wbem/addr2line.com"
+      - "C:/Windows/System32/wbem/addr2line.exe"
+      - "C:/Windows/System32/wbem/addr2line"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/addr2line.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/addr2line.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/addr2line"
+      - "C:/Windows/System32/OpenSSH/addr2line.com"
+      - "C:/Windows/System32/OpenSSH/addr2line.exe"
+      - "C:/Windows/System32/OpenSSH/addr2line"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/addr2line.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/addr2line.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/addr2line"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/addr2line.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/addr2line.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/addr2line"
+      - "C:/Program Files/Bandizip/addr2line.com"
+      - "C:/Program Files/Bandizip/addr2line.exe"
+      - "C:/Program Files/Bandizip/addr2line"
+      - "D:/platform-tools/addr2line.com"
+      - "D:/platform-tools/addr2line.exe"
+      - "D:/platform-tools/addr2line"
+      - "C:/Program Files/dotnet/addr2line.com"
+      - "C:/Program Files/dotnet/addr2line.exe"
+      - "C:/Program Files/dotnet/addr2line"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/addr2line.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/addr2line.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/addr2line"
+      - "C:/Program Files/WireGuard/addr2line.com"
+      - "C:/Program Files/WireGuard/addr2line.exe"
+      - "C:/Program Files/WireGuard/addr2line"
+      - "C:/Program Files/Tailscale/addr2line.com"
+      - "C:/Program Files/Tailscale/addr2line.exe"
+      - "C:/Program Files/Tailscale/addr2line"
+      - "C:/Program Files/Microsoft VS Code/bin/addr2line.com"
+      - "C:/Program Files/Microsoft VS Code/bin/addr2line.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/addr2line"
       - "D:/mingw64/bin/addr2line.com"
     found: "D:/mingw64/bin/addr2line.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1747,8 +2644,7 @@ events:
     names:
       - "tapi"
     candidate_directories:
-      - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
+      - "C:/mingw64/bin/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1764,6 +2660,7 @@ events:
       - "C:/Program Files/WireGuard/"
       - "C:/Program Files/Tailscale/"
       - "C:/Program Files/Microsoft VS Code/bin/"
+      - "D:/mingw64/bin/"
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/Cppcheck/"
       - "C:/Program Files/Git/cmd/"
@@ -1781,12 +2678,9 @@ events:
       - "C:/Users/JB/AppData/Local/Python/bin/"
       - "C:/Users/JB/AppData/Roaming/npm/"
     searched_directories:
-      - "D:/mingw64/bin/tapi.com"
-      - "D:/mingw64/bin/tapi.exe"
-      - "D:/mingw64/bin/tapi"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/tapi.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/tapi.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/tapi"
+      - "C:/mingw64/bin/tapi.com"
+      - "C:/mingw64/bin/tapi.exe"
+      - "C:/mingw64/bin/tapi"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/tapi.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/tapi.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/tapi"
@@ -1832,6 +2726,9 @@ events:
       - "C:/Program Files/Microsoft VS Code/bin/tapi.com"
       - "C:/Program Files/Microsoft VS Code/bin/tapi.exe"
       - "C:/Program Files/Microsoft VS Code/bin/tapi"
+      - "D:/mingw64/bin/tapi.com"
+      - "D:/mingw64/bin/tapi.exe"
+      - "D:/mingw64/bin/tapi"
       - "C:/Program Files/CMake/bin/tapi.com"
       - "C:/Program Files/CMake/bin/tapi.exe"
       - "C:/Program Files/CMake/bin/tapi"
@@ -1883,7 +2780,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1924,6 +2820,100 @@ events:
         - "C:\\Users\\JB\\.dotnet\\tools"
         - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "D:/mingw64/share/cmake-4.3/Modules/"
+    found: "D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "D:\\platform-tools"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Cppcheck"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\LLVM\\bin"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin"
+        - "C:\\Strawberry\\c\\bin"
+        - "C:\\Strawberry\\perl\\site\\bin"
+        - "C:\\Strawberry\\perl\\bin"
+        - "D:\\DEV\\Batch"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\JB\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\JB\\.dotnet\\tools"
+        - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/FeedbackAnalyzer"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/mingw64/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/4.3.1/CompilerIdCXX/a.exe
+      
   -
     kind: "find-v1"
     backtrace:
@@ -1948,7 +2938,6 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1984,9 +2973,6 @@ events:
       - "D:/mingw64/bin/gcc-ar-15.2.com"
       - "D:/mingw64/bin/gcc-ar-15.2.exe"
       - "D:/mingw64/bin/gcc-ar-15.2"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar-15.2.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar-15.2.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar-15.2"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar-15.2.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar-15.2.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar-15.2"
@@ -2083,9 +3069,6 @@ events:
       - "D:/mingw64/bin/gcc-ar-15.com"
       - "D:/mingw64/bin/gcc-ar-15.exe"
       - "D:/mingw64/bin/gcc-ar-15"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar-15.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar-15.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar-15"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar-15.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar-15.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar-15"
@@ -2182,9 +3165,6 @@ events:
       - "D:/mingw64/bin/gcc-ar15.com"
       - "D:/mingw64/bin/gcc-ar15.exe"
       - "D:/mingw64/bin/gcc-ar15"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar15.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar15.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ar15"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar15.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar15.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ar15"
@@ -2282,7 +3262,6 @@ events:
     found: "D:/mingw64/bin/gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -2323,6 +3302,7 @@ events:
         - "C:\\Users\\JB\\.dotnet\\tools"
         - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/FeedbackAnalyzer"
   -
     kind: "find-v1"
     backtrace:
@@ -2347,7 +3327,6 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "D:/mingw64/bin/"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -2383,9 +3362,6 @@ events:
       - "D:/mingw64/bin/gcc-ranlib-15.2.com"
       - "D:/mingw64/bin/gcc-ranlib-15.2.exe"
       - "D:/mingw64/bin/gcc-ranlib-15.2"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib-15.2.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib-15.2"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib-15.2.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib-15.2.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib-15.2"
@@ -2482,9 +3458,6 @@ events:
       - "D:/mingw64/bin/gcc-ranlib-15.com"
       - "D:/mingw64/bin/gcc-ranlib-15.exe"
       - "D:/mingw64/bin/gcc-ranlib-15"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib-15.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib-15.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib-15"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib-15.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib-15.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib-15"
@@ -2581,9 +3554,6 @@ events:
       - "D:/mingw64/bin/gcc-ranlib15.com"
       - "D:/mingw64/bin/gcc-ranlib15.exe"
       - "D:/mingw64/bin/gcc-ranlib15"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib15.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib15.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcc-ranlib15"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib15.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib15.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcc-ranlib15"
@@ -2681,7 +3651,6 @@ events:
     found: "D:/mingw64/bin/gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -2722,6 +3691,7 @@ events:
         - "C:\\Users\\JB\\.dotnet\\tools"
         - "C:\\Users\\JB\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\JB\\AppData\\Roaming\\npm"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/FeedbackAnalyzer"
   -
     kind: "find-v1"
     backtrace:
@@ -2745,7 +3715,6 @@ events:
       - "windres"
       - "windres"
     candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -2791,9 +3760,6 @@ events:
       - "C:/Program Files (x86)/FeedbackAnalyzer/sbin/"
       - "C:/Program Files (x86)/FeedbackAnalyzer/"
     searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/windres.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/windres.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/windres"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/windres.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/windres.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/windres"
@@ -2843,7 +3809,6 @@ events:
     found: "D:/mingw64/bin/windres.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -2899,11 +3864,11 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-caj084"
-      binary: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-caj084"
+      source: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6"
+      binary: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_FLAGS_DEBUG: ""
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -2911,20 +3876,23 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-caj084'
+        Change Dir: 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6'
         
-        Run Build Command(s): D:/mingw64/bin/ninja.exe -v cmTC_617f4
-        [1/2] D:\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj -c D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): D:/mingw64/bin/cmake.exe -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_65f9a/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_65f9a.dir\\build.make CMakeFiles/cmTC_65f9a.dir/build
+        mingw32-make[1]: Entering directory 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6'
+        Building CXX object CMakeFiles/cmTC_65f9a.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj -c D:\\mingw64\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp
         Using built-in specs.
-        COLLECT_GCC=D:\\mingw64\\bin\\c++.exe
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
         Target: x86_64-w64-mingw32
         Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-15.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r7' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --enable-libgdiagnostics --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-15.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r7) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_617f4.dir/'
-         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_617f4.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\JB\\AppData\\Local\\Temp\\ccNzgTgk.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_65f9a.dir\\'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT D:\\mingw64\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_65f9a.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\JB\\AppData\\Local\\Temp\\cchDHMpP.s
         GNU C++17 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r7) version 15.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.0, isl version isl-0.27-GMP
         
@@ -2949,15 +3917,16 @@ events:
          D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 319b0e6276b9caf8af1dcdd751e03d94
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_617f4.dir/'
-         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\JB\\AppData\\Local\\Temp\\ccNzgTgk.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_65f9a.dir\\'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JB\\AppData\\Local\\Temp\\cchDHMpP.s
         GNU assembler version 2.46.0 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r7) 2.46.0.20260210
         COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\mingw64\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_617f4.exe -Wl,--out-implib,libcmTC_617f4.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_65f9a.exe
+        D:\\mingw64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_65f9a.dir\\link.txt --verbose=1
         Using built-in specs.
-        COLLECT_GCC=D:\\mingw64\\bin\\c++.exe
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
         COLLECT_LTO_WRAPPER=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
         Target: x86_64-w64-mingw32
@@ -2967,12 +3936,16 @@ events:
         gcc version 15.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r7) 
         COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_617f4.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_617f4.'
-         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccOt9EQg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_617f4.exe D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LD:/mingw64/bin/../lib/gcc -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_617f4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_65f9a.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_65f9a.'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccMKkVSg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_65f9a.exe D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LD:/mingw64/bin/../lib/gcc -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_65f9a.dir/objects.a --no-whole-archive --out-implib libcmTC_65f9a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         collect2 version 15.2.0
-        D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccOt9EQg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_617f4.exe D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LD:/mingw64/bin/../lib/gcc -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_617f4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccMKkVSg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_65f9a.exe D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LD:/mingw64/bin/../lib/gcc -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_65f9a.dir/objects.a --no-whole-archive --out-implib libcmTC_65f9a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r7) 2.46.0.20260210
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_617f4.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_617f4.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_65f9a.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_65f9a.'
+        D:\\mingw64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_65f9a.dir/objects.a
+        D:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_65f9a.dir/objects.a @CMakeFiles\\cmTC_65f9a.dir\\objects1.rsp
+        D:\\mingw64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_65f9a.dir/objects.a -Wl,--no-whole-archive -o cmTC_65f9a.exe -Wl,--out-implib,libcmTC_65f9a.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6'
         
       exitCode: 0
   -
@@ -3013,20 +3986,23 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-caj084']
+        ignore line: [Change Dir: 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6']
         ignore line: []
-        ignore line: [Run Build Command(s): D:/mingw64/bin/ninja.exe -v cmTC_617f4]
-        ignore line: [[1/2] D:\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj -c D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): D:/mingw64/bin/cmake.exe -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_65f9a/fast]
+        ignore line: [D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_65f9a.dir\\build.make CMakeFiles/cmTC_65f9a.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-qxfwb6']
+        ignore line: [Building CXX object CMakeFiles/cmTC_65f9a.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj -c D:\\mingw64\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=D:\\mingw64\\bin\\c++.exe]
+        ignore line: [COLLECT_GCC=D:\\mingw64\\bin\\g++.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
         ignore line: [Target: x86_64-w64-mingw32]
         ignore line: [Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-15.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r7' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --enable-libgdiagnostics --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-15.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r7) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_617f4.dir/']
-        ignore line: [ D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT D:/mingw64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_617f4.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\JB\\AppData\\Local\\Temp\\ccNzgTgk.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_65f9a.dir\\']
+        ignore line: [ D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT D:\\mingw64\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_65f9a.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\JB\\AppData\\Local\\Temp\\cchDHMpP.s]
         ignore line: [GNU C++17 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r7) version 15.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.0  isl version isl-0.27-GMP]
         ignore line: []
@@ -3051,8 +4027,8 @@ events:
         ignore line: [ D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 319b0e6276b9caf8af1dcdd751e03d94]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_617f4.dir/']
-        ignore line: [ D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\JB\\AppData\\Local\\Temp\\ccNzgTgk.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_65f9a.dir\\']
+        ignore line: [ D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JB\\AppData\\Local\\Temp\\cchDHMpP.s]
         ignore line: [GNU assembler version 2.46.0 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r7) 2.46.0.20260210]
         ignore line: [COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/]
         ignore line: [D:/mingw64/bin/../libexec/gcc/]
@@ -3063,10 +4039,11 @@ events:
         ignore line: [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\mingw64\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_617f4.exe -Wl --out-implib libcmTC_617f4.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_65f9a.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_65f9a.exe]
+        ignore line: [D:\\mingw64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_65f9a.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=D:\\mingw64\\bin\\c++.exe]
+        ignore line: [COLLECT_GCC=D:\\mingw64\\bin\\g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -3083,13 +4060,13 @@ events:
         ignore line: [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_617f4.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_617f4.']
-        link line: [ D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccOt9EQg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_617f4.exe D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LD:/mingw64/bin/../lib/gcc -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_617f4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_65f9a.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_65f9a.']
+        link line: [ D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccMKkVSg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_65f9a.exe D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LD:/mingw64/bin/../lib/gcc -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_65f9a.dir/objects.a --no-whole-archive --out-implib libcmTC_65f9a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
           arg [D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccOt9EQg.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\JB\\AppData\\Local\\Temp\\ccMKkVSg.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -3111,7 +4088,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_617f4.exe] ==> ignore
+          arg [cmTC_65f9a.exe] ==> ignore
           arg [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
           arg [-LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
@@ -3121,9 +4098,11 @@ events:
           arg [-LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LD:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_617f4.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_65f9a.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_617f4.dll.a] ==> ignore
+          arg [libcmTC_65f9a.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -3204,7 +4183,7 @@ events:
       - "D:/mingw64/share/cmake-4.3/Modules/FetchContent.cmake:2158:EVAL:2 (__FetchContent_doPopulation)"
       - "D:/mingw64/share/cmake-4.3/Modules/FetchContent.cmake:2158 (cmake_language)"
       - "D:/mingw64/share/cmake-4.3/Modules/FetchContent.cmake:2399 (__FetchContent_Populate)"
-      - "CMakeLists.txt:37 (FetchContent_MakeAvailable)"
+      - "CMakeLists.txt:47 (FetchContent_MakeAvailable)"
     mode: "program"
     variable: "GIT_EXECUTABLE"
     description: "Git command line client"
@@ -3220,7 +4199,6 @@ events:
       - "git.cmd"
       - "git"
     candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -3267,9 +4245,6 @@ events:
       - "C:/Program Files (x86)/FeedbackAnalyzer/"
       - "C:/Users/JB/AppData/Local/Atlassian/SourceTree/git_local/bin/"
     searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.cmd.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.cmd.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.cmd"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.cmd.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.cmd.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.cmd"
@@ -3405,9 +4380,6 @@ events:
       - "C:/Users/JB/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.com"
       - "C:/Users/JB/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.exe"
       - "C:/Users/JB/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git"
@@ -3466,7 +4438,6 @@ events:
     found: "C:/Program Files/Git/cmd/git.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -3525,11 +4496,11 @@ events:
     checks:
       - "Performing Test HAVE_FLAG__ffile_prefix_map_D__DEV_FeedbackAnalyzer_09_build__deps_catch2_src__"
     directories:
-      source: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-m4pzoo"
-      binary: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-m4pzoo"
+      source: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-febabj"
+      binary: "D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-febabj"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_FLAGS_DEBUG: ""
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/extras;D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/CMake"
@@ -3537,18 +4508,26 @@ events:
       variable: "HAVE_FLAG__ffile_prefix_map_D__DEV_FeedbackAnalyzer_09_build__deps_catch2_src__"
       cached: true
       stdout: |
-        Change Dir: 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-m4pzoo'
+        Change Dir: 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-febabj'
         
-        Run Build Command(s): D:/mingw64/bin/ninja.exe -v cmTC_d9dd7
-        [1/2] D:\\mingw64\\bin\\c++.exe -DHAVE_FLAG__ffile_prefix_map_D__DEV_FeedbackAnalyzer_09_build__deps_catch2_src__  -std=gnu++17   -ffile-prefix-map=D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/= -o CMakeFiles/cmTC_d9dd7.dir/src.cxx.obj -c D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-m4pzoo/src.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\mingw64\\bin\\c++.exe   CMakeFiles/cmTC_d9dd7.dir/src.cxx.obj -o cmTC_d9dd7.exe -Wl,--out-implib,libcmTC_d9dd7.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): D:/mingw64/bin/cmake.exe -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_f1550/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f1550.dir\\build.make CMakeFiles/cmTC_f1550.dir/build
+        mingw32-make[1]: Entering directory 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-febabj'
+        Building CXX object CMakeFiles/cmTC_f1550.dir/src.cxx.obj
+        D:\\mingw64\\bin\\g++.exe -DHAVE_FLAG__ffile_prefix_map_D__DEV_FeedbackAnalyzer_09_build__deps_catch2_src__  -std=gnu++17   -ffile-prefix-map=D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-src/= -o CMakeFiles\\cmTC_f1550.dir\\src.cxx.obj -c D:\\DEV\\FeedbackAnalyzer_09\\build\\CMakeFiles\\CMakeScratch\\TryCompile-febabj\\src.cxx
+        Linking CXX executable cmTC_f1550.exe
+        D:\\mingw64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_f1550.dir\\link.txt --verbose=1
+        D:\\mingw64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_f1550.dir/objects.a
+        D:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_f1550.dir/objects.a @CMakeFiles\\cmTC_f1550.dir\\objects1.rsp
+        D:\\mingw64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_f1550.dir/objects.a -Wl,--no-whole-archive -o cmTC_f1550.exe -Wl,--out-implib,libcmTC_f1550.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f1550.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/DEV/FeedbackAnalyzer_09/build/CMakeFiles/CMakeScratch/TryCompile-febabj'
         
       exitCode: 0
   -
     kind: "find-v1"
     backtrace:
       - "D:/mingw64/share/cmake-4.3/Modules/CTest.cmake:171 (find_program)"
-      - "CMakeLists.txt:69 (include)"
+      - "CMakeLists.txt:102 (include)"
     mode: "program"
     variable: "GITCOMMAND"
     description: "Path to a program."
@@ -3563,7 +4542,6 @@ events:
     names:
       - "git"
     candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -3609,9 +4587,6 @@ events:
       - "C:/Program Files (x86)/FeedbackAnalyzer/sbin/"
       - "C:/Program Files (x86)/FeedbackAnalyzer/"
     searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/git"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/git"
@@ -3670,7 +4645,6 @@ events:
     found: "C:/Program Files/Git/cmd/git.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -3721,7 +4695,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "D:/mingw64/share/cmake-4.3/Modules/CTest.cmake:188 (find_program)"
-      - "CMakeLists.txt:69 (include)"
+      - "CMakeLists.txt:102 (include)"
     mode: "program"
     variable: "MEMORYCHECK_COMMAND"
     description: "Path to the memory checking command, used for memory error detection."
@@ -3741,7 +4715,6 @@ events:
       - "cuda-memcheck"
       - "compute-sanitizer"
     candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -3788,9 +4761,6 @@ events:
       - "C:/Program Files (x86)/FeedbackAnalyzer/"
       - "/REGISTRY-NOTFOUND/"
     searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/purify.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/purify.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/purify"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/purify.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/purify.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/purify"
@@ -3926,9 +4896,6 @@ events:
       - "/REGISTRY-NOTFOUND/purify.com"
       - "/REGISTRY-NOTFOUND/purify.exe"
       - "/REGISTRY-NOTFOUND/purify"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/valgrind.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/valgrind.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/valgrind"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/valgrind.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/valgrind.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/valgrind"
@@ -4064,9 +5031,6 @@ events:
       - "/REGISTRY-NOTFOUND/valgrind.com"
       - "/REGISTRY-NOTFOUND/valgrind.exe"
       - "/REGISTRY-NOTFOUND/valgrind"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/boundscheck.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/boundscheck.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/boundscheck"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/boundscheck.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/boundscheck.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/boundscheck"
@@ -4202,9 +5166,6 @@ events:
       - "/REGISTRY-NOTFOUND/boundscheck.com"
       - "/REGISTRY-NOTFOUND/boundscheck.exe"
       - "/REGISTRY-NOTFOUND/boundscheck"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/drmemory.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/drmemory.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/drmemory"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/drmemory.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/drmemory.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/drmemory"
@@ -4340,9 +5301,6 @@ events:
       - "/REGISTRY-NOTFOUND/drmemory.com"
       - "/REGISTRY-NOTFOUND/drmemory.exe"
       - "/REGISTRY-NOTFOUND/drmemory"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/cuda-memcheck.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/cuda-memcheck.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/cuda-memcheck"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/cuda-memcheck.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/cuda-memcheck.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/cuda-memcheck"
@@ -4478,9 +5436,6 @@ events:
       - "/REGISTRY-NOTFOUND/cuda-memcheck.com"
       - "/REGISTRY-NOTFOUND/cuda-memcheck.exe"
       - "/REGISTRY-NOTFOUND/cuda-memcheck"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/compute-sanitizer.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/compute-sanitizer.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/compute-sanitizer"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/compute-sanitizer.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/compute-sanitizer.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/compute-sanitizer"
@@ -4619,7 +5574,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -4670,7 +5624,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "D:/mingw64/share/cmake-4.3/Modules/CTest.cmake:196 (find_program)"
-      - "CMakeLists.txt:69 (include)"
+      - "CMakeLists.txt:102 (include)"
     mode: "program"
     variable: "COVERAGE_COMMAND"
     description: "Path to the coverage program that CTest uses for performing coverage inspection"
@@ -4685,7 +5639,6 @@ events:
     names:
       - "gcov"
     candidate_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -4731,9 +5684,6 @@ events:
       - "C:/Program Files (x86)/FeedbackAnalyzer/sbin/"
       - "C:/Program Files (x86)/FeedbackAnalyzer/"
     searched_directories:
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcov.com"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcov.exe"
-      - "C:/Program Files/cursor/resources/app/resources/helpers/gcov"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcov.com"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcov.exe"
       - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/gcov"
@@ -4783,7 +5733,6 @@ events:
     found: "D:/mingw64/bin/gcov.exe"
     search_context:
       ENV{PATH}:
-        - "c:\\Program Files\\cursor\\resources\\app\\resources\\helpers"
         - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
         - "C:\\Windows\\system32"
         - "C:\\Windows"

@@ -1,0 +1,72 @@
+FA_TC_56_WeightedSentimentNegation 1 0.323758
+FA_TC_56b_WeightedSentimentMixedPolarity 1 0.374713
+FA_TC_57_FileHandlerSaveResult 1 0.337066
+FA_TC_55_TrendCsvAggregate 1 0.31422
+FA_TC_58_SentimentKeywordDb 1 0.341788
+FA_TC_51_Sentiment1k 1 0.367685
+FA_TC_54_CoverageGate 1 0.319902
+GM-01 analyze aggregate 1 0.312845
+GM-02 filter neutral 1 0.391796
+GM-03 download CSV 1 0.382601
+GM-04 upload CSV 1 0.349454
+GM-10 trend aggregate 1 0.307435
+FA_TC_Cov_CsvHeaderOnly 1 0.330667
+FA_TC_Cov_CsvNoNewline 1 0.303712
+FA_TC_Cov_CsvBlankLineSkip 1 0.308348
+FA_TC_Cov_ApplyFilterEmptySuccess 1 0.300187
+FA_TC_Cov_SessionKeepsFilterView 1 0.302976
+FA_TC_Cov_FilterSentimentBranch 1 0.29644
+FA_TC_Cov_FilterAllAll 1 0.294052
+FA_TC_Cov_FilterUnknownCategory 1 0.321778
+FA_TC_Cov_SentimentAllLabels 1 0.298214
+FA_TC_Cov_KeywordNoMatch 1 0.291656
+FA_TC_Cov_FilterKeywordShipping 1 0.310334
+FA_TC_Cov_ApplyFilterNotSuccess 1 0.303509
+FA_TC_Cov_LegacyAnalyzerSmoke 1 0.309303
+FA_TC_Cov_ProductionCsvNoHeaderLine 1 0.325387
+FA_TC_Cov_FilterSentimentMismatch 1 0.320893
+FA_TC_33_CsvTextHeader 1 0.348754
+FA_TC_34_CsvIdTextColumn 1 0.370098
+FA_TC_35_CsvEmpty 1 0.427302
+FA_TC_36_CsvQuoted 1 0.365581
+FA_TC_37_CsvCrlf 1 0.412584
+FA_TC_39_DownloadWithoutFilter 1 0.419503
+FA_TC_40_DownloadAfterFilter 1 0.456175
+FA_TC_41_DownloadFilterEmptyKeep 1 0.422319
+FA_TC_42_DownloadStale 1 0.424877
+FA_TC_43_DownloadUtf8Bom 1 0.393608
+FA_TC_16_KeywordMainOnlyMismatch 1 0.319956
+FA_TC_17_FilterNeutralZero 1 0.325379
+FA_TC_29_ConsistencySentFilNeutral 1 0.39494
+FA_TC_31_ConsistencyFilteredStats 1 0.314262
+FA_TC_30_ConsistencyKwFilMain 1 0.352947
+FA_TC_32_ConsistencyPostRefactor 1 0.448193
+FA_TC_18_FilterNeutralAll 1 0.37434
+FA_TC_19_FilterPositive 1 0.360703
+FA_TC_20_FilterNegative 1 0.398671
+FA_TC_21_FilterSentimentAll 1 0.433108
+FA_TC_22_FilterOverlapOk 1 0.437221
+FA_TC_23_FilterCategoryShipping 1 0.361743
+FA_TC_24_FilterMainOnlyZero 1 0.40407
+FA_TC_25_FilterKeywordAll 1 0.329925
+FA_TC_26_FilterIntersection 1 0.368521
+FA_TC_27_FilterUnknownKeyword 1 0.386318
+FA_TC_28_FilterFiveCategories 1 0.323664
+FA_TC_09_KeywordShipping 1 0.367517
+FA_TC_10_KeywordQuality 1 0.365693
+FA_TC_11_KeywordPrice 1 0.306139
+FA_TC_12_KeywordService 1 0.371899
+FA_TC_13_KeywordUsability 1 0.342661
+FA_TC_14_KeywordNone 1 0.333065
+FA_TC_15_KeywordMultiCategory 1 0.368821
+FA_TC_01_SentimentEmpty 1 0.358481
+FA_TC_02_SentimentPositive 1 0.319279
+FA_TC_03_SentimentNegative 1 0.356989
+FA_TC_04_SentimentNeutralNoKw 1 0.318734
+FA_TC_05_SentimentPartialNeg 1 0.322773
+FA_TC_06_SentimentNeutralAmbiguous 1 0.364979
+FA_TC_07_SentimentPositiveWins 1 0.349547
+FA_TC_08_SentimentMixedN 1 0.317459
+feedback_analyzer_integration_tests_NOT_BUILT-b12d07c 0 0
+GoldenMaster 2 0.148612
+---

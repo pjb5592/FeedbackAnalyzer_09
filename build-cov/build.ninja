@@ -62,6 +62,51 @@ build CMakeFiles/feedback_analyzer.dir/src/cpp/CsvUploadParser.cpp.obj: CXX_COMP
   OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer.dir\src\cpp
   TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer.dir
 
+build CMakeFiles/feedback_analyzer.dir/src/cpp/FileHandler.cpp.obj: CXX_COMPILER__feedback_analyzer_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/FileHandler.cpp || cmake_object_order_depends_target_feedback_analyzer
+  DEFINES = -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+  DEP_FILE = CMakeFiles\feedback_analyzer.dir\src\cpp\FileHandler.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp
+  OBJECT_DIR = CMakeFiles\feedback_analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer.dir
+
+build CMakeFiles/feedback_analyzer.dir/src/cpp/SentimentClassifier.cpp.obj: CXX_COMPILER__feedback_analyzer_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/SentimentClassifier.cpp || cmake_object_order_depends_target_feedback_analyzer
+  DEFINES = -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+  DEP_FILE = CMakeFiles\feedback_analyzer.dir\src\cpp\SentimentClassifier.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp
+  OBJECT_DIR = CMakeFiles\feedback_analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer.dir
+
+build CMakeFiles/feedback_analyzer.dir/src/cpp/SentimentKeywordStore.cpp.obj: CXX_COMPILER__feedback_analyzer_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/SentimentKeywordStore.cpp || cmake_object_order_depends_target_feedback_analyzer
+  DEFINES = -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+  DEP_FILE = CMakeFiles\feedback_analyzer.dir\src\cpp\SentimentKeywordStore.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp
+  OBJECT_DIR = CMakeFiles\feedback_analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer.dir
+
+build CMakeFiles/feedback_analyzer.dir/src/cpp/TrendAnalyzer.cpp.obj: CXX_COMPILER__feedback_analyzer_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/TrendAnalyzer.cpp || cmake_object_order_depends_target_feedback_analyzer
+  DEFINES = -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+  DEP_FILE = CMakeFiles\feedback_analyzer.dir\src\cpp\TrendAnalyzer.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp
+  OBJECT_DIR = CMakeFiles\feedback_analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer.dir
+
+build CMakeFiles/feedback_analyzer.dir/src/cpp/TrendCsvParser.cpp.obj: CXX_COMPILER__feedback_analyzer_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/TrendCsvParser.cpp || cmake_object_order_depends_target_feedback_analyzer
+  DEFINES = -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+  DEP_FILE = CMakeFiles\feedback_analyzer.dir\src\cpp\TrendCsvParser.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp
+  OBJECT_DIR = CMakeFiles\feedback_analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer.dir
+
 build CMakeFiles/feedback_analyzer.dir/src/cpp/Filters.cpp.obj: CXX_COMPILER__feedback_analyzer_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/Filters.cpp || cmake_object_order_depends_target_feedback_analyzer
   DEFINES = -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
   DEP_FILE = CMakeFiles\feedback_analyzer.dir\src\cpp\Filters.cpp.obj.d
@@ -142,7 +187,7 @@ build CMakeFiles/feedback_analyzer.dir/src/cpp/main.cpp.obj: CXX_COMPILER__feedb
 #############################################
 # Link the executable feedback_analyzer.exe
 
-build feedback_analyzer.exe: CXX_EXECUTABLE_LINKER__feedback_analyzer_ CMakeFiles/feedback_analyzer.dir/src/cpp/Constants.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/CsvUploadParser.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/Filters.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/HtmlRenderer.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/HttpRouter.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/Logger.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/Session.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/TextAnalyzer.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/UIComponents.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/main.cpp.obj
+build feedback_analyzer.exe: CXX_EXECUTABLE_LINKER__feedback_analyzer_ CMakeFiles/feedback_analyzer.dir/src/cpp/Constants.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/CsvUploadParser.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/FileHandler.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/SentimentClassifier.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/SentimentKeywordStore.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/TrendAnalyzer.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/TrendCsvParser.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/Filters.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/HtmlRenderer.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/HttpRouter.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/Logger.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/Session.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/TextAnalyzer.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/UIComponents.cpp.obj CMakeFiles/feedback_analyzer.dir/src/cpp/main.cpp.obj
   LINK_LIBRARIES = -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\feedback_analyzer.dir
   POST_BUILD = cd .
@@ -233,6 +278,14 @@ build CMakeFiles/feedback_analyzer_tests.dir/tests/test_perf_skip.cpp.obj: CXX_C
   OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\tests
   TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
 
+build CMakeFiles/feedback_analyzer_tests.dir/tests/test_feature.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/tests/test_feature.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
+  DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\tests\test_feature.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\tests
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+
 build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/Constants.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/Constants.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
   DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\Constants.cpp.obj.d
   FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
@@ -243,6 +296,46 @@ build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/Constants.cpp.obj: CXX_COMP
 
 build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/CsvUploadParser.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/CsvUploadParser.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
   DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\CsvUploadParser.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+
+build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/FileHandler.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/FileHandler.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
+  DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\FileHandler.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+
+build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/SentimentClassifier.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/SentimentClassifier.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
+  DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\SentimentClassifier.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+
+build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/SentimentKeywordStore.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/SentimentKeywordStore.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
+  DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\SentimentKeywordStore.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+
+build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/TrendAnalyzer.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/TrendAnalyzer.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
+  DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\TrendAnalyzer.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
+  INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\feedback_analyzer_tests.dir\src\cpp
+  TARGET_SUPPORT_DIR = CMakeFiles\feedback_analyzer_tests.dir
+
+build CMakeFiles/feedback_analyzer_tests.dir/src/cpp/TrendCsvParser.cpp.obj: CXX_COMPILER__feedback_analyzer_tests_unscanned_ D$:/DEV/FeedbackAnalyzer_09/src/cpp/TrendCsvParser.cpp || cmake_object_order_depends_target_feedback_analyzer_tests
+  DEP_FILE = CMakeFiles\feedback_analyzer_tests.dir\src\cpp\TrendCsvParser.cpp.obj.d
   FLAGS = -std=gnu++17 --coverage -O0 -g -finput-charset=UTF-8
   INCLUDES = -ID:/DEV/FeedbackAnalyzer_09/src/cpp -ID:/DEV/FeedbackAnalyzer_09/tests -ID:/DEV/FeedbackAnalyzer_09/tests/fixtures -ID:/DEV/FeedbackAnalyzer_09/tests/support -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-src/src/catch2/.. -ID:/DEV/FeedbackAnalyzer_09/build-cov/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir
@@ -313,7 +406,7 @@ build CMakeFiles/feedback_analyzer_tests.dir/tests/support/GoldenMasterRunner.cp
 #############################################
 # Link the executable feedback_analyzer_tests.exe
 
-build feedback_analyzer_tests.exe feedback_analyzer_tests-b12d07c_tests.cmake | ${cmake_ninja_workdir}feedback_analyzer_tests-b12d07c_tests.cmake: CXX_EXECUTABLE_LINKER__feedback_analyzer_tests_ CMakeFiles/feedback_analyzer_tests.dir/tests/test_main.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_text_analyzer_sent.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_text_analyzer_kw.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_filters.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_consistency.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_csv_session.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_coverage_boundary.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_golden_master.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_perf_skip.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/Constants.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/CsvUploadParser.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/Filters.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/TextAnalyzer.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/DomainSentimentAnalyzer.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/DomainKeywordCounter.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/DomainFeedbackFilter.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/InMemoryDownloadSource.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/GoldenMasterRunner.cpp.obj | _deps/catch2-build/src/libCatch2.a || _deps/catch2-build/src/libCatch2.a
+build feedback_analyzer_tests.exe feedback_analyzer_tests-b12d07c_tests.cmake | ${cmake_ninja_workdir}feedback_analyzer_tests-b12d07c_tests.cmake: CXX_EXECUTABLE_LINKER__feedback_analyzer_tests_ CMakeFiles/feedback_analyzer_tests.dir/tests/test_main.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_text_analyzer_sent.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_text_analyzer_kw.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_filters.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_consistency.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_csv_session.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_coverage_boundary.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_golden_master.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_perf_skip.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/test_feature.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/Constants.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/CsvUploadParser.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/FileHandler.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/SentimentClassifier.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/SentimentKeywordStore.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/TrendAnalyzer.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/TrendCsvParser.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/Filters.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/src/cpp/TextAnalyzer.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/DomainSentimentAnalyzer.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/DomainKeywordCounter.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/DomainFeedbackFilter.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/InMemoryDownloadSource.cpp.obj CMakeFiles/feedback_analyzer_tests.dir/tests/support/GoldenMasterRunner.cpp.obj | _deps/catch2-build/src/libCatch2.a || _deps/catch2-build/src/libCatch2.a
   LINK_FLAGS = --coverage
   LINK_LIBRARIES = _deps/catch2-build/src/libCatch2.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\feedback_analyzer_tests.dir

@@ -1,6 +1,6 @@
 #include "Session.h"
 
-#include <sstream>
+#include "FileHandler.h"
 
 std::vector<Feedback> Session::currentFeedbacks;
 std::vector<Feedback> Session::downloadView_;
@@ -43,11 +43,5 @@ const std::vector<Feedback>& Session::getDownloadView() {
 }
 
 std::string Session::renderDownloadCsv() {
-    std::ostringstream csv;
-    csv << "\xEF\xBB\xBF";
-    csv << "text\n";
-    for (const auto& item : downloadView_) {
-        csv << item.getText() << '\n';
-    }
-    return csv.str();
+    return FileHandler::renderCsv(downloadView_);
 }

@@ -317,6 +317,7 @@ ctest --test-dir build -R "^GoldenMaster$"
 
 | 문서 | 역할 |
 |------|------|
+| `docs/defect_report.md` | Severity×ItemType·보고 템플릿·메트릭·종료 워크플로 |
 | `docs/requirements_analysis.md` | DEF·Mom·FA-001~055 원본 |
 | `docs/test_plan.md` | FA-TC-01~55 상세·RED/GREEN |
 | `docs/refactoring_plan.md` | Phase 0~7 Step·게이트 |

@@ -9,7 +9,11 @@ include(cmake/FACoverage.cmake)
 add_executable(feedback_analyzer
     src/cpp/Constants.cpp
     src/cpp/CsvUploadParser.cpp
+    src/cpp/FileHandler.cpp
     src/cpp/SentimentClassifier.cpp
+    src/cpp/SentimentKeywordStore.cpp
+    src/cpp/TrendAnalyzer.cpp
+    src/cpp/TrendCsvParser.cpp
     src/cpp/Filters.cpp
     src/cpp/HtmlRenderer.cpp
     src/cpp/HttpRouter.cpp
@@ -45,7 +49,11 @@ FetchContent_MakeAvailable(Catch2)
 set(FA_LEGACY_SOURCES
     src/cpp/Constants.cpp
     src/cpp/CsvUploadParser.cpp
+    src/cpp/FileHandler.cpp
     src/cpp/SentimentClassifier.cpp
+    src/cpp/SentimentKeywordStore.cpp
+    src/cpp/TrendAnalyzer.cpp
+    src/cpp/TrendCsvParser.cpp
     src/cpp/Filters.cpp
     src/cpp/TextAnalyzer.cpp
 )
@@ -68,6 +76,7 @@ add_executable(feedback_analyzer_tests
     tests/test_coverage_boundary.cpp
     tests/test_golden_master.cpp
     tests/test_perf_skip.cpp
+    tests/test_feature.cpp
     ${FA_LEGACY_SOURCES}
     ${FA_SUPPORT_SOURCES}
 )

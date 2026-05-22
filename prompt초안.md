@@ -465,6 +465,8 @@ git checkout -b spec    # 또는 red, green, refactoring, feature/newFeature
 [P] 시니어 C++ 개발자
 [C] feature/newFeature — project_purpose 미션 6~7 (Trend, File DB 등)
      green 기준선(FA-TC+커버리지+GM) 이후 확장
+     - saveResult 실제 구현
+     - 감성 분석 정확도 개선: 단순 키워드 매칭 → 가중치 기반 스코어링으로 업그레이드 
 [T] 기능별 **테스트·커버리지·Golden Master·구현** (순서 고정)
     1) test_plan에 기능 TC-ID 추가 (FA-TC-XX) — Given-When-Then·AC 매핑
     2) RED: 기능 TC 1건 = 1 CoT = 1 Commit (`test(feature):` 또는 `test(red):`)
@@ -521,6 +523,24 @@ TC 추가 → RED → GREEN(최소) → 커버리지 → GM. CoT·1 Commit per �
 [T] docs/qa_final_report.md — 커버리지, 결함, Before/After, 회고
 [F] ctest·lcov 반영
 ```
+
+---
+
+### 부록. cursor AI활용 회고고
+
+```
+[P] 프로젝트 문서 담당
+[T] Cursor AI 분석 결과를 바탕으로 보고서 작성
+  1) 분석 배경
+  2) Cursor.AI 분석 요약 (항목별 표)
+  3) 개선/처리 내역
+    | 피드백사항 | 수정 조치 | 결과 |
+  4) 전후 코드 비교(cpp 코드 블록)
+  5) 효과 및 향후 과제제
+[F] docs/report.md. 
+  - 순수 MarkDown만 출력 AI 설명 제외
+```
+
 
 ---
 

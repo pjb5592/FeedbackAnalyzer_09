@@ -14,7 +14,7 @@ CostDataFile:
 Site: DESKTOP-9VBPGL9
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Win32-ninja
+BuildName: Win32-mingw32-make
 
 # Subprojects
 LabelsForSubprojects: 
@@ -28,7 +28,7 @@ NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
 ConfigureCommand: "D:/mingw64/bin/cmake.exe" "D:/DEV/FeedbackAnalyzer_09"
-MakeCommand: D:\mingw64\bin\cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}"
+MakeCommand: D:/mingw64/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: D:/mingw64/bin/c++.exe
+Compiler: D:/mingw64/bin/g++.exe
 CompilerVersion: 15.2.0
 
 # Dynamic analysis (MemCheck)

@@ -93,10 +93,10 @@ feedback_analyzer_cpp/
 | 6 | 리팩토링 실행 | refactoring | Phase·Step별 1 Commit, ctest Green | [x] (2026-05-22, Phase 0~7 · 20 Step 커밋) |
 | 7 | 결함 분석·문서화 | green / refactoring | `docs/defect_list.md` | [x] (2026-05-22, DEF-01~04·Mom H2/H4/H5/H6·kw/fil 한계) |
 | 8 | Golden Master (4-D) | green | `tests/golden/*.approved.txt`, `docs/golden_master.md` (4-B·4-C 후) | [x] |
-| 9 | 기능 개선 | feature/newFeature | Trend·File DB 등 (미션 6~7) | [ ] |
-| 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [ ] |
+| 9 | 기능 개선 | feature/newFeature | Trend·File DB·saveResult·가중치 감성 (FA-TC-55~58, GM-10) | [x] |
+| 10 | 결함 관리 프로세스 | spec | `docs/defect_report.md` | [x] process-1.0 · Severity×ItemType·템플릿·메트릭 |
 | 11 | 설계 다이어그램 (선택) | spec | `docs/architecture.md` | [ ] |
-| 12 | QA 종합 검토 | refactoring / main | `docs/qa_final_report.md` | [ ] |
+| 12 | QA 종합 검토 | refactoring / main | `docs/qa_final_report.md` | [x] (2026-05-22, qa-final-1.0 · ctest 70/70 · lcov PASS) |
 
 **green 완료 조건 (refactoring 진입 전, 순서 고정)**
 
@@ -146,6 +146,10 @@ feedback_analyzer_cpp/
 | Step | 날짜 | Report | 내용 |
 |------|------|--------|------|
 | 11 | 2026-05-22 | [`Report/11.green-defect-list-report-2026-05-22.md`](./Report/11.green-defect-list-report-2026-05-22.md) | TODO #7 `defect_list` · GM-01~04 재점검 PASS |
+| 12 | 2026-05-22 | [`Report/12.feature-newFeature-report-2026-05-22.md`](./Report/12.feature-newFeature-report-2026-05-22.md) | TODO #9 feature FA-TC-55~58 · GM-10 · ctest 79/79 |
+| 13 | 2026-05-22 | [`Report/13.spec-defect-report-report-2026-05-22.md`](./Report/13.spec-defect-report-report-2026-05-22.md) | TODO #10 `defect_report` process-1.0 · Severity×ItemType·메트릭 |
+| 14 | 2026-05-22 | [`Report/14.qa-final-report-report-2026-05-22.md`](./Report/14.qa-final-report-report-2026-05-22.md) | TODO #12 `qa_final_report` · ctest 70/70 · lcov PASS · GM |
+| 15 | 2026-05-22 | [`Report/15.docs-cursor-report-report-2026-05-22.md`](./Report/15.docs-cursor-report-report-2026-05-22.md) | [`docs/report.md`](./docs/report.md) Cursor AI 종합 · DEF·전후 C++ · ctest 70/70 |
 
 **검증 명령**
 

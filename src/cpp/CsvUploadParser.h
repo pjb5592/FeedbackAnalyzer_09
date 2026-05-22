@@ -8,7 +8,5 @@
 class CsvUploadParser {
 public:
     std::vector<Feedback> parse(const std::string& content) const;
-
-private:
     static std::vector<std::string> parseLine(const std::string& line);
 };

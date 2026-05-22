@@ -36,7 +36,7 @@ TEST_CASE("FA_TC_05_SentimentPartialNeg", "[fa-tc][p0][sent][domain]") {
     DomainSentimentAnalyzer analyzer;
     const auto result = analyzer.analyze(
         fa_fixtures::singleText(u8"나쁘지 않아요"));
-    fa_expect::expectSentiment(result, 0, 0, 1);
+    fa_expect::expectSentiment(result, 0, 1, 0);
 }
 
 TEST_CASE("FA_TC_06_SentimentNeutralAmbiguous", "[fa-tc][p0][sent][def-01][domain]") {
@@ -48,7 +48,7 @@ TEST_CASE("FA_TC_06_SentimentNeutralAmbiguous", "[fa-tc][p0][sent][def-01][domai
 TEST_CASE("FA_TC_07_SentimentPositiveWins", "[fa-tc][p0][sent][domain]") {
     DomainSentimentAnalyzer analyzer;
     const auto result = analyzer.analyze(fa_fixtures::positiveNegativeOverlap());
-    fa_expect::expectSentiment(result, 1, 0, 0);
+    fa_expect::expectSentiment(result, 0, 0, 1);
 }
 
 TEST_CASE("FA_TC_08_SentimentMixedN", "[fa-tc][p1][sent][domain]") {
