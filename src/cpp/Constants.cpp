@@ -3,6 +3,12 @@
 std::map<std::string, std::vector<std::string>> Constants::SENTIMENT_KEYWORDS;
 std::map<std::string, std::map<std::string, std::vector<std::string>>> Constants::CATEGORY_KEYWORDS;
 
+namespace {
+
+std::vector<std::string> categoryNames;
+
+}  // namespace
+
 void Constants::init() {
     SENTIMENT_KEYWORDS[u8"긍정"] = {
         u8"좋아요", u8"만족", u8"감사", u8"최고", u8"좋은", u8"훌륭", u8"추천", u8"좋았어요",
@@ -49,4 +55,13 @@ void Constants::init() {
     CATEGORY_KEYWORDS[u8"사용성"]["ease"] = {u8"편리", u8"불편", u8"쉽게", u8"어렵"};
     CATEGORY_KEYWORDS[u8"사용성"]["guide"] = {u8"사용법", u8"설명서", u8"사용방법"};
     CATEGORY_KEYWORDS[u8"사용성"]["action"] = {u8"사용"};
+
+    categoryNames.clear();
+    for (const auto& entry : CATEGORY_KEYWORDS) {
+        categoryNames.push_back(entry.first);
+    }
+}
+
+const std::vector<std::string>& Constants::getCategoryNames() {
+    return categoryNames;
 }
