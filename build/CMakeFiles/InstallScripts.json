@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/DEV/FeedbackAnalyzer_09/build/cmake_install.cmake",
+		"D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-build/cmake_install.cmake",
+		"D:/DEV/FeedbackAnalyzer_09/build/_deps/catch2-build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

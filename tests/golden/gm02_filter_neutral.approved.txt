@@ -1,0 +1,4 @@
+sent.positive=0
+sent.neutral=1
+sent.negative=0
+filter.neutral.count=1

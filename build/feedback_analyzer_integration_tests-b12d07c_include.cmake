@@ -1,0 +1,5 @@
+if(EXISTS "D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests-b12d07c_tests.cmake")
+  include("D:/DEV/FeedbackAnalyzer_09/build/feedback_analyzer_integration_tests-b12d07c_tests.cmake")
+else()
+  add_test(feedback_analyzer_integration_tests_NOT_BUILT-b12d07c feedback_analyzer_integration_tests_NOT_BUILT-b12d07c)
+endif()

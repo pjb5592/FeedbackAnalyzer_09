@@ -1,0 +1,8 @@
+sent.positive=1
+sent.neutral=1
+sent.negative=1
+kw.배송=1
+kw.품질=0
+kw.가격=0
+kw.서비스=0
+kw.사용성=0
